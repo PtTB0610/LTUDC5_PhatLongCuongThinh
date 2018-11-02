@@ -1,5 +1,8 @@
 CREATE DATABASE ElectronicSupermarket
 
+USE [ElectronicSupermarket]
+GO
+
 CREATE TABLE [dbo].[WAREHOUSE](
 			[PRODUCT_ID] [int] PRIMARY KEY,
 			[INSTOCK_QUANTITY] [int] NOT NULL
@@ -20,7 +23,7 @@ CREATE TABLE [dbo].[CATEGORY](
 )
 
 CREATE TABLE [dbo].[PRODUCT](
-			[PRODUCT_ID] [int] PRIMARY KEY IDENTITY (1,1),
+			[PRODUCT_ID] [varchar] (255) PRIMARY KEY ,
 			[PRODUCT_NAME] [nvarchar] (255) NOT NULL UNIQUE,
 			[CATEGORY_ID] [int] ,
 			[PRODUCT_IMAGE] [nvarchar] (255),--image path
