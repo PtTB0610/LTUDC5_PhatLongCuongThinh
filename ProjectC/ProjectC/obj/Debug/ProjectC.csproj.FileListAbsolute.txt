@@ -1,0 +1,12 @@
+D:\Works\C#\ProjectC\ProjectC\bin\Debug\ProjectC.exe
+D:\Works\C#\ProjectC\ProjectC\bin\Debug\ProjectC.pdb
+D:\Works\C#\ProjectC\ProjectC\obj\Debug\ProjectC.csprojAssemblyReference.cache
+D:\Works\C#\ProjectC\ProjectC\obj\Debug\ProjectC.Properties.Resources.resources
+D:\Works\C#\ProjectC\ProjectC\obj\Debug\ProjectC.csproj.GenerateResource.cache
+D:\Works\C#\ProjectC\ProjectC\obj\Debug\ProjectC.csproj.CoreCompileInputs.cache
+D:\Works\C#\ProjectC\ProjectC\obj\Debug\ProjectC.exe
+D:\Works\C#\ProjectC\ProjectC\obj\Debug\ProjectC.pdb
+D:\Works\C#\ProjectC\ProjectC\obj\Debug\ProjectC.LoginForm.resources
+D:\Works\C#\ProjectC\ProjectC\obj\Debug\ProjectC.MainForm.resources
+D:\Works\C#\ProjectC\ProjectC\bin\Debug\ProjectC.exe.config
+D:\Works\C#\ProjectC\ProjectC\obj\Debug\ProjectC.ProductForm.resources

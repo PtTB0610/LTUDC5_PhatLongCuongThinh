@@ -4,12 +4,12 @@ USE [ElectronicSupermarket]
 GO
 
 CREATE TABLE [dbo].[WAREHOUSE](
-			[PRODUCT_ID] [int] PRIMARY KEY,
+			[PRODUCT_ID] [varchar] PRIMARY KEY,
 			[INSTOCK_QUANTITY] [int] NOT NULL
 )
 
 CREATE TABLE [dbo].[SUPPLIER](
-			[SUPPLIER_ID] [int] PRIMARY KEY,
+			[SUPPLIER_ID] [varchar] PRIMARY KEY,
 			[SUPPLIER_NAME] [nvarchar] (255) UNIQUE,
 			[CONTACT_NAME] [nvarchar] (255),
 			[SUPPLIER_PHONE] [int],
@@ -26,7 +26,8 @@ CREATE TABLE [dbo].[PRODUCT](
 			[PRODUCT_ID] [varchar] (255) PRIMARY KEY ,
 			[PRODUCT_NAME] [nvarchar] (255) NOT NULL UNIQUE,
 			[CATEGORY_ID] [int] ,
-			[PRODUCT_IMAGE] [nvarchar] (255),--image path
+			[PRODUCT_IMAGE] [nvarchar] (255),--image path,
+			[PRODUCT_PRICE] [float],
 			[SUPPLIER_ID] [int],
 			[PRODUCT_DESC] [nvarchar] (255),
 			FOREIGN KEY (PRODUCT_ID) REFERENCES WAREHOUSE(PRODUCT_ID),
