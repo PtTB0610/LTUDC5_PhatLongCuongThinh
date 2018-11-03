@@ -26,7 +26,7 @@ CREATE TABLE [dbo].[PRODUCT](
 			[PRODUCT_ID] [varchar] (255) PRIMARY KEY ,
 			[PRODUCT_NAME] [nvarchar] (255) NOT NULL UNIQUE,
 			[CATEGORY_ID] [int] ,
-			[PRODUCT_IMAGE] [nvarchar] (255),--image path,
+			[PRODUCT_IMAGE] [varbinary] (MAX),
 			[PRODUCT_PRICE] [float],
 			[SUPPLIER_ID] [int],
 			[PRODUCT_DESC] [nvarchar] (255),
