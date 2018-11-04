@@ -30,12 +30,14 @@
         {
             this.lvProductData = new System.Windows.Forms.ListView();
             this.clProductID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clProductName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clProductPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clCategory = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clSupplier = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clDesc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clProductName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnLoad = new System.Windows.Forms.Button();
+            this.pbImage = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
             // 
             // lvProductData
@@ -48,18 +50,25 @@
             this.clCategory,
             this.clSupplier,
             this.clDesc});
+            this.lvProductData.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lvProductData.GridLines = true;
-            this.lvProductData.Location = new System.Drawing.Point(12, 254);
+            this.lvProductData.Location = new System.Drawing.Point(0, 266);
             this.lvProductData.Name = "lvProductData";
-            this.lvProductData.Size = new System.Drawing.Size(976, 353);
+            this.lvProductData.Size = new System.Drawing.Size(1000, 353);
             this.lvProductData.TabIndex = 0;
             this.lvProductData.UseCompatibleStateImageBehavior = false;
             this.lvProductData.View = System.Windows.Forms.View.Details;
+            this.lvProductData.SelectedIndexChanged += new System.EventHandler(this.lvProductData_SelectedIndexChanged);
             // 
             // clProductID
             // 
             this.clProductID.Text = "Product ID";
             this.clProductID.Width = 111;
+            // 
+            // clProductName
+            // 
+            this.clProductName.Text = "Product Name";
+            this.clProductName.Width = 167;
             // 
             // clProductPrice
             // 
@@ -81,14 +90,9 @@
             this.clDesc.Text = "Description";
             this.clDesc.Width = 291;
             // 
-            // clProductName
-            // 
-            this.clProductName.Text = "Product Name";
-            this.clProductName.Width = 167;
-            // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(337, 58);
+            this.btnLoad.Location = new System.Drawing.Point(12, 214);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(108, 34);
             this.btnLoad.TabIndex = 1;
@@ -96,22 +100,32 @@
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
+            // pbImage
+            // 
+            this.pbImage.Location = new System.Drawing.Point(838, 29);
+            this.pbImage.Name = "pbImage";
+            this.pbImage.Size = new System.Drawing.Size(150, 150);
+            this.pbImage.TabIndex = 2;
+            this.pbImage.TabStop = false;
+            // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 619);
+            this.Controls.Add(this.pbImage);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.lvProductData);
             this.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ProductForm";
             this.Text = "ProductForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProductForm_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -126,5 +140,6 @@
         private System.Windows.Forms.ColumnHeader clDesc;
         private System.Windows.Forms.ColumnHeader clProductName;
         private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.PictureBox pbImage;
     }
 }

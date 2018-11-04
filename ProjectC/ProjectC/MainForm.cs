@@ -21,6 +21,9 @@ namespace ProjectC
             DialogResult result = MessageBox.Show("Are you sure you want to exit the program?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == System.Windows.Forms.DialogResult.Yes)
             {
+                foreach (Form form in this.MdiChildren) {
+                    form.Close();
+                }
                 Environment.Exit(0);
             }
         }

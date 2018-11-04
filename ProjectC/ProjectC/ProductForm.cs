@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using System.IO;
 
 namespace ProjectC
 {
@@ -40,6 +40,26 @@ namespace ProjectC
                 lvProductData.Items.Add(item);
             }
             
+        }       
+        private void lvProductData_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String temp;
+            if (lvProductData.SelectedItems.Count > 0) {
+                ListViewItem item = lvProductData.SelectedItems[0];
+                temp = item.SubItems[0].Text;
+                SqlConnection con = new SqlConnection("Data Source=DESKTOP-13K9FNP\\SQLEXPRESS;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
+                con.Open();
+                SqlCommand myCommand = new SqlCommand("SELECT * FROM [PRODUCT] WHERE PRODUCT_ID ='" + temp + "'", con);
+                SqlDataReader reader = myCommand.ExecuteReader();
+                reader.Read();
+                Byte[] imageData = (Byte[])reader["PRODUCT_IMAGE"];
+                MemoryStream stmBLOBData = new MemoryStream(imageData);
+                pbImage.Image = Image.FromStream(stmBLOBData);
+                con.Close();
+            }           
+        }
+        public void closeForm() {
+            this.Close();
         }
     }
 }
