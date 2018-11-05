@@ -15,7 +15,11 @@ namespace ProjectC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            clsFormProvider.loginF.ShowDialog();
+            Application.Run(clsFormProvider.mainF);
+            //Application.Run(new LoginForm());
+            //Application.Run(new AddForm());
+            //Application.Run(new MainForm(clsFormProvider.loginF.getUserType()));
         }
     }
 }

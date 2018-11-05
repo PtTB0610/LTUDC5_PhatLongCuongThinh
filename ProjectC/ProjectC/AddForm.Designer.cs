@@ -44,6 +44,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btn = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtInStock = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbUploadImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,14 +101,14 @@
             // 
             // txtSupplier
             // 
-            this.txtSupplier.Location = new System.Drawing.Point(158, 173);
+            this.txtSupplier.Location = new System.Drawing.Point(158, 214);
             this.txtSupplier.Name = "txtSupplier";
             this.txtSupplier.Size = new System.Drawing.Size(208, 22);
             this.txtSupplier.TabIndex = 6;
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(158, 213);
+            this.txtDesc.Location = new System.Drawing.Point(158, 254);
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(208, 22);
             this.txtDesc.TabIndex = 7;
@@ -150,7 +152,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(29, 173);
+            this.label5.Location = new System.Drawing.Point(29, 214);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 17);
             this.label5.TabIndex = 12;
@@ -159,7 +161,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 213);
+            this.label6.Location = new System.Drawing.Point(29, 254);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 17);
             this.label6.TabIndex = 13;
@@ -167,7 +169,7 @@
             // 
             // btn
             // 
-            this.btn.Location = new System.Drawing.Point(393, 213);
+            this.btn.Location = new System.Drawing.Point(393, 246);
             this.btn.Name = "btn";
             this.btn.Size = new System.Drawing.Size(121, 30);
             this.btn.TabIndex = 14;
@@ -175,11 +177,29 @@
             this.btn.UseVisualStyleBackColor = true;
             this.btn.Click += new System.EventHandler(this.btn_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(29, 173);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 17);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Stock Quantity";
+            // 
+            // txtInStock
+            // 
+            this.txtInStock.Location = new System.Drawing.Point(158, 173);
+            this.txtInStock.Name = "txtInStock";
+            this.txtInStock.Size = new System.Drawing.Size(208, 22);
+            this.txtInStock.TabIndex = 15;
+            // 
             // AddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 259);
+            this.ClientSize = new System.Drawing.Size(590, 288);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtInStock);
             this.Controls.Add(this.btn);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -221,5 +241,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtInStock;
     }
 }

@@ -31,6 +31,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuProduct = new System.Windows.Forms.ToolStripMenuItem();
+            this.mneLogout = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbUserType = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +50,8 @@
             // mnuMenu
             // 
             this.mnuMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuProduct});
+            this.mnuProduct,
+            this.mneLogout});
             this.mnuMenu.Name = "mnuMenu";
             this.mnuMenu.Size = new System.Drawing.Size(58, 24);
             this.mnuMenu.Text = "Menu";
@@ -60,11 +63,28 @@
             this.mnuProduct.Text = "Product";
             this.mnuProduct.Click += new System.EventHandler(this.mnuProduct_Click);
             // 
+            // mneLogout
+            // 
+            this.mneLogout.Name = "mneLogout";
+            this.mneLogout.Size = new System.Drawing.Size(216, 26);
+            this.mneLogout.Text = "Logout";
+            this.mneLogout.Click += new System.EventHandler(this.mneLogout_Click);
+            // 
+            // lbUserType
+            // 
+            this.lbUserType.AutoSize = true;
+            this.lbUserType.Location = new System.Drawing.Point(996, 39);
+            this.lbUserType.Name = "lbUserType";
+            this.lbUserType.Size = new System.Drawing.Size(59, 23);
+            this.lbUserType.TabIndex = 4;
+            this.lbUserType.Text = "label1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 623);
+            this.Controls.Add(this.lbUserType);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -87,5 +107,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuMenu;
         private System.Windows.Forms.ToolStripMenuItem mnuProduct;
+        private System.Windows.Forms.Label lbUserType;
+        private System.Windows.Forms.ToolStripMenuItem mneLogout;
     }
 }

@@ -25,8 +25,9 @@ namespace ProjectC
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-13K9FNP\\SQLEXPRESS;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [PRODUCT]", con);
+            SqlConnection con = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT PRODUCT.*, WAREHOUSE.*, SUPPLIER.*, CATEGORY.* FROM [PRODUCT] JOIN [WAREHOUSE] ON (PRODUCT.PRODUCT_ID = WAREHOUSE.PRODUCT_ID)" +
+                "JOIN [SUPPLIER] ON (PRODUCT.SUPPLIER_ID = SUPPLIER.SUPPLIER_ID) JOIN [CATEGORY] ON (PRODUCT.CATEGORY_ID = CATEGORY.CATEGORY_ID)", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             for (int i = 0; i < dt.Rows.Count; i++) {
@@ -34,12 +35,11 @@ namespace ProjectC
                 ListViewItem item = new ListViewItem(dr["PRODUCT_ID"].ToString());
                 item.SubItems.Add(dr["PRODUCT_NAME"].ToString());
                 item.SubItems.Add(dr["PRODUCT_PRICE"].ToString());
-                item.SubItems.Add(dr["CATEGORY_ID"].ToString());
-                item.SubItems.Add(dr["SUPPLIER_ID"].ToString());
+                item.SubItems.Add(dr["CATEGORY_NAME"].ToString());
+                item.SubItems.Add(dr["SUPPLIER_NAME"].ToString());
                 item.SubItems.Add(dr["PRODUCT_DESC"].ToString());
                 lvProductData.Items.Add(item);
-            }
-            
+            }           
         }       
         private void lvProductData_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -47,7 +47,7 @@ namespace ProjectC
             if (lvProductData.SelectedItems.Count > 0) {
                 ListViewItem item = lvProductData.SelectedItems[0];
                 temp = item.SubItems[0].Text;
-                SqlConnection con = new SqlConnection("Data Source=DESKTOP-13K9FNP\\SQLEXPRESS;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
+                SqlConnection con = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
                 con.Open();
                 SqlCommand myCommand = new SqlCommand("SELECT * FROM [PRODUCT] WHERE PRODUCT_ID ='" + temp + "'", con);
                 SqlDataReader reader = myCommand.ExecuteReader();
@@ -60,6 +60,14 @@ namespace ProjectC
         }
         public void closeForm() {
             this.Close();
+        }
+
+        private void ProductForm_Load(object sender, EventArgs e)
+        {
+            if (((MainForm)this.MdiParent).Controls["lbUserType"].Text != "Admin") {
+                btnUpdate.Enabled = false;
+                btnDelete.Enabled = false;
+            }
         }
     }
 }
