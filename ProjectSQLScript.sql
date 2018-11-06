@@ -52,3 +52,11 @@ CREATE TABLE [dbo].[STATISTIC](
 			[STATISTIC_PRICE] [int],
 			[USER_ID] [nvarchar]
 )
+
+CREATE TABLE [dbo].[USER] (
+			[USER_KEY] [varchar] (255) PRIMARY KEY,
+			[USER_NAME] [nvarchar] (255) NOT NULL UNIQUE,
+			[USER_SELFPHONE] [int],
+			[USER_GMAIL] [nvarchar] (255),
+			/*Employee Type doi Long add Table roi update sau*/
+)
