@@ -1,5 +1,6 @@
 CREATE DATABASE ElectronicSupermarket
 
+GO
 USE [ElectronicSupermarket]
 GO
 
@@ -43,3 +44,19 @@ UPDATE PRODUCT
 SET PRODUCT_IMAGE =
       (SELECT * FROM OPENROWSET(BULK N'D:\Works\C#\Project\LTUDC5_PhatLongCuongThinh\laptopimg2.jpg', SINGLE_BLOB) AS P_IMAGE)
 WHERE PRODUCT_ID = 'lptp002';
+
+CREATE TABLE [dbo].[STATISTIC](
+			[STATISTIC_ID] [nvarchar] PRIMARY KEY,
+			[STATISTIC_EMLOYEE] [nvarchar] (255) UNIQUE,
+			[STATISTIC_BILL] [nvarchar] (255),
+			[STATISTIC_PRICE] [int],
+			[USER_ID] [nvarchar]
+)
+
+CREATE TABLE [dbo].[USER] (
+			[USER_KEY] [varchar] (255) PRIMARY KEY,
+			[USER_NAME] [nvarchar] (255) NOT NULL UNIQUE,
+			[USER_SELFPHONE] [int],
+			[USER_GMAIL] [nvarchar] (255),
+			/*Employee Type doi Long add Table roi update sau*/
+)
