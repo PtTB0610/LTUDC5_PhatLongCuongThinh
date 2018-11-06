@@ -36,7 +36,6 @@
             this.txtProductPrice = new System.Windows.Forms.TextBox();
             this.txtCategory = new System.Windows.Forms.TextBox();
             this.txtSupplier = new System.Windows.Forms.TextBox();
-            this.txtDesc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@
             this.btn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtInStock = new System.Windows.Forms.TextBox();
+            this.rtbAddDesc = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbUploadImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +65,7 @@
             // 
             // pbUploadImg
             // 
+            this.pbUploadImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbUploadImg.Location = new System.Drawing.Point(393, 12);
             this.pbUploadImg.Name = "pbUploadImg";
             this.pbUploadImg.Size = new System.Drawing.Size(150, 150);
@@ -105,13 +106,6 @@
             this.txtSupplier.Name = "txtSupplier";
             this.txtSupplier.Size = new System.Drawing.Size(208, 22);
             this.txtSupplier.TabIndex = 6;
-            // 
-            // txtDesc
-            // 
-            this.txtDesc.Location = new System.Drawing.Point(158, 254);
-            this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(208, 22);
-            this.txtDesc.TabIndex = 7;
             // 
             // label1
             // 
@@ -169,7 +163,7 @@
             // 
             // btn
             // 
-            this.btn.Location = new System.Drawing.Point(393, 246);
+            this.btn.Location = new System.Drawing.Point(393, 214);
             this.btn.Name = "btn";
             this.btn.Size = new System.Drawing.Size(121, 30);
             this.btn.TabIndex = 14;
@@ -193,11 +187,20 @@
             this.txtInStock.Size = new System.Drawing.Size(208, 22);
             this.txtInStock.TabIndex = 15;
             // 
+            // rtbAddDesc
+            // 
+            this.rtbAddDesc.Location = new System.Drawing.Point(158, 254);
+            this.rtbAddDesc.Name = "rtbAddDesc";
+            this.rtbAddDesc.Size = new System.Drawing.Size(420, 121);
+            this.rtbAddDesc.TabIndex = 17;
+            this.rtbAddDesc.Text = "";
+            // 
             // AddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 288);
+            this.ClientSize = new System.Drawing.Size(590, 387);
+            this.Controls.Add(this.rtbAddDesc);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtInStock);
             this.Controls.Add(this.btn);
@@ -207,7 +210,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.txtSupplier);
             this.Controls.Add(this.txtCategory);
             this.Controls.Add(this.txtProductPrice);
@@ -233,7 +235,6 @@
         private System.Windows.Forms.TextBox txtProductPrice;
         private System.Windows.Forms.TextBox txtCategory;
         private System.Windows.Forms.TextBox txtSupplier;
-        private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -243,5 +244,6 @@
         private System.Windows.Forms.Button btn;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtInStock;
+        private System.Windows.Forms.RichTextBox rtbAddDesc;
     }
 }

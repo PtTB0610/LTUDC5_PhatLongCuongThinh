@@ -20,16 +20,10 @@ namespace ProjectC
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == System.Windows.Forms.DialogResult.Yes)
+            if (result == DialogResult.No)
             {
-                foreach (Form form in this.MdiChildren)
-                {
-                    form.Close();
-                }
-                Environment.Exit(0);
-                //Application.Exit();
+                e.Cancel = true;
             }
-            else e.Cancel = true;
         }
         
         private void mnuProduct_Click(object sender, EventArgs e)
@@ -49,10 +43,11 @@ namespace ProjectC
         }
 
         private void mneLogout_Click(object sender, EventArgs e) {
-            this.Hide();
-            clsFormProvider.loginF.ShowDialog();
-            lbUserType.Text = "";
-            lbUserType.Text = clsFormProvider.loginF.getUserType();
+            Application.Restart();
+            //this.Hide();
+            //clsFormProvider.loginF.ShowDialog();
+            //lbUserType.Text = "";
+            //lbUserType.Text = clsFormProvider.loginF.getUserType();
         }
     }
 }

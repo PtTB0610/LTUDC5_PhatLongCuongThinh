@@ -29,7 +29,11 @@ namespace ProjectC
                 fsBLOBFile.Read(byteBLOBData,0,byteBLOBData.Length);
                 fsBLOBFile.Close();
                 MemoryStream stmBLOBData = new MemoryStream(byteBLOBData);
-                pbUploadImg.Image = Image.FromStream(stmBLOBData);
+                Image temp = Image.FromStream(stmBLOBData);
+                Image resizeImg = clsFormProvider.ResizeImage(temp , 150 , 150);
+                //pbUploadImg.Image = Image.FromStream(stmBLOBData);
+                pbUploadImg.Image = resizeImg;
+                byteBLOBData = clsFormProvider.ImageToByteArray(resizeImg);
             }
         }
 
@@ -48,7 +52,7 @@ namespace ProjectC
             myCommand.Parameters.AddWithValue("@Param4", txtCategory.Text);
             myCommand.Parameters.AddWithValue("@Param5", byteBLOBData);
             myCommand.Parameters.AddWithValue("@Param6", txtSupplier.Text);
-            myCommand.Parameters.AddWithValue("@Param7", txtDesc.Text);
+            myCommand.Parameters.AddWithValue("@Param7", rtbAddDesc.Text);
             myCommand.ExecuteNonQuery();
             con.Close();
         }

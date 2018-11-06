@@ -49,17 +49,22 @@ namespace ProjectC
                 temp = item.SubItems[0].Text;
                 SqlConnection con = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
                 con.Open();
-                SqlCommand myCommand = new SqlCommand("SELECT * FROM [PRODUCT] WHERE PRODUCT_ID ='" + temp + "'", con);
+                SqlCommand myCommand = new SqlCommand("SELECT PRODUCT.*, WAREHOUSE.*, SUPPLIER.*, CATEGORY.* FROM [PRODUCT] JOIN [WAREHOUSE] ON (PRODUCT.PRODUCT_ID = WAREHOUSE.PRODUCT_ID)" +
+                "JOIN [SUPPLIER] ON (PRODUCT.SUPPLIER_ID = SUPPLIER.SUPPLIER_ID) JOIN [CATEGORY] ON (PRODUCT.CATEGORY_ID = CATEGORY.CATEGORY_ID) WHERE PRODUCT.PRODUCT_ID ='" + temp + "'", con);
                 SqlDataReader reader = myCommand.ExecuteReader();
                 reader.Read();
                 Byte[] imageData = (Byte[])reader["PRODUCT_IMAGE"];
                 MemoryStream stmBLOBData = new MemoryStream(imageData);
                 pbImage.Image = Image.FromStream(stmBLOBData);
+                txtProductID.Text = reader["PRODUCT_ID"].ToString();
+                txtProductName.Text = reader["PRODUCT_NAME"].ToString();
+                txtProductPrice.Text = reader["PRODUCT_PRICE"].ToString();
+                txtCategory.Text = reader["CATEGORY_NAME"].ToString();
+                txtInStock.Text = reader["INSTOCK_QUANTITY"].ToString();
+                txtSupplier.Text = reader["SUPPLIER_NAME"].ToString();
+                rtbDesc.Text = reader["PRODUCT_DESC"].ToString();
                 con.Close();
             }           
-        }
-        public void closeForm() {
-            this.Close();
         }
 
         private void ProductForm_Load(object sender, EventArgs e)

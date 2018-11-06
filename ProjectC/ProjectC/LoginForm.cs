@@ -18,6 +18,7 @@ namespace ProjectC
             InitializeComponent();
         }
         string userType;
+        bool flag = false;
         private void btnLogin_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
@@ -31,6 +32,7 @@ namespace ProjectC
             {
                 this.Close();
                 userType = (string)sdr["user_type"];
+                flag = true;
                 clsFormProvider.mainF.Show();
                 //this.Hide();
                 //MainForm mF = new MainForm((string)sdr["user_type"]);
@@ -43,6 +45,10 @@ namespace ProjectC
             return userType;
         }
 
+        public bool getFlag()
+        {
+            return flag;
+        }
         private void btnExitLogin_Click(object sender, EventArgs e)
         {            
             DialogResult result = MessageBox.Show("Are you sure you want to exit the program?", "Exit Confirmation", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
