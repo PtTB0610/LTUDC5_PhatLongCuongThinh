@@ -1,11 +1,10 @@
 CREATE DATABASE ElectronicSupermarket
 
-GO
 USE [ElectronicSupermarket]
 GO
 
 CREATE TABLE [dbo].[WAREHOUSE](
-			[PRODUCT_ID] [varchar] PRIMARY KEY,
+			[PRODUCT_ID] [varchar] (255) PRIMARY KEY,
 			[INSTOCK_QUANTITY] [int] NOT NULL
 )
 
@@ -54,9 +53,10 @@ CREATE TABLE [dbo].[STATISTIC](
 )
 
 CREATE TABLE [dbo].[USER] (
-			[USER_KEY] [varchar] (255) PRIMARY KEY,
+			[USER_ID] [varchar] (255) PRIMARY KEY,
 			[USER_NAME] [nvarchar] (255) NOT NULL UNIQUE,
-			[USER_SELFPHONE] [int],
-			[USER_GMAIL] [nvarchar] (255),
+			[USER_PHONE] [int],
+			[USER_EMAIL] [nvarchar] (255),
+			[USER_TYPE] [varchar] (255)
 			/*Employee Type doi Long add Table roi update sau*/
 )
