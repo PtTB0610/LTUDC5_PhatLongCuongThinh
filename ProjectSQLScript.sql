@@ -1,11 +1,10 @@
 ﻿CREATE DATABASE ElectronicSupermarket
 
-GO
 USE [ElectronicSupermarket]
 GO
 
 CREATE TABLE [dbo].[WAREHOUSE](
-			[PRODUCT_ID] [varchar] PRIMARY KEY,
+			[PRODUCT_ID] [varchar] (255) PRIMARY KEY,
 			[INSTOCK_QUANTITY] [int] NOT NULL
 )
 
@@ -54,19 +53,51 @@ CREATE TABLE [dbo].[STATISTIC](
 )
 
 CREATE TABLE [dbo].[USER] (
-			[USER_KEY] [varchar] (255) PRIMARY KEY,
+			[USER_ID] [varchar] (255) PRIMARY KEY,
 			[USER_NAME] [nvarchar] (255) NOT NULL UNIQUE,
 			[USER_SELFPHONE] [int],
 			[USER_GMAIL] [nvarchar] (255),
 			/*Employee Type doi Long add Table roi update sau*/
+			[USER_PHONE] [int],
+			[USER_EMAIL] [nvarchar] (255),
+			[USER_TYPE] [varchar] (255)
+			[EMLOYEE_ID] [varchar] (255) NOT NULL
+			FOREIGN KEY (EMLOYEE_ID) REFERENCES EMLOYEE(EMLOYEE_ID)
 )
+
+/*Emloyee*/
+CREATE TABLE [dbo].[EMLOYEE_TYPE](
+			[TYPE_ID] [int] PRIMARY KEY,
+			[TYPE_NAME] [nvarchar] (255) NOT NULL
+)
+CREATE TABLE [dbo].[EMLOYEE_ROOM](
+			[ROOM_ID] [int] PRIMARY KEY,
+			[ROOM_NAME] [nvarchar] (255) NOT NULL
+)
+
+CREATE TABLE [dbo].[EMLOYEE](
+			[EMLOYEE_ID] [varchar] (255) PRIMARY KEY ,
+			[EMLOYEE_NAME] [nvarchar] (255) NOT NULL UNIQUE,
+			[EMLOYEE_TYPE_ID] [int],
+			[EMLOYEE_IMAGE] [varbinary] (MAX),
+			[EMLOYEE_GMAIL] [nvarchar] (255),
+			[EMLOYEE_PHONE] [nvarchar] (255),
+			[EMLOYEE_DATE] [datetime],
+			[EMLOYEE_ADDRESS] [nvarchar] (255),
+			[EMLOYEE_ROOM_ID] [int],	
+			[EMLOYEE_STATISTIC] [nvarchar] (255),
+			FOREIGN KEY (EMLOYEE_TYPE_ID) REFERENCES EMLOYEE_TYPE(TYPE_ID),
+			FOREIGN KEY (EMLOYEE_ROOM_ID) REFERENCES EMLOYEE_ROOM(ROOM_ID)
+>>>>>>> 4e16e29fad388c8274d2481d26eab1b945ed4b16
+)
+
 CREATE TABLE [dbo].[BILL](
 			[BILL_ID] [nvarchar] PRIMARY KEY,
 			[USER_KEY] [nvarchar],
 			[USER_NAME] [nvarchar],
 			[PRODUCT_ID] [nvarchar],
-			/*EMPLOYEE_ID chờ cập nhật*/
+			[EMPLOYEE_ID] [nvarchar],
 			[BILL_DATE] [date],
 			[BILL_METHOD] [nvarchar] (255),
-			[BILL_PAY] [nvarchar] (255)			
+			[BILL_PAY] [nvarchar] (255)	
 )

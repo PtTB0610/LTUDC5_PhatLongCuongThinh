@@ -25,13 +25,13 @@ namespace ProjectC
             //SqlDataAdapter sda = new SqlDataAdapter("SELECT usertype FROM WHERE username = '" + txtUsername.Text + "' and password = '" + txtPassword.Text + "'", con);
             //DataTable dt = new DataTable();
             //sda.Fill(dt);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM [user] WHERE [username] = '" + txtUsername.Text + "' and [password] = '" + txtPassword.Text + "'", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM [USER] WHERE USER_NAME = '" + txtUsername.Text + "' and USER_PASS = '" + txtPassword.Text + "'", con);
             con.Open();
             SqlDataReader sdr = cmd.ExecuteReader();
             if (sdr.Read() == true)
             {
                 this.Close();
-                userType = (string)sdr["user_type"];
+                userType = (string)sdr["USER_TYPE"];
                 flag = true;
                 clsFormProvider.mainF.Show();
                 //this.Hide();

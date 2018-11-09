@@ -22,8 +22,8 @@ namespace ProjectC
             //}
             //else Application.Exit();
 
-            Application.Run(clsFormProvider.mainF);
-            //Application.Run(new LoginForm());
+             Application.Run(clsFormProvider.mainF);
+            // Application.Run(new LoginForm());
             //Application.Run(new AddForm());
         }
     }
