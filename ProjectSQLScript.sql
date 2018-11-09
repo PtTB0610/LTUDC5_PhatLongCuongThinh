@@ -1,4 +1,4 @@
-CREATE DATABASE ElectronicSupermarket
+﻿CREATE DATABASE ElectronicSupermarket
 
 GO
 USE [ElectronicSupermarket]
@@ -59,4 +59,14 @@ CREATE TABLE [dbo].[USER] (
 			[USER_SELFPHONE] [int],
 			[USER_GMAIL] [nvarchar] (255),
 			/*Employee Type doi Long add Table roi update sau*/
+)
+CREATE TABLE [dbo].[BILL](
+			[BILL_ID] [nvarchar] PRIMARY KEY,
+			[USER_KEY] [nvarchar],
+			[USER_NAME] [nvarchar],
+			[PRODUCT_ID] [nvarchar],
+			/*EMPLOYEE_ID chờ cập nhật*/
+			[BILL_DATE] [date],
+			[BILL_METHOD] [nvarchar] (255),
+			[BILL_PAY] [nvarchar] (255)			
 )
