@@ -57,12 +57,15 @@ CREATE TABLE [dbo].[USER] (
 			[USER_NAME] [nvarchar] (255) NOT NULL UNIQUE,
 			[USER_SELFPHONE] [int],
 			[USER_GMAIL] [nvarchar] (255),
-			/*Employee Type doi Long add Table roi update sau*/
 			[USER_PHONE] [int],
 			[USER_EMAIL] [nvarchar] (255),
-			[USER_TYPE] [varchar] (255)
-			[EMLOYEE_ID] [varchar] (255) NOT NULL
-			FOREIGN KEY (EMLOYEE_ID) REFERENCES EMLOYEE(EMLOYEE_ID)
+			[USER_TYPE] [varchar] (255),
+			[EMLOYEE_ID] [varchar] (255) NOT NULL,
+			[TYPE_ID] [int] ,
+			[TYPE_NAME] [nvarchar] (255) NOT NULL,
+			FOREIGN KEY (EMLOYEE_ID) REFERENCES EMLOYEE(EMLOYEE_ID),
+			FOREIGN KEY (TYPE_ID) REFERENCES EMLOYEE_TYPE(TYPE_ID),
+			FOREIGN KEY (TYPE_NAME) REFERENCES EMLOYEE_TYPE(TYPE_NAME)
 )
 
 /*Emloyee*/
