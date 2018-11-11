@@ -12,9 +12,11 @@ CREATE TABLE [dbo].[SUPPLIER](
 			[SUPPLIER_ID] [varchar] PRIMARY KEY,
 			[SUPPLIER_NAME] [nvarchar] (255) UNIQUE,
 			[CONTACT_NAME] [nvarchar] (255),
-			[SUPPLIER_PHONE] [int],
+			[SUPPLIER_PHONE] [varchar] (15),
 			[SUPPLIER_EMAIL] [varchar] (255),
-			[SUPPLIER_ADDRESS] [nvarchar] (255)
+			[SUPPLIER_ADDRESS] [nvarchar] (255),
+			[SUPPLIER_STATUS] [varchar] (50)
+			CONSTRAINT chk_phone CHECK (SUPPLIER_PHONE NOT LIKE '%[^0-9]%')
 )
 
 CREATE TABLE [dbo].[CATEGORY](
@@ -27,9 +29,10 @@ CREATE TABLE [dbo].[PRODUCT](
 			[PRODUCT_NAME] [nvarchar] (255) NOT NULL UNIQUE,
 			[CATEGORY_ID] [int] ,
 			[PRODUCT_IMAGE] [varbinary] (MAX),
-			[PRODUCT_PRICE] [float],
+			[PRODUCT_PRICE] [numeric] (18,3),
 			[SUPPLIER_ID] [int],
 			[PRODUCT_DESC] [nvarchar] (255),
+			[PRODUCT_STATUS] [varchar] (50)
 			FOREIGN KEY (PRODUCT_ID) REFERENCES WAREHOUSE(PRODUCT_ID),
 			FOREIGN KEY (CATEGORY_ID) REFERENCES CATEGORY(CATEGORY_ID)
 )
@@ -54,40 +57,22 @@ CREATE TABLE [dbo].[STATISTIC](
 
 CREATE TABLE [dbo].[USER] (
 			[USER_ID] [varchar] (255) PRIMARY KEY,
-			[USER_PASS] [varchar] (255) NOT NULL,
-			[USER_STATUS] [nvarchar] (255) NOT NULL UNIQUE,
 			[USER_NAME] [nvarchar] (255) NOT NULL UNIQUE,
-			[USER_PHONE] [int],
-			[USER_EMAIL] [nvarchar] (255),
+			[USER_PASS] [varchar] (255) NOT NULL,
 			[USER_TYPE] [varchar] (255),
+			[USER_STATUS] [varchar] (50) NOT NULL
+			FOREIGN KEY (USER_ID) REFERENCES EMPLOYEE(EMPLOYEE_ID)
 )
 
-/*Emloyee*/
-CREATE TABLE [dbo].[EMLOYEE_TYPE](
-			[TYPE_ID] [int] PRIMARY KEY,
-			[TYPE_NAME] [nvarchar] (255) NOT NULL
-)
-CREATE TABLE [dbo].[EMLOYEE_ROOM](
-			[ROOM_ID] [int] PRIMARY KEY,
-			[ROOM_NAME] [nvarchar] (255) NOT NULL
-)
-
-CREATE TABLE [dbo].[EMLOYEE](
-			[EMLOYEE_ID] [varchar] (255) PRIMARY KEY ,
-			[EMLOYEE_NAME] [nvarchar] (255) NOT NULL UNIQUE,
-			[EMLOYEE_TYPE_ID] [int],
-			[EMLOYEE_IMAGE] [varbinary] (MAX),
-			[EMLOYEE_GMAIL] [nvarchar] (255),
-			[EMLOYEE_PHONE] [nvarchar] (255),
-			[EMLOYEE_DATE] [datetime],
-			[EMLOYEE_ADDRESS] [nvarchar] (255),
-			[EMLOYEE_ROOM_ID] [int],	
-			[EMLOYEE_STATISTIC] [nvarchar] (255),
-			[USER_ID] [varchar] (255),
-			FOREIGN KEY (EMLOYEE_TYPE_ID) REFERENCES EMLOYEE_TYPE(TYPE_ID),
-			FOREIGN KEY (EMLOYEE_ROOM_ID) REFERENCES EMLOYEE_ROOM(ROOM_ID),
-			FOREIGN KEY (USER_ID) REFERENCES USER(USER_ID)
->>>>>>> 4e16e29fad388c8274d2481d26eab1b945ed4b16
+CREATE TABLE [dbo].[EMPLOYEE](
+			[EMPLOYEE_ID] [varchar] (255) PRIMARY KEY ,
+			[EMPLOYEE_NAME] [nvarchar] (255) NOT NULL UNIQUE,
+			[EMPLOYEE_IMAGE] [varbinary] (MAX),
+			[EMPLOYEE_EMAIL] [nvarchar] (255),
+			[EMPLOYEE_PHONE] [varchar] (15),
+			[EMPLOYEE_DATE] [datetime],
+			[EMPLOYEE_ADDRESS] [nvarchar] (255)
+			CONSTRAINT chk_phone CHECK (EMPLOYEE_PHONE NOT LIKE '%[^0-9]%')
 )
 
 CREATE TABLE [dbo].[BILL](
