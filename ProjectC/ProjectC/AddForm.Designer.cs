@@ -51,7 +51,7 @@
             // 
             // btnUploadImage
             // 
-            this.btnUploadImage.Location = new System.Drawing.Point(393, 173);
+            this.btnUploadImage.Location = new System.Drawing.Point(422, 173);
             this.btnUploadImage.Name = "btnUploadImage";
             this.btnUploadImage.Size = new System.Drawing.Size(121, 30);
             this.btnUploadImage.TabIndex = 0;
@@ -69,6 +69,7 @@
             this.pbUploadImg.Location = new System.Drawing.Point(393, 12);
             this.pbUploadImg.Name = "pbUploadImg";
             this.pbUploadImg.Size = new System.Drawing.Size(150, 150);
+            this.pbUploadImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbUploadImg.TabIndex = 1;
             this.pbUploadImg.TabStop = false;
             // 
@@ -163,7 +164,7 @@
             // 
             // btn
             // 
-            this.btn.Location = new System.Drawing.Point(393, 214);
+            this.btn.Location = new System.Drawing.Point(422, 214);
             this.btn.Name = "btn";
             this.btn.Size = new System.Drawing.Size(121, 30);
             this.btn.TabIndex = 14;
@@ -191,7 +192,7 @@
             // 
             this.rtbAddDesc.Location = new System.Drawing.Point(158, 254);
             this.rtbAddDesc.Name = "rtbAddDesc";
-            this.rtbAddDesc.Size = new System.Drawing.Size(420, 121);
+            this.rtbAddDesc.Size = new System.Drawing.Size(385, 121);
             this.rtbAddDesc.TabIndex = 17;
             this.rtbAddDesc.Text = "";
             // 
@@ -199,7 +200,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 387);
+            this.ClientSize = new System.Drawing.Size(559, 385);
             this.Controls.Add(this.rtbAddDesc);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtInStock);

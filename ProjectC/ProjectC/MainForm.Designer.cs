@@ -43,7 +43,7 @@
             this.mnuMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1067, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1067, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -53,20 +53,20 @@
             this.mnuProduct,
             this.mneLogout});
             this.mnuMenu.Name = "mnuMenu";
-            this.mnuMenu.Size = new System.Drawing.Size(58, 24);
+            this.mnuMenu.Size = new System.Drawing.Size(50, 20);
             this.mnuMenu.Text = "Menu";
             // 
             // mnuProduct
             // 
             this.mnuProduct.Name = "mnuProduct";
-            this.mnuProduct.Size = new System.Drawing.Size(216, 26);
+            this.mnuProduct.Size = new System.Drawing.Size(116, 22);
             this.mnuProduct.Text = "Product";
             this.mnuProduct.Click += new System.EventHandler(this.mnuProduct_Click);
             // 
             // mneLogout
             // 
             this.mneLogout.Name = "mneLogout";
-            this.mneLogout.Size = new System.Drawing.Size(216, 26);
+            this.mneLogout.Size = new System.Drawing.Size(116, 22);
             this.mneLogout.Text = "Logout";
             this.mneLogout.Click += new System.EventHandler(this.mneLogout_Click);
             // 
@@ -75,13 +75,13 @@
             this.lbUserType.AutoSize = true;
             this.lbUserType.Location = new System.Drawing.Point(996, 39);
             this.lbUserType.Name = "lbUserType";
-            this.lbUserType.Size = new System.Drawing.Size(59, 23);
+            this.lbUserType.Size = new System.Drawing.Size(44, 18);
             this.lbUserType.TabIndex = 4;
             this.lbUserType.Text = "label1";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 623);
             this.Controls.Add(this.lbUserType);

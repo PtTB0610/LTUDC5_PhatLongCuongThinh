@@ -21,11 +21,11 @@ namespace ProjectC
         bool flag = false;
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
             //SqlDataAdapter sda = new SqlDataAdapter("SELECT usertype FROM WHERE username = '" + txtUsername.Text + "' and password = '" + txtPassword.Text + "'", con);
             //DataTable dt = new DataTable();
             //sda.Fill(dt);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM [USER] WHERE USER_NAME = '" + txtUsername.Text + "' and USER_PASS = '" + txtPassword.Text + "'", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM [USER] WHERE USER_NAME = '" + txtUsername.Text + "' and USER_PASS = '" + txtPassword.Text + "' AND USER_STATUS = 'active'", con);
             con.Open();
             SqlDataReader sdr = cmd.ExecuteReader();
             if (sdr.Read() == true)

@@ -15,14 +15,14 @@ namespace ProjectC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //clsFormProvider.loginF.ShowDialog();
-            //if (clsFormProvider.loginF.getFlag())
-            //{
-            //    Application.Run(clsFormProvider.mainF);
-            //}
+            clsFormProvider.loginF.ShowDialog();
+            if (clsFormProvider.loginF.getFlag())
+            {
+                Application.Run(clsFormProvider.mainF);
+            }
             //else Application.Exit();
 
-             Application.Run(clsFormProvider.mainF);
+            // Application.Run(clsFormProvider.mainF);
             // Application.Run(new LoginForm());
             //Application.Run(new AddForm());
         }
