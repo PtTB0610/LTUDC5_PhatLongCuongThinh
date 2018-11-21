@@ -30,48 +30,54 @@ namespace ProjectC
                 "JOIN [SUPPLIER] ON (PRODUCT.SUPPLIER_ID = SUPPLIER.SUPPLIER_ID) JOIN [CATEGORY] ON (PRODUCT.CATEGORY_ID = CATEGORY.CATEGORY_ID)", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
-            for (int i = 0; i < dt.Rows.Count; i++) {
-                DataRow dr = dt.Rows[i];
-                if (dr["PRODUCT_STATUS"].ToString() == Convert.ToString("1")) {
-                    ListViewItem item = new ListViewItem(dr["PRODUCT_ID"].ToString());
-                    item.SubItems.Add(dr["PRODUCT_NAME"].ToString());
-                    item.SubItems.Add(dr["PRODUCT_PRICE"].ToString());
-                    item.SubItems.Add(dr["CATEGORY_NAME"].ToString());
-                    item.SubItems.Add(dr["SUPPLIER_NAME"].ToString());
-                    item.SubItems.Add(dr["PRODUCT_DESC"].ToString());
-                    lvProductData.Items.Add(item);
-                }              
-            }           
+            //for (int i = 0; i < dt.Rows.Count; i++) {
+            //    DataRow dr = dt.Rows[i];
+            //    if (dr["PRODUCT_STATUS"].ToString() == Convert.ToString("1")) {
+            //        ListViewItem item = new ListViewItem(dr["PRODUCT_ID"].ToString());
+            //        item.SubItems.Add(dr["PRODUCT_NAME"].ToString());
+            //        item.SubItems.Add(dr["PRODUCT_PRICE"].ToString());
+            //        item.SubItems.Add(dr["CATEGORY_NAME"].ToString());
+            //        item.SubItems.Add(dr["SUPPLIER_NAME"].ToString());
+            //        item.SubItems.Add(dr["PRODUCT_DESC"].ToString());
+            //        lvProductData.Items.Add(item);
+            //    }              
+            //}           
         }       
         private void lvProductData_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String temp;
-            if (lvProductData.SelectedItems.Count > 0) {
-                ListViewItem item = lvProductData.SelectedItems[0];
-                temp = item.SubItems[0].Text;
-                SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
-                con.Open();
-                SqlCommand myCommand = new SqlCommand("SELECT PRODUCT.*, WAREHOUSE.*, SUPPLIER.*, CATEGORY.* FROM [PRODUCT] JOIN [WAREHOUSE] ON (PRODUCT.PRODUCT_ID = WAREHOUSE.PRODUCT_ID)" +
-                "JOIN [SUPPLIER] ON (PRODUCT.SUPPLIER_ID = SUPPLIER.SUPPLIER_ID) JOIN [CATEGORY] ON (PRODUCT.CATEGORY_ID = CATEGORY.CATEGORY_ID) WHERE PRODUCT.PRODUCT_ID ='" + temp + "'", con);
-                SqlDataReader reader = myCommand.ExecuteReader();
-                reader.Read();
-                Byte[] imageData = (Byte[])reader["PRODUCT_IMAGE"];
-                MemoryStream stmBLOBData = new MemoryStream(imageData);
-                pbImage.Image = Image.FromStream(stmBLOBData);
-                txtProductID.Text = reader["PRODUCT_ID"].ToString();
-                txtProductName.Text = reader["PRODUCT_NAME"].ToString();
-                txtProductPrice.Text = reader["PRODUCT_PRICE"].ToString();
-                txtCategory.Text = reader["CATEGORY_NAME"].ToString();
-                txtInStock.Text = reader["INSTOCK_QUANTITY"].ToString();
-                txtSupplier.Text = reader["SUPPLIER_NAME"].ToString();
-                rtbDesc.Text = reader["PRODUCT_DESC"].ToString();
-                con.Close();
-            }           
+            //String temp;
+            //if (lvProductData.SelectedItems.Count > 0) {
+            //    ListViewItem item = lvProductData.SelectedItems[0];
+            //    temp = item.SubItems[0].Text;
+            //    SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
+            //    con.Open();
+            //    SqlCommand myCommand = new SqlCommand("SELECT PRODUCT.*, WAREHOUSE.*, SUPPLIER.*, CATEGORY.* FROM [PRODUCT] JOIN [WAREHOUSE] ON (PRODUCT.PRODUCT_ID = WAREHOUSE.PRODUCT_ID)" +
+            //    "JOIN [SUPPLIER] ON (PRODUCT.SUPPLIER_ID = SUPPLIER.SUPPLIER_ID) JOIN [CATEGORY] ON (PRODUCT.CATEGORY_ID = CATEGORY.CATEGORY_ID) WHERE PRODUCT.PRODUCT_ID ='" + temp + "'", con);
+            //    SqlDataReader reader = myCommand.ExecuteReader();
+            //    reader.Read();
+            //    Byte[] imageData = (Byte[])reader["PRODUCT_IMAGE"];
+            //    MemoryStream stmBLOBData = new MemoryStream(imageData);
+            //    pbImage.Image = Image.FromStream(stmBLOBData);
+            //    txtProductID.Text = reader["PRODUCT_ID"].ToString();
+            //    txtProductName.Text = reader["PRODUCT_NAME"].ToString();
+            //    txtProductPrice.Text = reader["PRODUCT_PRICE"].ToString();
+            //    txtCategory.Text = reader["CATEGORY_NAME"].ToString();
+            //    txtInStock.Text = reader["INSTOCK_QUANTITY"].ToString();
+            //    txtSupplier.Text = reader["SUPPLIER_NAME"].ToString();
+            //    rtbDesc.Text = reader["PRODUCT_DESC"].ToString();
+            //    con.Close();
+            //}           
         }
 
         private void ProductForm_Load(object sender, EventArgs e)
         {
-            if (((MainForm)this.MdiParent).Controls["lbUserType"].Text != "Admin") {
+            // TODO: This line of code loads data into the 'electronicSupermarketDataSet.PRODUCT' table. You can move, or remove it, as needed.
+            this.pRODUCTTableAdapter.Fill(this.electronicSupermarketDataSet.PRODUCT);
+            // TODO: This line of code loads data into the 'electronicSupermarketDataSet.SUPPLIER' table. You can move, or remove it, as needed.
+            this.sUPPLIERTableAdapter.Fill(this.electronicSupermarketDataSet.SUPPLIER);
+            // TODO: This line of code loads data into the 'electronicSupermarketDataSet.CATEGORY' table. You can move, or remove it, as needed.
+            this.cATEGORYTableAdapter.Fill(this.electronicSupermarketDataSet.CATEGORY);
+            if (((MainForm)this.MdiParent).Controls["labelUserType"].Text != "Admin") {
                 btnUpdate.Enabled = false;
                 btnDelete.Enabled = false;
             }

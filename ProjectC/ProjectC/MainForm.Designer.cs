@@ -32,7 +32,10 @@
             this.mnuMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuProduct = new System.Windows.Forms.ToolStripMenuItem();
             this.mneLogout = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbUserType = new System.Windows.Forms.Label();
+            this.mnuSupplier = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAccountInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelUserType = new System.Windows.Forms.Label();
+            this.labelUserID = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +54,9 @@
             // 
             this.mnuMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuProduct,
-            this.mneLogout});
+            this.mneLogout,
+            this.mnuSupplier,
+            this.mnuAccountInfo});
             this.mnuMenu.Name = "mnuMenu";
             this.mnuMenu.Size = new System.Drawing.Size(50, 20);
             this.mnuMenu.Text = "Menu";
@@ -59,32 +64,55 @@
             // mnuProduct
             // 
             this.mnuProduct.Name = "mnuProduct";
-            this.mnuProduct.Size = new System.Drawing.Size(116, 22);
+            this.mnuProduct.Size = new System.Drawing.Size(180, 22);
             this.mnuProduct.Text = "Product";
             this.mnuProduct.Click += new System.EventHandler(this.mnuProduct_Click);
             // 
             // mneLogout
             // 
             this.mneLogout.Name = "mneLogout";
-            this.mneLogout.Size = new System.Drawing.Size(116, 22);
+            this.mneLogout.Size = new System.Drawing.Size(180, 22);
             this.mneLogout.Text = "Logout";
             this.mneLogout.Click += new System.EventHandler(this.mneLogout_Click);
             // 
-            // lbUserType
+            // mnuSupplier
             // 
-            this.lbUserType.AutoSize = true;
-            this.lbUserType.Location = new System.Drawing.Point(996, 39);
-            this.lbUserType.Name = "lbUserType";
-            this.lbUserType.Size = new System.Drawing.Size(44, 18);
-            this.lbUserType.TabIndex = 4;
-            this.lbUserType.Text = "label1";
+            this.mnuSupplier.Name = "mnuSupplier";
+            this.mnuSupplier.Size = new System.Drawing.Size(180, 22);
+            this.mnuSupplier.Text = "Supplier";
+            // 
+            // mnuAccountInfo
+            // 
+            this.mnuAccountInfo.Name = "mnuAccountInfo";
+            this.mnuAccountInfo.Size = new System.Drawing.Size(180, 22);
+            this.mnuAccountInfo.Text = "Account Info";
+            this.mnuAccountInfo.Click += new System.EventHandler(this.mnuAccountInfo_Click);
+            // 
+            // labelUserType
+            // 
+            this.labelUserType.AutoSize = true;
+            this.labelUserType.Location = new System.Drawing.Point(996, 39);
+            this.labelUserType.Name = "labelUserType";
+            this.labelUserType.Size = new System.Drawing.Size(44, 18);
+            this.labelUserType.TabIndex = 4;
+            this.labelUserType.Text = "label1";
+            // 
+            // labelUserID
+            // 
+            this.labelUserID.AutoSize = true;
+            this.labelUserID.Location = new System.Drawing.Point(931, 39);
+            this.labelUserID.Name = "labelUserID";
+            this.labelUserID.Size = new System.Drawing.Size(44, 18);
+            this.labelUserID.TabIndex = 6;
+            this.labelUserID.Text = "label1";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 623);
-            this.Controls.Add(this.lbUserType);
+            this.Controls.Add(this.labelUserID);
+            this.Controls.Add(this.labelUserType);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -107,7 +135,10 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuMenu;
         private System.Windows.Forms.ToolStripMenuItem mnuProduct;
-        private System.Windows.Forms.Label lbUserType;
+        private System.Windows.Forms.Label labelUserType;
         private System.Windows.Forms.ToolStripMenuItem mneLogout;
+        private System.Windows.Forms.Label labelUserID;
+        private System.Windows.Forms.ToolStripMenuItem mnuSupplier;
+        private System.Windows.Forms.ToolStripMenuItem mnuAccountInfo;
     }
 }

@@ -14,7 +14,8 @@ namespace ProjectC
         public MainForm(/*string userType*/)
         {
             InitializeComponent();
-            lbUserType.Text = clsFormProvider.loginF.getUserType();
+            labelUserType.Text = clsFormProvider.loginF.getUserType();
+            labelUserID.Text = clsFormProvider.loginF.getUserID();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -48,6 +49,15 @@ namespace ProjectC
             //clsFormProvider.loginF.ShowDialog();
             //lbUserType.Text = "";
             //lbUserType.Text = clsFormProvider.loginF.getUserType();
+        }
+
+        private void mnuAccountInfo_Click(object sender, EventArgs e)
+        {
+            UserInfoForm UIForm = new UserInfoForm();
+            UIForm.MdiParent = this;
+            UIForm.TopLevel = false;
+            UIForm.Dock = DockStyle.Fill;
+            UIForm.Show();
         }
     }
 }
