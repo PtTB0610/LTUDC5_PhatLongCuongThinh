@@ -15,5 +15,30 @@ namespace ProjectC
         {
             InitializeComponent();
         }
+
+        private void EmployeeFORM_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmpName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+
+        }
+
+        private void txtEmpPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnEmpCreate_Click(object sender, EventArgs e)
+        {
+            addEmployee addEmp = new addEmployee();
+            addEmp.Show();
+        }
     }
 }

@@ -25,3 +25,22 @@ D:\Works\C#\Project\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\Projec
 D:\Works\C#\Project\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.pdb
 D:\Works\C#\Project\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.UserInfoForm.resources
 D:\Works\C#\Project\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.SupplierForm.resources
+D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\bin\Debug\ProjectC.exe.config
+D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\obj\Debug\ProjectC.exe
+D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\obj\Debug\ProjectC.pdb
+D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\bin\Debug\ProjectC.exe
+D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\bin\Debug\ProjectC.pdb
+D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\obj\Debug\ProjectC.CustomerForm.resources
+D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\obj\Debug\ProjectC.EmployeeFORM.resources
+D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\obj\Debug\ProjectC.LoginForm.resources
+D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\obj\Debug\ProjectC.MainForm.resources
+D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\obj\Debug\ProjectC.ProductForm.resources
+D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\obj\Debug\ProjectC.Properties.Resources.resources
+D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\obj\Debug\ProjectC.SupplierForm.resources
+D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\obj\Debug\ProjectC.UserInfoForm.resources
+D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\obj\Debug\ProjectC.csproj.GenerateResource.Cache
+D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\obj\Debug\ProjectC.AddProductForm.resources
+D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\obj\Debug\ProjectC.AddSupplierForm.resources
+D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\obj\Debug\ProjectC.AddCategory.resources
+D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\obj\Debug\ProjectC.BillForm.resources
+D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\obj\Debug\ProjectC.StatisticForm.resources

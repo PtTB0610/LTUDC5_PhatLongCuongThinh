@@ -14,8 +14,8 @@ namespace ProjectC
         public MainForm(/*string userType*/)
         {
             InitializeComponent();
-            labelUserType.Text = clsFormProvider.loginF.getUserType();
-            labelUserID.Text = clsFormProvider.loginF.getUserID();
+            //labelUserType.Text = clsFormProvider.loginF.getUserType();
+            //labelUserID.Text = clsFormProvider.loginF.getUserID();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -27,21 +27,21 @@ namespace ProjectC
             }
         }
         
-        private void mnuProduct_Click(object sender, EventArgs e)
-        {
-            ProductForm productForm = new ProductForm();
-            productForm.MdiParent = this;
-            productForm.TopLevel = false;
-            productForm.Dock = DockStyle.Fill;
-            productForm.Show();
-            disableControls();
-        }
-        public void disableControls() {
-            mnuProduct.Enabled = false;
-        }
-        public void enableControls() {
-            mnuProduct.Enabled = true;
-        }
+        //private void mnuProduct_Click(object sender, EventArgs e)
+        //{
+        //    ProductForm productForm = new ProductForm();
+        //    productForm.MdiParent = this;
+        //    productForm.TopLevel = false;
+        //    productForm.Dock = DockStyle.Fill;
+        //    productForm.Show();
+        //    disableControls();
+        //}
+        //public void disableControls() {
+        //    mnuProduct.Enabled = false;
+        //}
+        //public void enableControls() {
+        //    mnuProduct.Enabled = true;
+        //}
 
         private void mneLogout_Click(object sender, EventArgs e) {
             Application.Restart();
@@ -55,8 +55,6 @@ namespace ProjectC
         {
             UserInfoForm UIForm = new UserInfoForm();
             UIForm.MdiParent = this;
-            UIForm.TopLevel = false;
-            UIForm.Dock = DockStyle.Fill;
             UIForm.Show();
         }
     }
