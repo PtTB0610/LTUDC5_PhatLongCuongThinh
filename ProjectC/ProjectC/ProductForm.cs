@@ -71,12 +71,6 @@ namespace ProjectC
 
         private void ProductForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'electronicSupermarketDataSet.PRODUCT' table. You can move, or remove it, as needed.
-            this.pRODUCTTableAdapter.Fill(this.electronicSupermarketDataSet.PRODUCT);
-            // TODO: This line of code loads data into the 'electronicSupermarketDataSet.SUPPLIER' table. You can move, or remove it, as needed.
-            this.sUPPLIERTableAdapter.Fill(this.electronicSupermarketDataSet.SUPPLIER);
-            // TODO: This line of code loads data into the 'electronicSupermarketDataSet.CATEGORY' table. You can move, or remove it, as needed.
-            this.cATEGORYTableAdapter.Fill(this.electronicSupermarketDataSet.CATEGORY);
             if (((MainForm)this.MdiParent).Controls["labelUserType"].Text != "Admin") {
                 btnUpdate.Enabled = false;
                 btnDelete.Enabled = false;

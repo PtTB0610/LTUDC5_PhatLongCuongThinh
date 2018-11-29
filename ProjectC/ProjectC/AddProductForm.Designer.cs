@@ -32,11 +32,6 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label6 = new System.Windows.Forms.Label();
             this.rtfAddDesc = new System.Windows.Forms.RichTextBox();
-            this.sUPPLIERBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.electronicSupermarketDataSet = new ProjectC.ElectronicSupermarketDataSet();
-            this.cATEGORYBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sUPPLIERTableAdapter = new ProjectC.ElectronicSupermarketDataSetTableAdapters.SUPPLIERTableAdapter();
-            this.cATEGORYTableAdapter = new ProjectC.ElectronicSupermarketDataSetTableAdapters.CATEGORYTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.txtProductID = new System.Windows.Forms.TextBox();
@@ -55,9 +50,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cboProductStatus = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.sUPPLIERBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.electronicSupermarketDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cATEGORYBindingSource)).BeginInit();
+            
             ((System.ComponentModel.ISupportInitialize)(this.picUploadImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,29 +76,7 @@
             this.rtfAddDesc.Size = new System.Drawing.Size(714, 154);
             this.rtfAddDesc.TabIndex = 17;
             this.rtfAddDesc.Text = "";
-            // 
-            // sUPPLIERBindingSource
-            // 
-            this.sUPPLIERBindingSource.DataMember = "SUPPLIER";
-            this.sUPPLIERBindingSource.DataSource = this.electronicSupermarketDataSet;
-            // 
-            // electronicSupermarketDataSet
-            // 
-            this.electronicSupermarketDataSet.DataSetName = "ElectronicSupermarketDataSet";
-            this.electronicSupermarketDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cATEGORYBindingSource
-            // 
-            this.cATEGORYBindingSource.DataMember = "CATEGORY";
-            this.cATEGORYBindingSource.DataSource = this.electronicSupermarketDataSet;
-            // 
-            // sUPPLIERTableAdapter
-            // 
-            this.sUPPLIERTableAdapter.ClearBeforeFill = true;
-            // 
-            // cATEGORYTableAdapter
-            // 
-            this.cATEGORYTableAdapter.ClearBeforeFill = true;
+            
             // 
             // label1
             // 
@@ -142,15 +113,14 @@
             // cboCategory
             // 
             this.cboCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cboCategory.DataSource = this.cATEGORYBindingSource;
-            this.cboCategory.DisplayMember = "CATEGORY_NAME";
+            
             this.cboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategory.FormattingEnabled = true;
             this.cboCategory.Location = new System.Drawing.Point(145, 124);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(414, 21);
             this.cboCategory.TabIndex = 35;
-            this.cboCategory.ValueMember = "CATEGORY_ID";
+
             // 
             // btnAdd
             // 
@@ -175,15 +145,14 @@
             // cboSupplier
             // 
             this.cboSupplier.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cboSupplier.DataSource = this.sUPPLIERBindingSource;
-            this.cboSupplier.DisplayMember = "SUPPLIER_NAME";
+            
             this.cboSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSupplier.FormattingEnabled = true;
             this.cboSupplier.Location = new System.Drawing.Point(145, 193);
             this.cboSupplier.Name = "cboSupplier";
             this.cboSupplier.Size = new System.Drawing.Size(414, 21);
             this.cboSupplier.TabIndex = 34;
-            this.cboSupplier.ValueMember = "SUPPLIER_ID";
+
             // 
             // btnUploadImage
             // 
@@ -334,9 +303,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddForm";
             this.Load += new System.EventHandler(this.AddForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.sUPPLIERBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.electronicSupermarketDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cATEGORYBindingSource)).EndInit();
+            
             ((System.ComponentModel.ISupportInitialize)(this.picUploadImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -348,11 +315,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox rtfAddDesc;
-        private ElectronicSupermarketDataSet electronicSupermarketDataSet;
-        private System.Windows.Forms.BindingSource sUPPLIERBindingSource;
-        private ElectronicSupermarketDataSetTableAdapters.SUPPLIERTableAdapter sUPPLIERTableAdapter;
-        private System.Windows.Forms.BindingSource cATEGORYBindingSource;
-        private ElectronicSupermarketDataSetTableAdapters.CATEGORYTableAdapter cATEGORYTableAdapter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.TextBox txtProductID;

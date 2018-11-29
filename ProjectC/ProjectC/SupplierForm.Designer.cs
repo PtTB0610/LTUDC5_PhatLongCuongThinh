@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSupplierID = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -42,24 +41,14 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sUPPLIERBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.electronicSupermarketDataSet = new ProjectC.ElectronicSupermarketDataSet();
-            this.sUPPLIERTableAdapter = new ProjectC.ElectronicSupermarketDataSetTableAdapters.SUPPLIERTableAdapter();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.sUPPLIERIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sUPPLIERNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sUPPLIERPHONEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sUPPLIEREMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sUPPLIERADDRESSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sUPPLIERBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.electronicSupermarketDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -162,37 +151,15 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.sUPPLIERIDDataGridViewTextBoxColumn,
-            this.sUPPLIERNAMEDataGridViewTextBoxColumn,
-            this.sUPPLIERPHONEDataGridViewTextBoxColumn,
-            this.sUPPLIEREMAILDataGridViewTextBoxColumn,
-            this.sUPPLIERADDRESSDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.sUPPLIERBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(0, 229);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(800, 221);
             this.dataGridView1.TabIndex = 12;
-            // 
-            // sUPPLIERBindingSource
-            // 
-            this.sUPPLIERBindingSource.DataMember = "SUPPLIER";
-            this.sUPPLIERBindingSource.DataSource = this.electronicSupermarketDataSet;
-            // 
-            // electronicSupermarketDataSet
-            // 
-            this.electronicSupermarketDataSet.DataSetName = "ElectronicSupermarketDataSet";
-            this.electronicSupermarketDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sUPPLIERTableAdapter
-            // 
-            this.sUPPLIERTableAdapter.ClearBeforeFill = true;
             // 
             // btnUpdate
             // 
@@ -246,36 +213,6 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // sUPPLIERIDDataGridViewTextBoxColumn
-            // 
-            this.sUPPLIERIDDataGridViewTextBoxColumn.DataPropertyName = "SUPPLIER_ID";
-            this.sUPPLIERIDDataGridViewTextBoxColumn.HeaderText = "SUPPLIER_ID";
-            this.sUPPLIERIDDataGridViewTextBoxColumn.Name = "sUPPLIERIDDataGridViewTextBoxColumn";
-            // 
-            // sUPPLIERNAMEDataGridViewTextBoxColumn
-            // 
-            this.sUPPLIERNAMEDataGridViewTextBoxColumn.DataPropertyName = "SUPPLIER_NAME";
-            this.sUPPLIERNAMEDataGridViewTextBoxColumn.HeaderText = "SUPPLIER_NAME";
-            this.sUPPLIERNAMEDataGridViewTextBoxColumn.Name = "sUPPLIERNAMEDataGridViewTextBoxColumn";
-            // 
-            // sUPPLIERPHONEDataGridViewTextBoxColumn
-            // 
-            this.sUPPLIERPHONEDataGridViewTextBoxColumn.DataPropertyName = "SUPPLIER_PHONE";
-            this.sUPPLIERPHONEDataGridViewTextBoxColumn.HeaderText = "SUPPLIER_PHONE";
-            this.sUPPLIERPHONEDataGridViewTextBoxColumn.Name = "sUPPLIERPHONEDataGridViewTextBoxColumn";
-            // 
-            // sUPPLIEREMAILDataGridViewTextBoxColumn
-            // 
-            this.sUPPLIEREMAILDataGridViewTextBoxColumn.DataPropertyName = "SUPPLIER_EMAIL";
-            this.sUPPLIEREMAILDataGridViewTextBoxColumn.HeaderText = "SUPPLIER_EMAIL";
-            this.sUPPLIEREMAILDataGridViewTextBoxColumn.Name = "sUPPLIEREMAILDataGridViewTextBoxColumn";
-            // 
-            // sUPPLIERADDRESSDataGridViewTextBoxColumn
-            // 
-            this.sUPPLIERADDRESSDataGridViewTextBoxColumn.DataPropertyName = "SUPPLIER_ADDRESS";
-            this.sUPPLIERADDRESSDataGridViewTextBoxColumn.HeaderText = "SUPPLIER_ADDRESS";
-            this.sUPPLIERADDRESSDataGridViewTextBoxColumn.Name = "sUPPLIERADDRESSDataGridViewTextBoxColumn";
-            // 
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(420, 101);
@@ -319,8 +256,6 @@
             this.Text = "SupplierForm";
             this.Load += new System.EventHandler(this.SupplierForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sUPPLIERBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.electronicSupermarketDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,20 +276,12 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private ElectronicSupermarketDataSet electronicSupermarketDataSet;
-        private System.Windows.Forms.BindingSource sUPPLIERBindingSource;
-        private ElectronicSupermarketDataSetTableAdapters.SUPPLIERTableAdapter sUPPLIERTableAdapter;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sUPPLIERIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sUPPLIERNAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sUPPLIERPHONEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sUPPLIEREMAILDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sUPPLIERADDRESSDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnClose;
     }
 }

@@ -59,10 +59,7 @@ namespace ProjectC
 
         private void AddForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'electronicSupermarketDataSet.CATEGORY' table. You can move, or remove it, as needed.
-            this.cATEGORYTableAdapter.Fill(this.electronicSupermarketDataSet.CATEGORY);
-            // TODO: This line of code loads data into the 'electronicSupermarketDataSet.SUPPLIER' table. You can move, or remove it, as needed.
-            this.sUPPLIERTableAdapter.Fill(this.electronicSupermarketDataSet.SUPPLIER);
+            
         }
 
         private void btnClose_Click(object sender, EventArgs e)

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.picImage = new System.Windows.Forms.PictureBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -46,32 +45,17 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
-            this.pRODUCTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.electronicSupermarketDataSet = new ProjectC.ElectronicSupermarketDataSet();
             this.cboSupplier = new System.Windows.Forms.ComboBox();
-            this.sUPPLIERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cboCategory = new System.Windows.Forms.ComboBox();
-            this.cATEGORYBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cATEGORYTableAdapter = new ProjectC.ElectronicSupermarketDataSetTableAdapters.CATEGORYTableAdapter();
-            this.sUPPLIERTableAdapter = new ProjectC.ElectronicSupermarketDataSetTableAdapters.SUPPLIERTableAdapter();
-            this.pRODUCTTableAdapter = new ProjectC.ElectronicSupermarketDataSetTableAdapters.PRODUCTTableAdapter();
             this.btnAddNew = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pRODUCTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRODUCTNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRODUCTPRICEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRODUCTDESCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label9 = new System.Windows.Forms.Label();
             this.cboProductStatus = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUCTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.electronicSupermarketDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sUPPLIERBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cATEGORYBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -230,37 +214,18 @@
             // 
             // dgvProduct
             // 
-            this.dgvProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvProduct.AutoGenerateColumns = false;
+            this.dgvProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.pRODUCTIDDataGridViewTextBoxColumn,
-            this.pRODUCTNAMEDataGridViewTextBoxColumn,
-            this.pRODUCTPRICEDataGridViewTextBoxColumn,
-            this.pRODUCTDESCDataGridViewTextBoxColumn});
-            this.dgvProduct.DataSource = this.pRODUCTBindingSource;
             this.dgvProduct.Location = new System.Drawing.Point(0, 353);
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.Size = new System.Drawing.Size(1000, 320);
             this.dgvProduct.TabIndex = 31;
             // 
-            // pRODUCTBindingSource
-            // 
-            this.pRODUCTBindingSource.DataMember = "PRODUCT";
-            this.pRODUCTBindingSource.DataSource = this.electronicSupermarketDataSet;
-            // 
-            // electronicSupermarketDataSet
-            // 
-            this.electronicSupermarketDataSet.DataSetName = "ElectronicSupermarketDataSet";
-            this.electronicSupermarketDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // cboSupplier
             // 
             this.cboSupplier.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cboSupplier.DataSource = this.sUPPLIERBindingSource;
-            this.cboSupplier.DisplayMember = "SUPPLIER_NAME";
             this.cboSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSupplier.FormattingEnabled = true;
             this.cboSupplier.Location = new System.Drawing.Point(185, 192);
@@ -269,16 +234,9 @@
             this.cboSupplier.TabIndex = 32;
             this.cboSupplier.ValueMember = "SUPPLIER_ID";
             // 
-            // sUPPLIERBindingSource
-            // 
-            this.sUPPLIERBindingSource.DataMember = "SUPPLIER";
-            this.sUPPLIERBindingSource.DataSource = this.electronicSupermarketDataSet;
-            // 
             // cboCategory
             // 
             this.cboCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cboCategory.DataSource = this.cATEGORYBindingSource;
-            this.cboCategory.DisplayMember = "CATEGORY_NAME";
             this.cboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategory.FormattingEnabled = true;
             this.cboCategory.Location = new System.Drawing.Point(185, 151);
@@ -286,23 +244,6 @@
             this.cboCategory.Size = new System.Drawing.Size(208, 25);
             this.cboCategory.TabIndex = 33;
             this.cboCategory.ValueMember = "CATEGORY_ID";
-            // 
-            // cATEGORYBindingSource
-            // 
-            this.cATEGORYBindingSource.DataMember = "CATEGORY";
-            this.cATEGORYBindingSource.DataSource = this.electronicSupermarketDataSet;
-            // 
-            // cATEGORYTableAdapter
-            // 
-            this.cATEGORYTableAdapter.ClearBeforeFill = true;
-            // 
-            // sUPPLIERTableAdapter
-            // 
-            this.sUPPLIERTableAdapter.ClearBeforeFill = true;
-            // 
-            // pRODUCTTableAdapter
-            // 
-            this.pRODUCTTableAdapter.ClearBeforeFill = true;
             // 
             // btnAddNew
             // 
@@ -376,40 +317,6 @@
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             // 
-            // pRODUCTIDDataGridViewTextBoxColumn
-            // 
-            this.pRODUCTIDDataGridViewTextBoxColumn.DataPropertyName = "PRODUCT_ID";
-            this.pRODUCTIDDataGridViewTextBoxColumn.HeaderText = "PRODUCT_ID";
-            this.pRODUCTIDDataGridViewTextBoxColumn.Name = "pRODUCTIDDataGridViewTextBoxColumn";
-            // 
-            // pRODUCTNAMEDataGridViewTextBoxColumn
-            // 
-            this.pRODUCTNAMEDataGridViewTextBoxColumn.DataPropertyName = "PRODUCT_NAME";
-            this.pRODUCTNAMEDataGridViewTextBoxColumn.HeaderText = "PRODUCT_NAME";
-            this.pRODUCTNAMEDataGridViewTextBoxColumn.Name = "pRODUCTNAMEDataGridViewTextBoxColumn";
-            // 
-            // pRODUCTPRICEDataGridViewTextBoxColumn
-            // 
-            this.pRODUCTPRICEDataGridViewTextBoxColumn.DataPropertyName = "PRODUCT_PRICE";
-            this.pRODUCTPRICEDataGridViewTextBoxColumn.HeaderText = "PRODUCT_PRICE";
-            this.pRODUCTPRICEDataGridViewTextBoxColumn.Name = "pRODUCTPRICEDataGridViewTextBoxColumn";
-            // 
-            // pRODUCTDESCDataGridViewTextBoxColumn
-            // 
-            this.pRODUCTDESCDataGridViewTextBoxColumn.DataPropertyName = "PRODUCT_DESC";
-            this.pRODUCTDESCDataGridViewTextBoxColumn.HeaderText = "PRODUCT_DESC";
-            this.pRODUCTDESCDataGridViewTextBoxColumn.Name = "pRODUCTDESCDataGridViewTextBoxColumn";
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(24, 268);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(118, 18);
-            this.label9.TabIndex = 39;
-            this.label9.Text = "Product Status : ";
-            // 
             // cboProductStatus
             // 
             this.cboProductStatus.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -422,6 +329,16 @@
             this.cboProductStatus.Name = "cboProductStatus";
             this.cboProductStatus.Size = new System.Drawing.Size(208, 25);
             this.cboProductStatus.TabIndex = 40;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(24, 268);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(118, 18);
+            this.label9.TabIndex = 39;
+            this.label9.Text = "Product Status : ";
             // 
             // ProductForm
             // 
@@ -441,14 +358,9 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "ProductForm";
-            //this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProductForm_FormClosing);
             this.Load += new System.EventHandler(this.ProductForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRODUCTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.electronicSupermarketDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sUPPLIERBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cATEGORYBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -476,22 +388,11 @@
         private System.Windows.Forms.DataGridView dgvProduct;
         private System.Windows.Forms.ComboBox cboSupplier;
         private System.Windows.Forms.ComboBox cboCategory;
-        private ElectronicSupermarketDataSet electronicSupermarketDataSet;
-        private System.Windows.Forms.BindingSource cATEGORYBindingSource;
-        private ElectronicSupermarketDataSetTableAdapters.CATEGORYTableAdapter cATEGORYTableAdapter;
-        private System.Windows.Forms.BindingSource sUPPLIERBindingSource;
-        private ElectronicSupermarketDataSetTableAdapters.SUPPLIERTableAdapter sUPPLIERTableAdapter;
-        private System.Windows.Forms.BindingSource pRODUCTBindingSource;
-        private ElectronicSupermarketDataSetTableAdapters.PRODUCTTableAdapter pRODUCTTableAdapter;
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pRODUCTIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pRODUCTNAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pRODUCTPRICEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pRODUCTDESCDataGridViewTextBoxColumn;
         private System.Windows.Forms.ComboBox cboProductStatus;
         private System.Windows.Forms.Label label9;
     }
