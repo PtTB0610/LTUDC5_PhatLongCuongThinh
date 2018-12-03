@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.picImage = new System.Windows.Forms.PictureBox();
+            this.pbImage = new System.Windows.Forms.PictureBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.rtfDesc = new System.Windows.Forms.RichTextBox();
@@ -48,26 +48,28 @@
             this.cboSupplier = new System.Windows.Forms.ComboBox();
             this.cboCategory = new System.Windows.Forms.ComboBox();
             this.btnAddNew = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtIDtoSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnUpload = new System.Windows.Forms.Button();
             this.cboProductStatus = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // picImage
+            // pbImage
             // 
-            this.picImage.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.picImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picImage.Location = new System.Drawing.Point(808, 72);
-            this.picImage.Name = "picImage";
-            this.picImage.Size = new System.Drawing.Size(150, 150);
-            this.picImage.TabIndex = 2;
-            this.picImage.TabStop = false;
+            this.pbImage.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbImage.Location = new System.Drawing.Point(808, 72);
+            this.pbImage.Name = "pbImage";
+            this.pbImage.Size = new System.Drawing.Size(150, 150);
+            this.pbImage.TabIndex = 2;
+            this.pbImage.TabStop = false;
             // 
             // btnUpdate
             // 
@@ -88,6 +90,7 @@
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // rtfDesc
             // 
@@ -220,12 +223,17 @@
             this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProduct.Location = new System.Drawing.Point(0, 353);
             this.dgvProduct.Name = "dgvProduct";
+            this.dgvProduct.ReadOnly = true;
+            this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProduct.Size = new System.Drawing.Size(1000, 320);
             this.dgvProduct.TabIndex = 31;
+            this.dgvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellClick);
+            this.dgvProduct.SelectionChanged += new System.EventHandler(this.dgvProduct_SelectionChanged);
             // 
             // cboSupplier
             // 
             this.cboSupplier.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboSupplier.DisplayMember = "SUPPLIER_ID";
             this.cboSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSupplier.FormattingEnabled = true;
             this.cboSupplier.Location = new System.Drawing.Point(185, 192);
@@ -237,6 +245,7 @@
             // cboCategory
             // 
             this.cboCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cboCategory.DisplayMember = "CATEGORY_ID";
             this.cboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategory.FormattingEnabled = true;
             this.cboCategory.Location = new System.Drawing.Point(185, 151);
@@ -256,13 +265,13 @@
             this.btnAddNew.UseVisualStyleBackColor = true;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
-            // textBox1
+            // txtIDtoSearch
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Location = new System.Drawing.Point(185, 303);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(208, 25);
-            this.textBox1.TabIndex = 35;
+            this.txtIDtoSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtIDtoSearch.Location = new System.Drawing.Point(185, 303);
+            this.txtIDtoSearch.Name = "txtIDtoSearch";
+            this.txtIDtoSearch.Size = new System.Drawing.Size(208, 25);
+            this.txtIDtoSearch.TabIndex = 35;
             // 
             // btnSearch
             // 
@@ -273,6 +282,7 @@
             this.btnSearch.TabIndex = 36;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label8
             // 
@@ -286,14 +296,15 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnUpload);
             this.groupBox1.Controls.Add(this.cboProductStatus);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtProductID);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.picImage);
+            this.groupBox1.Controls.Add(this.pbImage);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.btnUpdate);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtIDtoSearch);
             this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.btnAddNew);
             this.groupBox1.Controls.Add(this.rtfDesc);
@@ -316,6 +327,17 @@
             this.groupBox1.Size = new System.Drawing.Size(1000, 347);
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
+            // 
+            // btnUpload
+            // 
+            this.btnUpload.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnUpload.Location = new System.Drawing.Point(833, 236);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(108, 34);
+            this.btnUpload.TabIndex = 41;
+            this.btnUpload.Text = "Upload";
+            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // cboProductStatus
             // 
@@ -340,6 +362,10 @@
             this.label9.TabIndex = 39;
             this.label9.Text = "Product Status : ";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -359,7 +385,7 @@
             this.ShowInTaskbar = false;
             this.Text = "ProductForm";
             this.Load += new System.EventHandler(this.ProductForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -369,7 +395,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox picImage;
+        private System.Windows.Forms.PictureBox pbImage;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.RichTextBox rtfDesc;
@@ -389,11 +415,13 @@
         private System.Windows.Forms.ComboBox cboSupplier;
         private System.Windows.Forms.ComboBox cboCategory;
         private System.Windows.Forms.Button btnAddNew;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtIDtoSearch;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cboProductStatus;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnUpload;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

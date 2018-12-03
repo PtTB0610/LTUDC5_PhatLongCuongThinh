@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label6 = new System.Windows.Forms.Label();
             this.rtfAddDesc = new System.Windows.Forms.RichTextBox();
@@ -50,7 +49,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cboProductStatus = new System.Windows.Forms.ComboBox();
-            
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picUploadImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +75,6 @@
             this.rtfAddDesc.Size = new System.Drawing.Size(714, 154);
             this.rtfAddDesc.TabIndex = 17;
             this.rtfAddDesc.Text = "";
-            
             // 
             // label1
             // 
@@ -109,18 +107,17 @@
             this.txtProductID.Name = "txtProductID";
             this.txtProductID.Size = new System.Drawing.Size(414, 20);
             this.txtProductID.TabIndex = 23;
+            this.txtProductID.Leave += new System.EventHandler(this.txtProductID_Leave);
             // 
             // cboCategory
             // 
             this.cboCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            
             this.cboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategory.FormattingEnabled = true;
             this.cboCategory.Location = new System.Drawing.Point(145, 124);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(414, 21);
             this.cboCategory.TabIndex = 35;
-
             // 
             // btnAdd
             // 
@@ -132,6 +129,7 @@
             this.btnAdd.TabIndex = 31;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtProductName
             // 
@@ -141,18 +139,17 @@
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(414, 20);
             this.txtProductName.TabIndex = 24;
+            this.txtProductName.Leave += new System.EventHandler(this.txtProductName_Leave);
             // 
             // cboSupplier
             // 
             this.cboSupplier.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            
             this.cboSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSupplier.FormattingEnabled = true;
             this.cboSupplier.Location = new System.Drawing.Point(145, 193);
             this.cboSupplier.Name = "cboSupplier";
             this.cboSupplier.Size = new System.Drawing.Size(414, 21);
             this.cboSupplier.TabIndex = 34;
-
             // 
             // btnUploadImage
             // 
@@ -164,6 +161,7 @@
             this.btnUploadImage.TabIndex = 21;
             this.btnUploadImage.Text = "Upload";
             this.btnUploadImage.UseVisualStyleBackColor = true;
+            this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
             // 
             // picUploadImg
             // 
@@ -184,6 +182,7 @@
             this.txtProductPrice.Name = "txtProductPrice";
             this.txtProductPrice.Size = new System.Drawing.Size(414, 20);
             this.txtProductPrice.TabIndex = 25;
+            this.txtProductPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductPrice_KeyPress);
             // 
             // label2
             // 
@@ -226,6 +225,7 @@
             this.txtInStock.Name = "txtInStock";
             this.txtInStock.Size = new System.Drawing.Size(414, 20);
             this.txtInStock.TabIndex = 32;
+            this.txtInStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInStock_KeyPress);
             // 
             // label4
             // 
@@ -272,11 +272,21 @@
             this.cboProductStatus.Size = new System.Drawing.Size(414, 21);
             this.cboProductStatus.TabIndex = 38;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(145, 257);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 39;
+            this.label9.Text = "label9";
+            // 
             // AddProductForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(770, 452);
             this.ControlBox = false;
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.cboProductStatus);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
@@ -303,7 +313,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddForm";
             this.Load += new System.EventHandler(this.AddForm_Load);
-            
             ((System.ComponentModel.ISupportInitialize)(this.picUploadImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -333,5 +342,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cboProductStatus;
+        private System.Windows.Forms.Label label9;
     }
 }

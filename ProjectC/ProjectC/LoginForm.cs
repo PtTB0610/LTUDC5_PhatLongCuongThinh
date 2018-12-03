@@ -23,13 +23,9 @@ namespace ProjectC
         private void btnLogin_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
-            //SqlDataAdapter sda = new SqlDataAdapter("SELECT usertype FROM WHERE username = '" + txtUsername.Text + "' and password = '" + txtPassword.Text + "'", con);
-            //DataTable dt = new DataTable();
-            //sda.Fill(dt);
-            //SqlCommand cmd = new SqlCommand("SELECT * FROM [USER] WHERE USER_NAME = '" + txtUsername.Text + "' and USER_PASS = '" + txtPassword.Text + "' AND USER_STATUS = 'active'", con);
-            //SqlCommand cmd = new SqlCommand("SP_LAYDSUSER", con);
-            //cmd.CommandType = CommandType.StoredProcedure;
-            SqlDataAdapter sda = new SqlDataAdapter("SP_LAYDSUSER",con);
+            SqlCommand cmd = new SqlCommand("SP_LAYDSUSER", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             for (int i = 0; i < dt.Rows.Count; i++)
@@ -47,19 +43,6 @@ namespace ProjectC
             if (!flag) {
                 MessageBox.Show("Wrong username or password!!! Please reenter ", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            //con.Open();
-            //SqlDataReader sdr = cmd.ExecuteReader();
-            //if (sdr.Read() == true)
-            //{
-            //    this.Close();
-            //    userType = (string)sdr["USER_TYPE"];
-            //    flag = true;
-            //    clsFormProvider.mainF.Show();
-            //    //this.Hide();
-            //    //MainForm mF = new MainForm((string)sdr["user_type"]);
-            //    //mF.Show(this);
-            //}
-            //else MessageBox.Show("Wrong username or password!!! Please reenter ", "Login error", MessageBoxButtons.OK,MessageBoxIcon.Error);
         }
 
         public string getUserType() {

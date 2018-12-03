@@ -81,6 +81,7 @@
     <Compile Include="BillForm.designer.cs">
       <DependentUpon>BillForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="clsDatabase.cs" />
     <Compile Include="clsFormProvider.cs" />
     <Compile Include="CustomerForm.cs">
       <SubType>Form</SubType>

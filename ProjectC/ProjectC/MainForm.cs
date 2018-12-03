@@ -6,16 +6,26 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ProjectC
 {
     public partial class MainForm : Form
     {
-        public MainForm(/*string userType*/)
+        public MainForm()
         {
             InitializeComponent();
-            //labelUserType.Text = clsFormProvider.loginF.getUserType();
-            //labelUserID.Text = clsFormProvider.loginF.getUserID();
+        }
+        string userType = clsFormProvider.loginF.getUserType();
+        string userID = clsFormProvider.loginF.getUserID();
+
+        public string  getUserType() {
+            return userType;
+        }
+
+        public string getUserID()
+        {
+            return userID;
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -26,22 +36,14 @@ namespace ProjectC
                 e.Cancel = true;
             }
         }
-        
-        //private void mnuProduct_Click(object sender, EventArgs e)
-        //{
-        //    ProductForm productForm = new ProductForm();
-        //    productForm.MdiParent = this;
-        //    productForm.TopLevel = false;
-        //    productForm.Dock = DockStyle.Fill;
-        //    productForm.Show();
-        //    disableControls();
-        //}
-        //public void disableControls() {
-        //    mnuProduct.Enabled = false;
-        //}
-        //public void enableControls() {
-        //    mnuProduct.Enabled = true;
-        //}
+        public void disableViewProductControls()
+        {
+            mnuViewProduct.Enabled = false;
+        }
+        public void enableViewProductControls()
+        {
+            mnuViewProduct.Enabled = true;
+        }
 
         private void mneLogout_Click(object sender, EventArgs e) {
             Application.Restart();
@@ -56,6 +58,21 @@ namespace ProjectC
             UserInfoForm UIForm = new UserInfoForm();
             UIForm.MdiParent = this;
             UIForm.Show();
+        }
+
+        private void mnuExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void mnuViewProduct_Click(object sender, EventArgs e)
+        {
+            ProductForm productForm = new ProductForm();
+            productForm.MdiParent = this;
+            productForm.TopLevel = false;
+            productForm.Dock = DockStyle.Fill;
+            productForm.Show();
+            disableViewProductControls();
         }
     }
 }

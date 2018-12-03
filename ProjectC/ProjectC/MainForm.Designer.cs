@@ -31,6 +31,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAccountInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuLogout = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuViewProduct = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuViewSupplier = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,8 +48,6 @@
             this.mnuAddBill = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAddStatistic = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAddCate = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuLogout = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,9 +77,22 @@
             // mnuAccountInfo
             // 
             this.mnuAccountInfo.Name = "mnuAccountInfo";
-            this.mnuAccountInfo.Size = new System.Drawing.Size(152, 22);
+            this.mnuAccountInfo.Size = new System.Drawing.Size(180, 22);
             this.mnuAccountInfo.Text = "Account Info";
             this.mnuAccountInfo.Click += new System.EventHandler(this.mnuAccountInfo_Click);
+            // 
+            // mnuLogout
+            // 
+            this.mnuLogout.Name = "mnuLogout";
+            this.mnuLogout.Size = new System.Drawing.Size(180, 22);
+            this.mnuLogout.Text = "Logout";
+            // 
+            // mnuExit
+            // 
+            this.mnuExit.Name = "mnuExit";
+            this.mnuExit.Size = new System.Drawing.Size(180, 22);
+            this.mnuExit.Text = "Exit";
+            this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
             // viewToolStripMenuItem
             // 
@@ -97,37 +110,38 @@
             // mnuViewProduct
             // 
             this.mnuViewProduct.Name = "mnuViewProduct";
-            this.mnuViewProduct.Size = new System.Drawing.Size(152, 22);
+            this.mnuViewProduct.Size = new System.Drawing.Size(180, 22);
             this.mnuViewProduct.Text = "Product";
+            this.mnuViewProduct.Click += new System.EventHandler(this.mnuViewProduct_Click);
             // 
             // mnuViewSupplier
             // 
             this.mnuViewSupplier.Name = "mnuViewSupplier";
-            this.mnuViewSupplier.Size = new System.Drawing.Size(152, 22);
+            this.mnuViewSupplier.Size = new System.Drawing.Size(126, 22);
             this.mnuViewSupplier.Text = "Supplier";
             // 
             // mnuViewEmployee
             // 
             this.mnuViewEmployee.Name = "mnuViewEmployee";
-            this.mnuViewEmployee.Size = new System.Drawing.Size(152, 22);
+            this.mnuViewEmployee.Size = new System.Drawing.Size(126, 22);
             this.mnuViewEmployee.Text = "Employee";
             // 
             // mnuViewCustomer
             // 
             this.mnuViewCustomer.Name = "mnuViewCustomer";
-            this.mnuViewCustomer.Size = new System.Drawing.Size(152, 22);
+            this.mnuViewCustomer.Size = new System.Drawing.Size(126, 22);
             this.mnuViewCustomer.Text = "Customer";
             // 
             // mnuViewBill
             // 
             this.mnuViewBill.Name = "mnuViewBill";
-            this.mnuViewBill.Size = new System.Drawing.Size(152, 22);
+            this.mnuViewBill.Size = new System.Drawing.Size(126, 22);
             this.mnuViewBill.Text = "Bill";
             // 
             // mnuViewStatistic
             // 
             this.mnuViewStatistic.Name = "mnuViewStatistic";
-            this.mnuViewStatistic.Size = new System.Drawing.Size(152, 22);
+            this.mnuViewStatistic.Size = new System.Drawing.Size(126, 22);
             this.mnuViewStatistic.Text = "Statistic";
             // 
             // addToolStripMenuItem
@@ -147,56 +161,44 @@
             // mnuAddProduct
             // 
             this.mnuAddProduct.Name = "mnuAddProduct";
-            this.mnuAddProduct.Size = new System.Drawing.Size(152, 22);
+            this.mnuAddProduct.Size = new System.Drawing.Size(126, 22);
             this.mnuAddProduct.Text = "Product";
             // 
             // mnuAddSupplier
             // 
             this.mnuAddSupplier.Name = "mnuAddSupplier";
-            this.mnuAddSupplier.Size = new System.Drawing.Size(152, 22);
+            this.mnuAddSupplier.Size = new System.Drawing.Size(126, 22);
             this.mnuAddSupplier.Text = "Supplier";
             // 
             // mnuAddEmployee
             // 
             this.mnuAddEmployee.Name = "mnuAddEmployee";
-            this.mnuAddEmployee.Size = new System.Drawing.Size(152, 22);
+            this.mnuAddEmployee.Size = new System.Drawing.Size(126, 22);
             this.mnuAddEmployee.Text = "Employee";
             // 
             // mnuAddCustomer
             // 
             this.mnuAddCustomer.Name = "mnuAddCustomer";
-            this.mnuAddCustomer.Size = new System.Drawing.Size(152, 22);
+            this.mnuAddCustomer.Size = new System.Drawing.Size(126, 22);
             this.mnuAddCustomer.Text = "Customer";
             // 
             // mnuAddBill
             // 
             this.mnuAddBill.Name = "mnuAddBill";
-            this.mnuAddBill.Size = new System.Drawing.Size(152, 22);
+            this.mnuAddBill.Size = new System.Drawing.Size(126, 22);
             this.mnuAddBill.Text = "Bill";
             // 
             // mnuAddStatistic
             // 
             this.mnuAddStatistic.Name = "mnuAddStatistic";
-            this.mnuAddStatistic.Size = new System.Drawing.Size(152, 22);
+            this.mnuAddStatistic.Size = new System.Drawing.Size(126, 22);
             this.mnuAddStatistic.Text = "Statistic";
             // 
             // mnuAddCate
             // 
             this.mnuAddCate.Name = "mnuAddCate";
-            this.mnuAddCate.Size = new System.Drawing.Size(152, 22);
+            this.mnuAddCate.Size = new System.Drawing.Size(126, 22);
             this.mnuAddCate.Text = "Category";
-            // 
-            // mnuLogout
-            // 
-            this.mnuLogout.Name = "mnuLogout";
-            this.mnuLogout.Size = new System.Drawing.Size(152, 22);
-            this.mnuLogout.Text = "Logout";
-            // 
-            // mnuExit
-            // 
-            this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(152, 22);
-            this.mnuExit.Text = "Exit";
             // 
             // MainForm
             // 
