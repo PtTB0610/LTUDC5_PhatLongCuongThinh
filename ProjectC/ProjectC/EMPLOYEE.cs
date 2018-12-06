@@ -40,5 +40,17 @@ namespace ProjectC
             addEmployee addEmp = new addEmployee();
             addEmp.Show();
         }
+
+        private void dgvEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvEmployee.SelectedCells.Count > 0)
+            {
+                txtUserID.Text = dgvEmployee.SelectedCells[0].Value.ToString();
+                txtUserName.Text = dgvEmployee.SelectedCells[1].Value.ToString();
+                txtUserPass.Text = dgvEmployee.SelectedCells[2].Value.ToString();
+                cbUserType.SelectedValue = dgvEmployee.SelectedCells[4].Value.ToString();
+                cbUserStatus.SelectedValue = dgvEmployee.SelectedCells[3].Value.ToString();
+            }
+        }
     }
 }

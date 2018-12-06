@@ -123,6 +123,7 @@ namespace ProjectC
             DialogResult result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK) {
                 filePath = openFileDialog1.FileName;
+                picUploadImg.Image = Image.FromFile(@"" + filePath);
             }
         }
     }
