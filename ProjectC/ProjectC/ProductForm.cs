@@ -20,7 +20,7 @@ namespace ProjectC
         SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
         private void ProductForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ((MainForm)this.MdiParent).enableViewProductControls();
+           
         }
 
         clsDatabase db = new clsDatabase();
@@ -67,12 +67,14 @@ namespace ProjectC
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            ((MainForm)this.MdiParent).enableViewProductControls();
             this.Close();
         }
 
         private void btnAddNew_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            ((MainForm)this.MdiParent).enableViewProductControls();
+            this.Close();
             AddProductForm addPro = new AddProductForm();
             addPro.Show();
             addPro.MdiParent = clsFormProvider.mainF;
@@ -103,6 +105,7 @@ namespace ProjectC
             DialogResult result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK) {
                 filePath = openFileDialog1.FileName;
+                pbImage.Image = Image.FromFile(@"" + filePath);
             }
         }
 
@@ -114,7 +117,7 @@ namespace ProjectC
         private void dgvProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             pbImage.Image = null;
-            if (dgvProduct.SelectedCells.Count > 0) {
+            if (dgvProduct.SelectedRows.Count > 0) {
                 txtProductID.Text = dgvProduct.SelectedCells[0].Value.ToString();
                 txtProductName.Text = dgvProduct.SelectedCells[1].Value.ToString();
                 txtProductPrice.Text = dgvProduct.SelectedCells[4].Value.ToString();

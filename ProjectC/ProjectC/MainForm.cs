@@ -74,5 +74,15 @@ namespace ProjectC
             productForm.Show();
             disableViewProductControls();
         }
+
+        private void mnuViewEmployee_Click(object sender, EventArgs e)
+        {
+            EmployeeFORM employeeform = new EmployeeFORM();
+            employeeform.MdiParent = this;
+            employeeform.TopLevel = false;
+            employeeform.Dock = DockStyle.Fill;
+            employeeform.Show();
+            
+        }
     }
 }

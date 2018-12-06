@@ -53,3 +53,28 @@ D:\Works\C#\Project\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\Projec
 D:\Works\C#\Project\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.EmployeeFORM.resources
 D:\Works\C#\Project\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.PAYMENT.resources
 D:\Works\C#\Project\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.StatisticForm.resources
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\bin\Debug\ProjectC.exe.config
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\bin\Debug\ProjectC.exe
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\bin\Debug\ProjectC.pdb
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.csprojAssemblyReference.cache
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.AddCategory.resources
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.addCustomer.resources
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.addEmployee.resources
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.AddProductForm.resources
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.AddSupplierForm.resources
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.BillForm.resources
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.CustomerForm.resources
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.EmployeeFORM.resources
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.LoginForm.resources
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.MainForm.resources
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.PAYMENT.resources
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.ProductForm.resources
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.Properties.Resources.resources
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.StatisticForm.resources
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.SupplierForm.resources
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.UserInfoForm.resources
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.csproj.GenerateResource.cache
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.csproj.CoreCompileInputs.cache
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.exe
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.pdb
+D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.UserForm.resources
