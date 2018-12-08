@@ -419,3 +419,17 @@ SET EMPLOYEE_NAME = @employee_name,
 	EMPLOYEE_DATE = @employee_date,
 	EMPLOYEE_ADDRESS = @employee_address
 WHERE EMPLOYEE_ID = @employee_id
+
+
+--Tim Product bang ID
+create proc sp_searchProductbyID (@P_ID varchar(255))
+as
+select * from PRODUCT where PRODUCT_ID = @P_ID
+--Tim product name
+create proc sp_searchProductbyName (@P_NAME varchar(255))
+as
+select * from PRODUCT where PRODUCT_NAME = @P_NAME
+--Tim Username
+create proc sp_searchUserbyName (@U_NAME varchar(255))
+as
+select * from [dbo].[USER] where USER_NAME = @U_NAME

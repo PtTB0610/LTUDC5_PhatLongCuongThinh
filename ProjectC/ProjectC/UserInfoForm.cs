@@ -17,17 +17,118 @@ namespace ProjectC
             InitializeComponent();
         }
 
-        //private void UserInfoForm_Load(object sender, EventArgs e)
-        //{
-        //    SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
-        //    SqlDataAdapter sda = new SqlDataAdapter("SP_TIMUSERBANGID '" + labelUserID.Text + "'", con);
-        //    DataTable dt = new DataTable();
-        //    sda.Fill(dt);
-        //    DataRow dr = dt.Rows[0];
-        //    txtUserName.Text = (string)dr["USER_NAME"];
-        //    txtUserPass.Text = (string)dr["USER_PASS"];
-        //    txtStatus.Text = (string)dr["USER_STATUS"];
-        //    txtUserType.Text = (string)dr["USER_TYPE"];
-        //}
+        clsDatabase db = new clsDatabase();
+        SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
+        private void UserInfoForm_Load(object sender, EventArgs e)
+        {
+            dgvData.DataSource = getUserTable();
+            if (clsFormProvider.mainF.getUserType() == "Manager") {
+                cboUserType.Items.Clear();
+                cboUserType.Items.Add("Manager");
+                cboUserType.Items.Add("User");
+            }
+        }
+
+        public DataTable getUserTable() {
+            try{ con.Open(); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            SqlCommand cmd = new SqlCommand("SP_LAYDSUSER", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            try { con.Close(); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            return dt;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        UserForm userForm;
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            if (userForm != null)
+            {
+                userForm.Show();
+            }
+            else
+            {
+                userForm = new UserForm();
+                userForm.MdiParent = clsFormProvider.mainF;
+                userForm.Show();
+                userForm.FormClosing += userForm_FormClosing;
+            }
+        }
+
+        public void userForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            userForm = null;
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to update this user info?", "Update confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes) {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SP_SUAUSER", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@U_NAME", txtUserName.Text));
+                    cmd.Parameters.Add(new SqlParameter("@U_PASS", txtUserPass.Text));
+                    cmd.Parameters.Add(new SqlParameter("@U_TYPE", cboUserType.Text));
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        MessageBox.Show("Update user successful!!!");
+                    }
+                    if (clsFormProvider.mainF.getUserName() == txtUserName.Text)
+                    {
+                        label4.Name = clsFormProvider.mainF.getUserName();
+                        label5.Name = clsFormProvider.mainF.getUserType();
+                        clsFormProvider.mainF.setUserType(cboUserType.Text);
+                        if (clsFormProvider.mainF.getUserType() == "User")
+                        {
+                            MessageBox.Show("Your account do not have permission to use this function. The application will be restart!!!");
+                            Application.Restart();
+                        }
+                    }
+                    txtUserName.Clear();
+                    txtUserPass.Clear();
+                    cboUserType.Text = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        private void dgvData_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (!dgvData.Rows[dgvData.CurrentCell.RowIndex].IsNewRow)
+                {
+                    if (dgvData.SelectedRows.Count > 0)
+                    {
+                        txtUserName.Text = dgvData.SelectedCells[0].Value.ToString();
+                        txtUserPass.Text = dgvData.SelectedCells[1].Value.ToString();
+                        cboUserType.Text = dgvData.SelectedCells[2].Value.ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

@@ -78,3 +78,4 @@ D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.csp
 D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.exe
 D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.pdb
 D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.UserForm.resources
+D:\Works\C#\Project\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.UserForm.resources

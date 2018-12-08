@@ -8,20 +8,16 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Data.SqlClient;
-using System.Collections;
+
 namespace ProjectC
 {
     public partial class AddProductForm : Form
-    {
-
-        
+    {    
         public AddProductForm()
         {
             InitializeComponent();
         }
-
-        ArrayList arrID = new ArrayList();
-        ArrayList arrName = new ArrayList();
+        SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
         clsDatabase db = new clsDatabase();
         private void AddForm_Load(object sender, EventArgs e)
         {
@@ -32,13 +28,6 @@ namespace ProjectC
             cboSupplier.DataSource = db.getTableData("SUPPLIER");
             cboSupplier.DisplayMember = "SUPPLIER_NAME";
             cboSupplier.ValueMember = "SUPPLIER_ID";
-
-            DataTable dt = db.getTableData("PRODUCT");
-            for (int i = 0; i < dt.Rows.Count; i++) {
-                DataRow dr = dt.Rows[i];
-                arrID.Add(dr["PRODUCT_ID"].ToString());
-                arrName.Add(dr["PRODUCT_NAME"].ToString());
-            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -48,33 +37,62 @@ namespace ProjectC
 
         private void txtProductID_Leave(object sender, EventArgs e)
         {
-            foreach (string s in arrID) {
-                if (txtProductID.Text == s) {
-                    MessageBox.Show("This ID is already used! Please input a different ID");
+            if (txtProductID.Text != "") {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("sp_searchProductbyID", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@P_ID", txtProductID.Text));
+                if ((string)cmd.ExecuteScalar() == txtProductID.Text)
+                {
+                    MessageBox.Show("This ID is already used!!! Please try different ID!!!");
                     txtProductID.Clear();
                     txtProductID.Focus();
-                    break;
                 }
+                con.Close();
             }
         }
 
         private void txtProductName_Leave(object sender, EventArgs e)
         {
-            foreach (string s in arrID)
+            if (txtProductName.Text != "")
             {
-                if (txtProductID.Text == s)
+                try
                 {
-                    MessageBox.Show("This name is already used! Please input a different Name");
-                    txtProductID.Clear();
-                    txtProductID.Focus();
-                    break;
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("sp_searchProductbyName", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@P_NAME", txtProductName.Text));
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        if (txtProductName.Text == reader["PRODUCT_NAME"].ToString())
+                        {
+                            MessageBox.Show("This product name is already used!!! Please try different product name!!!");
+                            txtProductName.Clear();
+                            txtProductName.Focus();
+                            break;
+                        }
+                    }
                 }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+                finally {
+                    con.Close();
+                }              
             }
         }
 
         private void txtProductPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.' || e.KeyChar == '\b'))
+            {
+                e.Handled = true;
+            }
+            TextBox txtDecimal = sender as TextBox;
+            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
             {
                 e.Handled = true;
             }
@@ -90,7 +108,6 @@ namespace ProjectC
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
             con.Open();
             SqlCommand cmd = new SqlCommand("SP_THEMDSPRODUCT", con);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -102,11 +119,7 @@ namespace ProjectC
             cmd.Parameters.Add(new SqlParameter("@P_DESC", rtfAddDesc.Text));
             cmd.Parameters.Add(new SqlParameter("@S_ID", cboSupplier.SelectedValue));
             cmd.Parameters.Add(new SqlParameter("@P_STATUS", cboProductStatus.Text));
-            SqlCommand cmd2 = new SqlCommand("SP_THEMDSWAREHOUSE", con);
-            cmd2.CommandType = CommandType.StoredProcedure;
-            cmd2.Parameters.Add(new SqlParameter("@P_ID", txtProductID.Text));
-            cmd2.Parameters.Add(new SqlParameter("@SLUONG", txtInStock.Text));
-            cmd2.ExecuteNonQuery();
+            cmd.Parameters.Add(new SqlParameter("@INSTOCK", txtInStock.Text));
             if (cmd.ExecuteNonQuery() > 0)
             {
                 MessageBox.Show("Add product successful");
@@ -124,6 +137,15 @@ namespace ProjectC
             if (result == DialogResult.OK) {
                 filePath = openFileDialog1.FileName;
                 picUploadImg.Image = Image.FromFile(@"" + filePath);
+            }
+        }
+
+        private void AddProductForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
             }
         }
     }

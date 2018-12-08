@@ -14,9 +14,7 @@ namespace ProjectC
             SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
             con.Open();
             string sql = "SELECT * FROM " + tableName;
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = sql;
+            SqlCommand cmd = new SqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

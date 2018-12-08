@@ -18,7 +18,7 @@ namespace ProjectC
             InitializeComponent();
         }
         string userType;
-        string userID;
+        string userName;
         bool flag = false;
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -35,8 +35,8 @@ namespace ProjectC
                 {
                     this.Close();
                     userType = (string)dr["USER_TYPE"];
-                    userID = (string)dr["USER_ID"];
                     flag = true;
+                    clsFormProvider.mainF.setUserName((string)dr["USER_NAME"]);
                     clsFormProvider.mainF.Show();
                 }
             }
@@ -47,11 +47,6 @@ namespace ProjectC
 
         public string getUserType() {
             return userType;
-        }
-
-        public string getUserID()
-        {
-            return userID;
         }
 
         public bool getFlag()

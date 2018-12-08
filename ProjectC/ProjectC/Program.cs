@@ -25,8 +25,7 @@ namespace ProjectC
             //Application.Run(new StatisticForm());
             //Application.Run(new SupplierForm());
             // Application.Run(clsFormProvider.mainF);
-            // Application.Run(new LoginForm());
-            //Application.Run(new AddForm());
+            //Application.Run(new UserInfoForm());
         }
     }
 }

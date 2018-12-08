@@ -49,7 +49,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cboProductStatus = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picUploadImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,6 +68,7 @@
             // 
             // rtfAddDesc
             // 
+            this.rtfAddDesc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rtfAddDesc.Location = new System.Drawing.Point(27, 287);
             this.rtfAddDesc.Margin = new System.Windows.Forms.Padding(2);
             this.rtfAddDesc.Name = "rtfAddDesc";
@@ -90,10 +90,10 @@
             // btnClose
             // 
             this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnClose.Location = new System.Drawing.Point(676, 229);
+            this.btnClose.Location = new System.Drawing.Point(678, 218);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(63, 24);
+            this.btnClose.Size = new System.Drawing.Size(81, 30);
             this.btnClose.TabIndex = 36;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -102,6 +102,7 @@
             // txtProductID
             // 
             this.txtProductID.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtProductID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProductID.Location = new System.Drawing.Point(145, 29);
             this.txtProductID.Margin = new System.Windows.Forms.Padding(2);
             this.txtProductID.Name = "txtProductID";
@@ -122,10 +123,10 @@
             // btnAdd
             // 
             this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAdd.Location = new System.Drawing.Point(589, 229);
+            this.btnAdd.Location = new System.Drawing.Point(590, 218);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(78, 24);
+            this.btnAdd.Size = new System.Drawing.Size(82, 30);
             this.btnAdd.TabIndex = 31;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -134,6 +135,7 @@
             // txtProductName
             // 
             this.txtProductName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProductName.Location = new System.Drawing.Point(145, 60);
             this.txtProductName.Margin = new System.Windows.Forms.Padding(2);
             this.txtProductName.Name = "txtProductName";
@@ -154,10 +156,10 @@
             // btnUploadImage
             // 
             this.btnUploadImage.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnUploadImage.Location = new System.Drawing.Point(635, 184);
+            this.btnUploadImage.Location = new System.Drawing.Point(589, 184);
             this.btnUploadImage.Margin = new System.Windows.Forms.Padding(2);
             this.btnUploadImage.Name = "btnUploadImage";
-            this.btnUploadImage.Size = new System.Drawing.Size(65, 24);
+            this.btnUploadImage.Size = new System.Drawing.Size(82, 30);
             this.btnUploadImage.TabIndex = 21;
             this.btnUploadImage.Text = "Upload";
             this.btnUploadImage.UseVisualStyleBackColor = true;
@@ -177,6 +179,7 @@
             // txtProductPrice
             // 
             this.txtProductPrice.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtProductPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProductPrice.Location = new System.Drawing.Point(145, 93);
             this.txtProductPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtProductPrice.Name = "txtProductPrice";
@@ -220,6 +223,7 @@
             // txtInStock
             // 
             this.txtInStock.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtInStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtInStock.Location = new System.Drawing.Point(145, 160);
             this.txtInStock.Margin = new System.Windows.Forms.Padding(2);
             this.txtInStock.Name = "txtInStock";
@@ -272,21 +276,11 @@
             this.cboProductStatus.Size = new System.Drawing.Size(414, 21);
             this.cboProductStatus.TabIndex = 38;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(145, 257);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 39;
-            this.label9.Text = "label9";
-            // 
             // AddProductForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(770, 452);
             this.ControlBox = false;
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.cboProductStatus);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
@@ -312,6 +306,7 @@
             this.Name = "AddProductForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddProductForm_FormClosing);
             this.Load += new System.EventHandler(this.AddForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picUploadImg)).EndInit();
             this.ResumeLayout(false);
@@ -342,6 +337,5 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cboProductStatus;
-        private System.Windows.Forms.Label label9;
     }
 }

@@ -16,16 +16,27 @@ namespace ProjectC
         {
             InitializeComponent();
         }
-        string userType = clsFormProvider.loginF.getUserType();
-        string userID = clsFormProvider.loginF.getUserID();
 
-        public string  getUserType() {
+        string userType = clsFormProvider.loginF.getUserType();
+        string userName;
+        public string getUserType()
+        {
             return userType;
         }
 
-        public string getUserID()
+        public void setUserType(string userType)
         {
-            return userID;
+            this.userType = userType;
+        }
+
+        public string getUserName()
+        {
+            return this.userName;
+        }
+
+        public void setUserName(string userName)
+        {
+            this.userName = userName;
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -36,16 +47,9 @@ namespace ProjectC
                 e.Cancel = true;
             }
         }
-        public void disableViewProductControls()
-        {
-            mnuViewProduct.Enabled = false;
-        }
-        public void enableViewProductControls()
-        {
-            mnuViewProduct.Enabled = true;
-        }
 
-        private void mneLogout_Click(object sender, EventArgs e) {
+        private void mneLogout_Click(object sender, EventArgs e)
+        {
             Application.Restart();
             //this.Hide();
             //clsFormProvider.loginF.ShowDialog();
@@ -65,14 +69,26 @@ namespace ProjectC
             this.Close();
         }
 
+        ProductForm productForm;
         private void mnuViewProduct_Click(object sender, EventArgs e)
         {
-            ProductForm productForm = new ProductForm();
-            productForm.MdiParent = this;
-            productForm.TopLevel = false;
-            productForm.Dock = DockStyle.Fill;
-            productForm.Show();
-            disableViewProductControls();
+            if (productForm != null)
+            {
+                productForm.Show();
+            }
+            else
+            {
+                productForm = new ProductForm();
+                productForm.MdiParent = this;
+                productForm.Dock = DockStyle.Fill;
+                productForm.Show();
+                productForm.FormClosing += productForm_FormClosing;
+            }
+        }
+
+        public void productForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            productForm = null;
         }
 
         private void mnuViewEmployee_Click(object sender, EventArgs e)
@@ -82,7 +98,34 @@ namespace ProjectC
             employeeform.TopLevel = false;
             employeeform.Dock = DockStyle.Fill;
             employeeform.Show();
-            
+
+        }
+        //Chi cho phep tao 1 UserInfoForm
+        UserInfoForm userInfoForm;
+        private void userToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (userInfoForm != null)
+            {
+                userInfoForm.Show();
+            }
+            else
+            {
+                userInfoForm = new UserInfoForm();
+                userInfoForm.MdiParent = clsFormProvider.mainF;
+                userInfoForm.Show();
+                userInfoForm.FormClosing += userInfoForm_FormClosing;
+            }
+        }
+        public void userInfoForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            userInfoForm = null;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            if (getUserType() == "User") {
+                userToolStripMenuItem.Visible = false;
+            }
         }
     }
 }
