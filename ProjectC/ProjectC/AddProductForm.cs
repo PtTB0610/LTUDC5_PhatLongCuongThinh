@@ -108,27 +108,41 @@ namespace ProjectC
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("SP_THEMDSPRODUCT", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(new SqlParameter("@P_ID", txtProductID.Text));
-            cmd.Parameters.Add(new SqlParameter("@P_NAME", txtProductName.Text));
-            cmd.Parameters.Add(new SqlParameter("@P_PRICE", txtProductPrice.Text));
-            cmd.Parameters.Add(new SqlParameter("@C_ID", cboCategory.SelectedValue));
-            cmd.Parameters.Add(new SqlParameter("@P_IMAGE", filePath));
-            cmd.Parameters.Add(new SqlParameter("@P_DESC", rtfAddDesc.Text));
-            cmd.Parameters.Add(new SqlParameter("@S_ID", cboSupplier.SelectedValue));
-            cmd.Parameters.Add(new SqlParameter("@P_STATUS", cboProductStatus.Text));
-            cmd.Parameters.Add(new SqlParameter("@INSTOCK", txtInStock.Text));
-            if (cmd.ExecuteNonQuery() > 0)
+            if (txtProductID.Text != "" && txtProductName.Text != "")
             {
-                MessageBox.Show("Add product successful");
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SP_THEMDSPRODUCT", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@P_ID", txtProductID.Text));
+                    cmd.Parameters.Add(new SqlParameter("@P_NAME", txtProductName.Text));
+                    cmd.Parameters.Add(new SqlParameter("@P_PRICE", txtProductPrice.Text));
+                    cmd.Parameters.Add(new SqlParameter("@C_ID", cboCategory.SelectedValue));
+                    cmd.Parameters.Add(new SqlParameter("@P_IMAGE", filePath));
+                    cmd.Parameters.Add(new SqlParameter("@P_DESC", rtfAddDesc.Text));
+                    cmd.Parameters.Add(new SqlParameter("@S_ID", cboSupplier.SelectedValue));
+                    cmd.Parameters.Add(new SqlParameter("@P_STATUS", cboProductStatus.Text));
+                    cmd.Parameters.Add(new SqlParameter("@INSTOCK", txtInStock.Text));
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        MessageBox.Show("Add product successful");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Product not added");
+                    }
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
             }
-            else
-            {
-                MessageBox.Show("Product not added");
+            else {
+                MessageBox.Show("Product ID or Product name is blank!!! Can not add new product!!!");
             }
-            con.Close();
         }
         string filePath = "";
         private void btnUploadImage_Click(object sender, EventArgs e)

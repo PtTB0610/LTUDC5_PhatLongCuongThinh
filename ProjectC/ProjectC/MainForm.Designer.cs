@@ -40,6 +40,7 @@
             this.mnuViewCustomer = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuViewBill = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuViewStatistic = new System.Windows.Forms.ToolStripMenuItem();
+            this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAddProduct = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAddSupplier = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +49,7 @@
             this.mnuAddBill = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAddStatistic = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAddCate = new System.Windows.Forms.ToolStripMenuItem();
-            this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,6 +148,13 @@
             this.mnuViewStatistic.Size = new System.Drawing.Size(180, 22);
             this.mnuViewStatistic.Text = "Statistic";
             // 
+            // userToolStripMenuItem
+            // 
+            this.userToolStripMenuItem.Name = "userToolStripMenuItem";
+            this.userToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.userToolStripMenuItem.Text = "User";
+            this.userToolStripMenuItem.Click += new System.EventHandler(this.userToolStripMenuItem_Click);
+            // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -156,7 +164,8 @@
             this.mnuAddCustomer,
             this.mnuAddBill,
             this.mnuAddStatistic,
-            this.mnuAddCate});
+            this.mnuAddCate,
+            this.userToolStripMenuItem1});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.addToolStripMenuItem.Text = "Add";
@@ -164,51 +173,53 @@
             // mnuAddProduct
             // 
             this.mnuAddProduct.Name = "mnuAddProduct";
-            this.mnuAddProduct.Size = new System.Drawing.Size(126, 22);
+            this.mnuAddProduct.Size = new System.Drawing.Size(180, 22);
             this.mnuAddProduct.Text = "Product";
+            this.mnuAddProduct.Click += new System.EventHandler(this.mnuAddProduct_Click);
             // 
             // mnuAddSupplier
             // 
             this.mnuAddSupplier.Name = "mnuAddSupplier";
-            this.mnuAddSupplier.Size = new System.Drawing.Size(126, 22);
+            this.mnuAddSupplier.Size = new System.Drawing.Size(180, 22);
             this.mnuAddSupplier.Text = "Supplier";
             // 
             // mnuAddEmployee
             // 
             this.mnuAddEmployee.Name = "mnuAddEmployee";
-            this.mnuAddEmployee.Size = new System.Drawing.Size(126, 22);
+            this.mnuAddEmployee.Size = new System.Drawing.Size(180, 22);
             this.mnuAddEmployee.Text = "Employee";
             // 
             // mnuAddCustomer
             // 
             this.mnuAddCustomer.Name = "mnuAddCustomer";
-            this.mnuAddCustomer.Size = new System.Drawing.Size(126, 22);
+            this.mnuAddCustomer.Size = new System.Drawing.Size(180, 22);
             this.mnuAddCustomer.Text = "Customer";
             // 
             // mnuAddBill
             // 
             this.mnuAddBill.Name = "mnuAddBill";
-            this.mnuAddBill.Size = new System.Drawing.Size(126, 22);
+            this.mnuAddBill.Size = new System.Drawing.Size(180, 22);
             this.mnuAddBill.Text = "Bill";
             // 
             // mnuAddStatistic
             // 
             this.mnuAddStatistic.Name = "mnuAddStatistic";
-            this.mnuAddStatistic.Size = new System.Drawing.Size(126, 22);
+            this.mnuAddStatistic.Size = new System.Drawing.Size(180, 22);
             this.mnuAddStatistic.Text = "Statistic";
             // 
             // mnuAddCate
             // 
             this.mnuAddCate.Name = "mnuAddCate";
-            this.mnuAddCate.Size = new System.Drawing.Size(126, 22);
+            this.mnuAddCate.Size = new System.Drawing.Size(180, 22);
             this.mnuAddCate.Text = "Category";
+            this.mnuAddCate.Click += new System.EventHandler(this.mnuAddCate_Click);
             // 
-            // userToolStripMenuItem
+            // userToolStripMenuItem1
             // 
-            this.userToolStripMenuItem.Name = "userToolStripMenuItem";
-            this.userToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.userToolStripMenuItem.Text = "User";
-            this.userToolStripMenuItem.Click += new System.EventHandler(this.userToolStripMenuItem_Click);
+            this.userToolStripMenuItem1.Name = "userToolStripMenuItem1";
+            this.userToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.userToolStripMenuItem1.Text = "User";
+            this.userToolStripMenuItem1.Click += new System.EventHandler(this.userToolStripMenuItem1_Click);
             // 
             // MainForm
             // 
@@ -258,5 +269,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuLogout;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
         private System.Windows.Forms.ToolStripMenuItem userToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem userToolStripMenuItem1;
     }
 }

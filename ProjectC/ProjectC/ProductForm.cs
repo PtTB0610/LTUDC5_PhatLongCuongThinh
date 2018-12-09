@@ -30,18 +30,9 @@ namespace ProjectC
         clsDatabase db = new clsDatabase();
         private void ProductForm_Load(object sender, EventArgs e)
         {
-            if (((MainForm)this.MdiParent).getUserType() != "Admin") {
-                btnUpdate.Enabled = false;
-                btnDelete.Enabled = false;
+            if (((MainForm)this.MdiParent).getUserType() == "User") {
                 cboProductStatus.Visible = false;
                 label9.Visible = false;
-                btnUpload.Enabled = false;
-                txtProductName.Enabled = false;
-                txtProductPrice.Enabled = false;
-                txtProductPrice.Enabled = false;
-                cboCategory.Enabled = false;
-                cboSupplier.Enabled = false;
-                txtInStock.Enabled = false;
             }
             cboCategory.DataSource = db.getTableData("CATEGORY");
             cboCategory.DisplayMember = "CATEGORY_NAME";
@@ -52,9 +43,9 @@ namespace ProjectC
             cboSupplier.ValueMember = "SUPPLIER_ID";
 
 
-            if (clsFormProvider.mainF.getUserType() == "Admin")
+            if (clsFormProvider.mainF.getUserType() == "User")
             {
-                dgvProduct.DataSource = getProductDataForAdmin();
+                getProductData();
                 dgvProduct.Columns[2].Visible = false;
                 dgvProduct.Columns[3].Visible = false;
                 dgvProduct.Columns[5].Visible = false;
@@ -62,7 +53,7 @@ namespace ProjectC
                 dgvProduct.Columns[8].Visible = false;
             }
             else {
-                dgvProduct.DataSource = getProductData();
+                getProductDataForAdmin();
                 dgvProduct.Columns[2].Visible = false;
                 dgvProduct.Columns[3].Visible = false;
                 dgvProduct.Columns[5].Visible = false;
@@ -76,56 +67,103 @@ namespace ProjectC
             this.Close();
         }
 
-
-        AddProductForm addPro;
         private void btnAddNew_Click(object sender, EventArgs e)
         {
-            this.Close();
-            //AddProductForm addPro = new AddProductForm();
-            //addPro.Show();
-            //addPro.MdiParent = clsFormProvider.mainF;
-            if (addPro != null)
+            if (txtProductID.Text != "" && txtProductName.Text != "")
             {
-                addPro.Show();
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SP_THEMDSPRODUCT", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@P_ID", txtProductID.Text));
+                    cmd.Parameters.Add(new SqlParameter("@P_NAME", txtProductName.Text));
+                    cmd.Parameters.Add(new SqlParameter("@P_PRICE", txtProductPrice.Text));
+                    cmd.Parameters.Add(new SqlParameter("@C_ID", cboCategory.SelectedValue));
+                    cmd.Parameters.Add(new SqlParameter("@P_IMAGE", filePath));
+                    cmd.Parameters.Add(new SqlParameter("@P_DESC", rtfDesc.Text));
+                    cmd.Parameters.Add(new SqlParameter("@S_ID", cboSupplier.SelectedValue));
+                    cmd.Parameters.Add(new SqlParameter("@P_STATUS", cboProductStatus.Text));
+                    cmd.Parameters.Add(new SqlParameter("@INSTOCK", txtInStock.Text));
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        MessageBox.Show("Add product successful");
+                        txtProductID.Clear();
+                        txtProductName.Clear();
+                        cboCategory.SelectedValue = 1;
+                        pbImage.Image = null;
+                        txtProductPrice.Clear();
+                        cboSupplier.SelectedValue = 1;
+                        txtInStock.Clear();
+                        rtfDesc.Clear();
+                        cboProductStatus.SelectedText = "";
+                        if (clsFormProvider.mainF.getUserType() == "User")
+                        {
+                            getProductData();
+                        }
+                        else if (clsFormProvider.mainF.getUserType() == "Admin" || clsFormProvider.mainF.getUserType() == "Manager")
+                        {
+                            getProductDataForAdmin();
+                        }
+                    }
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            else
+            else {
+                MessageBox.Show("Product ID or Product name is blank!!! Can not add new product!!!");
+            }
+        }
+
+        public void getProductDataForAdmin()
+        {
+            try
             {
-                addPro = new AddProductForm();
-                addPro.MdiParent = clsFormProvider.mainF;
-                addPro.Show();
-                addPro.FormClosing += addPro_FormClosing;
+                con.Close();
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SP_LAYTATCAPRODUCT", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                con.Close();
+                dgvProduct.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
-        public void addPro_FormClosing(object sender, FormClosingEventArgs e)
+        public void getProductData()
         {
-            addPro = null;
-        }
-
-        public DataTable getProductDataForAdmin() {
-            SqlCommand cmd = new SqlCommand("SP_LAYTATCAPRODUCT", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            return dt;
-        }
-
-        public DataTable getProductData()
-        {
-            SqlCommand cmd = new SqlCommand("SP_LAYDSPRODUCT", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            return dt;
+            try
+            {
+                con.Close();
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SP_LAYDSPRODUCT", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                con.Close();
+                dgvProduct.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         string filePath = "";
         private void btnUpload_Click(object sender, EventArgs e)
         {
             DialogResult result = openFileDialog1.ShowDialog();
-            if (result == DialogResult.OK) {
+            if (result == DialogResult.OK)
+            {
                 filePath = openFileDialog1.FileName;
                 pbImage.Image = Image.FromFile(@"" + filePath);
             }
@@ -137,7 +175,9 @@ namespace ProjectC
         }
 
         private void dgvProduct_CellClick(object sender, DataGridViewCellEventArgs e)
-        {           
+        {
+            btnAddNew.Enabled = false;
+            txtProductID.Enabled = false;
             if (!dgvProduct.Rows[dgvProduct.CurrentCell.RowIndex].IsNewRow)
             {
                 pbImage.Image = null;
@@ -161,13 +201,15 @@ namespace ProjectC
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            btnAddNew.Enabled = false;
+            txtProductID.Enabled = false;
             pbImage.Image = null;
             bool flag = false;
             con.Open();
-            SqlCommand cmd = new SqlCommand("sp_searchProductbyID",con);
+            SqlCommand cmd = new SqlCommand("sp_searchProductbyID", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(new SqlParameter("@P_ID",txtIDtoSearch.Text));
-            if((string)cmd.ExecuteScalar() == txtIDtoSearch.Text)
+            cmd.Parameters.Add(new SqlParameter("@P_ID", txtIDtoSearch.Text));
+            if ((string)cmd.ExecuteScalar() == txtIDtoSearch.Text)
             {
                 DataTable dt = new DataTable();
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -196,7 +238,8 @@ namespace ProjectC
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (txtProductID.Text != "" && cboProductStatus.Text != "inactive") {
+            if (txtProductID.Text != "" && cboProductStatus.Text != "inactive")
+            {
                 con.Open();
                 SqlCommand cmd = new SqlCommand("SP_XOAPRODUCT", con);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -206,60 +249,151 @@ namespace ProjectC
                     MessageBox.Show("Product delete successful!!");
                     if (clsFormProvider.mainF.getUserType() == "User")
                     {
-                        dgvProduct.DataSource = getProductData();
+                        getProductData();
                     }
-                    else {
-                        dgvProduct.DataSource = getProductDataForAdmin();
+                    else
+                    {
+                        getProductDataForAdmin();
                     }
                 }
                 con.Close();
-            } else if (txtProductID.Text != "" && cboProductStatus.Text == "inactive") {
+            }
+            else if (txtProductID.Text != "" && cboProductStatus.Text == "inactive")
+            {
                 MessageBox.Show("Product is already inactive!!");
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            try
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("SP_SUAPRODUCT",con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@P_ID", txtProductID.Text));
-                cmd.Parameters.Add(new SqlParameter("@P_NAME", txtProductName.Text));
-                cmd.Parameters.Add(new SqlParameter("@C_ID", cboCategory.SelectedValue));
-                cmd.Parameters.Add(new SqlParameter("@P_IMAGE", filePath));
-                cmd.Parameters.Add(new SqlParameter("@P_PRICE", txtProductPrice.Text));
-                cmd.Parameters.Add(new SqlParameter("@S_ID", cboSupplier.SelectedValue));
-                cmd.Parameters.Add(new SqlParameter("@INSTOCK", txtInStock.Text));
-                cmd.Parameters.Add(new SqlParameter("@P_DESC", rtfDesc.Text));
-                cmd.Parameters.Add(new SqlParameter("@P_STATUS", cboProductStatus.Text));
-                if (cmd.ExecuteNonQuery() > 0) {
-                    MessageBox.Show("Product updated successful!!!");
-                    if (clsFormProvider.mainF.getUserType() == "User")
+            DialogResult result = MessageBox.Show("Are you sure you want update the product info?", "Update Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes) {
+                if (txtProductName.Text != "")
+                {
+                    try
                     {
-                        dgvProduct.DataSource = getProductData();
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("SP_SUAPRODUCT", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@P_ID", txtProductID.Text));
+                        cmd.Parameters.Add(new SqlParameter("@P_NAME", txtProductName.Text));
+                        cmd.Parameters.Add(new SqlParameter("@C_ID", cboCategory.SelectedValue));
+                        cmd.Parameters.Add(new SqlParameter("@P_IMAGE", filePath));
+                        cmd.Parameters.Add(new SqlParameter("@P_PRICE", txtProductPrice.Text));
+                        cmd.Parameters.Add(new SqlParameter("@S_ID", cboSupplier.SelectedValue));
+                        cmd.Parameters.Add(new SqlParameter("@INSTOCK", txtInStock.Text));
+                        cmd.Parameters.Add(new SqlParameter("@P_DESC", rtfDesc.Text));
+                        cmd.Parameters.Add(new SqlParameter("@P_STATUS", cboProductStatus.Text));
+                        if (cmd.ExecuteNonQuery() > 0)
+                        {
+                            MessageBox.Show("Product updated successful!!!");
+                            txtProductID.Clear();
+                            txtProductName.Clear();
+                            cboCategory.SelectedValue = 1;
+                            pbImage.Image = null;
+                            txtProductPrice.Clear();
+                            cboSupplier.SelectedValue = 1;
+                            txtInStock.Clear();
+                            rtfDesc.Clear();
+                            cboProductStatus.SelectedText = "";
+                            if (clsFormProvider.mainF.getUserType() == "User")
+                            {
+                                getProductData();
+                            }
+                            else if (clsFormProvider.mainF.getUserType() == "Admin" || clsFormProvider.mainF.getUserType() == "Manager")
+                            {
+                                getProductDataForAdmin();
+                            }
+                        }
+                        btnAddNew.Enabled = true;
+                        con.Close();
                     }
-                    else {
-                        dgvProduct.DataSource = getProductDataForAdmin();
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
                     }
-                    txtProductID.Clear();
-                    txtProductName.Clear();
-                    cboCategory.SelectedValue = 1;
-                    pbImage.Image = null;
-                    txtProductPrice.Clear();
-                    cboSupplier.SelectedValue = 1;
-                    txtInStock.Clear();
-                    rtfDesc.Clear();
-                    cboProductStatus.SelectedText = "";
-                }              
+                }
+                else
+                {
+                    MessageBox.Show("Product name is blank!!! Can not update product infomation!!!");
+                }
             }
-            catch (Exception ex)
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            btnAddNew.Enabled = true;
+            txtProductID.Enabled = true;
+            txtProductID.Clear();
+            txtProductName.Clear();
+            txtProductPrice.Clear();
+            cboCategory.SelectedValue = 1;
+            cboSupplier.SelectedValue = 1;
+            txtInStock.Clear();
+            cboProductStatus.Text = "";
+            rtfDesc.Clear();
+            pbImage.Image = null;
+            txtProductID.Focus();
+        }
+
+        private void txtProductID_Leave(object sender, EventArgs e)
+        {
+            if (txtProductID.Text != "")
             {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("sp_searchProductbyID", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@P_ID", txtProductID.Text));
+                    if ((string)cmd.ExecuteScalar() == txtProductID.Text)
+                    {
+                        MessageBox.Show("This ID is already used!!! Please try different ID!!!");
+                        txtProductID.Clear();
+                        txtProductID.Focus();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    con.Close();
+                }
             }
-            finally {
-                con.Close();
+        }
+
+        private void txtProductName_Leave(object sender, EventArgs e)
+        {
+            if (txtProductName.Text != "")
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("sp_searchProductbyName", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@P_NAME", txtProductName.Text));
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        if (txtProductName.Text == reader["PRODUCT_NAME"].ToString())
+                        {
+                            MessageBox.Show("This product name is already used!!! Please try different product name!!!");
+                            txtProductName.Clear();
+                            txtProductName.Focus();
+                            break;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    con.Close();
+                }
             }
         }
     }

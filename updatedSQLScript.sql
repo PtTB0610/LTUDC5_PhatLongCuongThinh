@@ -433,3 +433,6 @@ select * from PRODUCT where PRODUCT_NAME = @P_NAME
 create proc sp_searchUserbyName (@U_NAME varchar(255))
 as
 select * from [dbo].[USER] where USER_NAME = @U_NAME
+--Tim CATEGORY bang ID
+create proc sp_searchCatebyID (@C_ID int)
+as select * from CATEGORY where CATEGORY_ID = @C_ID

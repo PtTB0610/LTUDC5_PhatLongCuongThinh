@@ -51,10 +51,6 @@ namespace ProjectC
         private void mneLogout_Click(object sender, EventArgs e)
         {
             Application.Restart();
-            //this.Hide();
-            //clsFormProvider.loginF.ShowDialog();
-            //lbUserType.Text = "";
-            //lbUserType.Text = clsFormProvider.loginF.getUserType();
         }
 
         private void mnuAccountInfo_Click(object sender, EventArgs e)
@@ -125,7 +121,72 @@ namespace ProjectC
         {
             if (getUserType() == "User") {
                 userToolStripMenuItem.Visible = false;
+                userToolStripMenuItem1.Visible = false;
+                mnuAddCate.Visible = false;
             }
+        }
+
+
+        AddCategory addCate;
+        private void mnuAddCate_Click(object sender, EventArgs e)
+        {
+            if (addCate != null)
+            {
+                addCate.Show();
+            }
+            else
+            {
+                addCate = new AddCategory();
+                addCate.MdiParent = clsFormProvider.mainF;
+                addCate.Show();
+                addCate.FormClosing += addCate_FormClosing;
+            }
+        }
+        public void addCate_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            addCate = null;
+        }
+
+        AddProductForm addPro;
+        private void mnuAddProduct_Click(object sender, EventArgs e)
+        {
+            if (addPro != null)
+            {
+                addPro.Show();
+            }
+            else
+            {
+                addPro = new AddProductForm();
+                addPro.MdiParent = clsFormProvider.mainF;
+                addPro.Show();
+                addPro.FormClosing += addPro_FormClosing;
+            }
+        }
+
+        public void addPro_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            addPro = null;
+        }
+
+        UserForm userForm;
+        private void userToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (userForm != null)
+            {
+                userForm.Show();
+            }
+            else
+            {
+                userForm = new UserForm();
+                userForm.MdiParent = clsFormProvider.mainF;
+                userForm.Show();
+                userForm.FormClosing += userForm_FormClosing;
+            }
+        }
+
+        public void userForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            userForm = null;
         }
     }
 }

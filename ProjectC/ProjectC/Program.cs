@@ -26,6 +26,7 @@ namespace ProjectC
             //Application.Run(new SupplierForm());
             // Application.Run(clsFormProvider.mainF);
             //Application.Run(new UserInfoForm());
+            //Application.Run(new AddCategory());
         }
     }
 }

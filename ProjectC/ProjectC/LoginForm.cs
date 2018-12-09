@@ -18,16 +18,17 @@ namespace ProjectC
             InitializeComponent();
         }
         string userType;
-        string userName;
         bool flag = false;
         private void btnLogin_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
+            con.Open();
             SqlCommand cmd = new SqlCommand("SP_LAYDSUSER", con);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sda.Fill(dt);
+            con.Close();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 DataRow dr = dt.Rows[i];

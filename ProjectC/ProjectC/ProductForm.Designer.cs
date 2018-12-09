@@ -56,6 +56,7 @@
             this.cboProductStatus = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -185,15 +186,16 @@
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(208, 25);
             this.txtProductName.TabIndex = 18;
+            this.txtProductName.Leave += new System.EventHandler(this.txtProductName_Leave);
             // 
             // txtProductID
             // 
             this.txtProductID.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtProductID.Enabled = false;
             this.txtProductID.Location = new System.Drawing.Point(185, 34);
             this.txtProductID.Name = "txtProductID";
             this.txtProductID.Size = new System.Drawing.Size(208, 25);
             this.txtProductID.TabIndex = 17;
+            this.txtProductID.Leave += new System.EventHandler(this.txtProductID_Leave);
             // 
             // label6
             // 
@@ -271,7 +273,7 @@
             // txtIDtoSearch
             // 
             this.txtIDtoSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtIDtoSearch.Location = new System.Drawing.Point(185, 303);
+            this.txtIDtoSearch.Location = new System.Drawing.Point(185, 310);
             this.txtIDtoSearch.Name = "txtIDtoSearch";
             this.txtIDtoSearch.Size = new System.Drawing.Size(208, 25);
             this.txtIDtoSearch.TabIndex = 35;
@@ -299,6 +301,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.btnUpload);
             this.groupBox1.Controls.Add(this.cboProductStatus);
             this.groupBox1.Controls.Add(this.label9);
@@ -334,7 +337,7 @@
             // btnUpload
             // 
             this.btnUpload.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnUpload.Location = new System.Drawing.Point(833, 236);
+            this.btnUpload.Location = new System.Drawing.Point(808, 228);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(108, 34);
             this.btnUpload.TabIndex = 41;
@@ -350,7 +353,7 @@
             this.cboProductStatus.Items.AddRange(new object[] {
             "active",
             "inactive"});
-            this.cboProductStatus.Location = new System.Drawing.Point(185, 264);
+            this.cboProductStatus.Location = new System.Drawing.Point(185, 272);
             this.cboProductStatus.Name = "cboProductStatus";
             this.cboProductStatus.Size = new System.Drawing.Size(208, 25);
             this.cboProductStatus.TabIndex = 40;
@@ -359,7 +362,7 @@
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(24, 268);
+            this.label9.Location = new System.Drawing.Point(24, 275);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(118, 18);
             this.label9.TabIndex = 39;
@@ -368,6 +371,17 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btnClear
+            // 
+            this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnClear.Location = new System.Drawing.Point(875, 266);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(108, 34);
+            this.btnClear.TabIndex = 42;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // ProductForm
             // 
@@ -426,5 +440,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button btnClear;
     }
 }
