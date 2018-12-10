@@ -69,6 +69,7 @@
             this.txtCateID.Name = "txtCateID";
             this.txtCateID.Size = new System.Drawing.Size(197, 20);
             this.txtCateID.TabIndex = 3;
+            this.txtCateID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCateID_KeyPress);
             this.txtCateID.Leave += new System.EventHandler(this.txtCateID_Leave);
             // 
             // txtCateName
@@ -77,6 +78,7 @@
             this.txtCateName.Name = "txtCateName";
             this.txtCateName.Size = new System.Drawing.Size(197, 20);
             this.txtCateName.TabIndex = 4;
+            this.txtCateName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCateName_KeyPress);
             // 
             // btnAdd
             // 
@@ -86,6 +88,7 @@
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label3
             // 
@@ -120,6 +123,7 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Enabled = false;
             this.btnUpdate.Location = new System.Drawing.Point(126, 133);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);

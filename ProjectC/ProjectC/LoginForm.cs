@@ -38,6 +38,7 @@ namespace ProjectC
                     userType = (string)dr["USER_TYPE"];
                     flag = true;
                     clsFormProvider.mainF.setUserName((string)dr["USER_NAME"]);
+                    clsFormProvider.mainF.setUserPass((string)dr["USER_PASS"]);
                     clsFormProvider.mainF.Show();
                 }
             }

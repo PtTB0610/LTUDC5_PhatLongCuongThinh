@@ -28,37 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cboUserType = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtUserPass = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.btnRegister = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // cboUserType
-            // 
-            this.cboUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboUserType.FormattingEnabled = true;
-            this.cboUserType.Items.AddRange(new object[] {
-            "Admin",
-            "Manager",
-            "User"});
-            this.cboUserType.Location = new System.Drawing.Point(127, 118);
-            this.cboUserType.Name = "cboUserType";
-            this.cboUserType.Size = new System.Drawing.Size(234, 21);
-            this.cboUserType.TabIndex = 37;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 117);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "User Type";
             // 
             // txtUserPass
             // 
@@ -74,7 +50,6 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(234, 20);
             this.txtUserName.TabIndex = 34;
-            this.txtUserName.Leave += new System.EventHandler(this.txtUserName_Leave);
             // 
             // label10
             // 
@@ -94,19 +69,19 @@
             this.label11.TabIndex = 30;
             this.label11.Text = "User Name";
             // 
-            // btnRegister
+            // btnUpdate
             // 
-            this.btnRegister.Location = new System.Drawing.Point(127, 145);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(95, 31);
-            this.btnRegister.TabIndex = 38;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.UseVisualStyleBackColor = true;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            this.btnUpdate.Location = new System.Drawing.Point(127, 106);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(95, 31);
+            this.btnUpdate.TabIndex = 38;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(228, 145);
+            this.btnExit.Location = new System.Drawing.Point(228, 106);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(95, 31);
             this.btnExit.TabIndex = 39;
@@ -117,12 +92,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(411, 202);
+            this.ClientSize = new System.Drawing.Size(411, 170);
             this.ControlBox = false;
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnRegister);
-            this.Controls.Add(this.cboUserType);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtUserPass);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.label10);
@@ -133,19 +106,18 @@
             this.ShowInTaskbar = false;
             this.Text = "User Register";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserForm_FormClosing);
+            this.Load += new System.EventHandler(this.UserForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox cboUserType;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtUserPass;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnExit;
     }
 }

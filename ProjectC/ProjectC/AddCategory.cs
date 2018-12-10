@@ -17,16 +17,17 @@ namespace ProjectC
         {
             InitializeComponent();
         }
-
+        //Đường dẫn database
         SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        //Lấy dữ liệu từ database
         private void getCateData() {
             try
             {
+                con.Close();
                 con.Open();
                 SqlCommand cmd = new SqlCommand("SP_LAYTATCACATEGORY", con);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -45,7 +46,7 @@ namespace ProjectC
                 con.Close();
             }
         }
-
+        //Load Form
         private void AddCategory_Load(object sender, EventArgs e)
         {
             getCateData();
@@ -54,10 +55,11 @@ namespace ProjectC
                 cboCateStatus.Visible = false;
             }
         }
-
+        //Sự kiện khi nhấn vào 1 ô trong Datagridview
         private void dgvData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnAdd.Enabled = false;
+            btnUpdate.Enabled = true;
             txtCateID.Enabled = false;
             if (dgvData.SelectedRows.Count > 0) {
                 txtCateID.Text = dgvData.SelectedCells[0].Value.ToString();
@@ -65,16 +67,18 @@ namespace ProjectC
                 cboCateStatus.Text = dgvData.SelectedCells[2].Value.ToString();
             }
         }
-
+        //Trả form về trạng thái khi load lần đầu
         private void btnClear_Click(object sender, EventArgs e)
         {
             btnAdd.Enabled = true;
+            btnUpdate.Enabled = false;
             txtCateID.Enabled = true;
             txtCateID.Clear();
             txtCateName.Clear();
+            txtSearchID.Clear();
             cboCateStatus.Text = "";
         }
-
+        //Kiểm trả ID đã có trong database chưa
         private void txtCateID_Leave(object sender, EventArgs e)
         {
             try
@@ -102,13 +106,11 @@ namespace ProjectC
                 con.Close();
             }
         }
-
+        //Sự kiện khi tìm kiếm
         private void btnSearch_Click(object sender, EventArgs e)
         {
             try
             {
-                btnAdd.Enabled = false;
-                txtCateID.Enabled = false;
                 if (txtSearchID.Text != "")
                 {
                     con.Open();
@@ -123,6 +125,10 @@ namespace ProjectC
                         txtCateID.Text = dt.Rows[0]["CATEGORY_ID"].ToString();
                         txtCateName.Text = dt.Rows[0]["CATEGORY_NAME"].ToString();
                         cboCateStatus.Text = dt.Rows[0]["CATEGORY_STATUS"].ToString();
+                        btnAdd.Enabled = false;
+                        txtCateID.Enabled = false;
+                        btnUpdate.Enabled = true;
+                        txtSearchID.Clear();
                     }
                 }
             }
@@ -156,6 +162,8 @@ namespace ProjectC
                         cboCateStatus.SelectedText = "";
                         btnAdd.Enabled = true;
                         txtCateID.Enabled = true;
+                        btnUpdate.Enabled = false;
+                        getCateData();
                     }
                 }
                 catch (Exception ex)
@@ -166,6 +174,50 @@ namespace ProjectC
                 {
                     con.Close();
                 }
+            }
+        }
+
+        private void txtCateName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '\b' || e.KeyChar == ' '))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCateID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SP_THEMCATEGORY", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@C_ID",txtCateID.Text));
+                cmd.Parameters.Add(new SqlParameter("@C_NAME",txtCateName.Text));
+                cmd.Parameters.Add(new SqlParameter("@C_STATUS",cboCateStatus.Text));
+                if (cmd.ExecuteNonQuery() > 0) {
+                    MessageBox.Show("Category added successful!!!");
+                    txtCateID.Clear();
+                    txtCateName.Clear();
+                    cboCateStatus.Text = "";
+                    getCateData();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
             }
         }
     }

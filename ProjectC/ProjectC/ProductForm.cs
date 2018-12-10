@@ -34,11 +34,11 @@ namespace ProjectC
                 cboProductStatus.Visible = false;
                 label9.Visible = false;
             }
-            cboCategory.DataSource = db.getTableData("CATEGORY");
+            cboCategory.DataSource = getCategoryTable();
             cboCategory.DisplayMember = "CATEGORY_NAME";
             cboCategory.ValueMember = "CATEGORY_ID";
 
-            cboSupplier.DataSource = db.getTableData("SUPPLIER");
+            cboSupplier.DataSource = getSupplierTable();
             cboSupplier.DisplayMember = "SUPPLIER_NAME";
             cboSupplier.ValueMember = "SUPPLIER_ID";
 
@@ -61,12 +61,12 @@ namespace ProjectC
                 dgvProduct.Columns[8].Visible = false;
             }
         }
-
+        //Đóng form
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        //Thêm mới product
         private void btnAddNew_Click(object sender, EventArgs e)
         {
             if (txtProductID.Text != "" && txtProductName.Text != "")
@@ -117,7 +117,7 @@ namespace ProjectC
                 MessageBox.Show("Product ID or Product name is blank!!! Can not add new product!!!");
             }
         }
-
+        //Lấy dữ liệu từ database
         public void getProductDataForAdmin()
         {
             try
@@ -137,7 +137,7 @@ namespace ProjectC
                 MessageBox.Show(ex.Message);
             }
         }
-
+        //Lấy dữ liệu từ database
         public void getProductData()
         {
             try
@@ -158,7 +158,8 @@ namespace ProjectC
             }
         }
 
-        string filePath = "";
+        string filePath = "";//đường dẫn file hình ảnh
+        //Upload hình ảnh
         private void btnUpload_Click(object sender, EventArgs e)
         {
             DialogResult result = openFileDialog1.ShowDialog();
@@ -178,6 +179,8 @@ namespace ProjectC
         {
             btnAddNew.Enabled = false;
             txtProductID.Enabled = false;
+            btnUpdate.Enabled = true;
+            btnDelete.Enabled = true;
             if (!dgvProduct.Rows[dgvProduct.CurrentCell.RowIndex].IsNewRow)
             {
                 pbImage.Image = null;
@@ -202,6 +205,7 @@ namespace ProjectC
         private void btnSearch_Click(object sender, EventArgs e)
         {
             btnAddNew.Enabled = false;
+            btnUpdate.Enabled = true;
             txtProductID.Enabled = false;
             pbImage.Image = null;
             bool flag = false;
@@ -247,6 +251,19 @@ namespace ProjectC
                 if (cmd.ExecuteNonQuery() > 0)
                 {
                     MessageBox.Show("Product delete successful!!");
+                    txtProductID.Clear();
+                    txtProductName.Clear();
+                    cboCategory.SelectedValue = 1;
+                    pbImage.Image = null;
+                    txtProductPrice.Clear();
+                    cboSupplier.SelectedValue = 1;
+                    txtInStock.Clear();
+                    rtfDesc.Clear();
+                    cboProductStatus.SelectedText = "";
+                    btnUpdate.Enabled = false;
+                    btnDelete.Enabled = false;
+                    txtProductID.Enabled = true;
+                    btnAddNew.Enabled = true;
                     if (clsFormProvider.mainF.getUserType() == "User")
                     {
                         getProductData();
@@ -281,7 +298,7 @@ namespace ProjectC
                         cmd.Parameters.Add(new SqlParameter("@P_IMAGE", filePath));
                         cmd.Parameters.Add(new SqlParameter("@P_PRICE", txtProductPrice.Text));
                         cmd.Parameters.Add(new SqlParameter("@S_ID", cboSupplier.SelectedValue));
-                        cmd.Parameters.Add(new SqlParameter("@INSTOCK", txtInStock.Text));
+                        cmd.Parameters.Add(new SqlParameter("@INSTOCK", Convert.ToInt32(txtInStock.Text)));
                         cmd.Parameters.Add(new SqlParameter("@P_DESC", rtfDesc.Text));
                         cmd.Parameters.Add(new SqlParameter("@P_STATUS", cboProductStatus.Text));
                         if (cmd.ExecuteNonQuery() > 0)
@@ -296,6 +313,9 @@ namespace ProjectC
                             txtInStock.Clear();
                             rtfDesc.Clear();
                             cboProductStatus.SelectedText = "";
+                            btnUpdate.Enabled = false;
+                            btnDelete.Enabled = false;
+                            txtProductID.Enabled = true;
                             if (clsFormProvider.mainF.getUserType() == "User")
                             {
                                 getProductData();
@@ -324,6 +344,8 @@ namespace ProjectC
         {
             btnAddNew.Enabled = true;
             txtProductID.Enabled = true;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
             txtProductID.Clear();
             txtProductName.Clear();
             txtProductPrice.Clear();
@@ -394,6 +416,52 @@ namespace ProjectC
                 {
                     con.Close();
                 }
+            }
+        }
+
+        private DataTable getCategoryTable() {
+            con.Close();
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SP_LAYDSCATEGORY", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            con.Close();
+            return dt;
+        }
+
+        private DataTable getSupplierTable()
+        {
+            con.Close();
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SP_LAYDSSUPPLIER", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            con.Close();
+            return dt;
+        }
+
+        private void txtProductPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.' || e.KeyChar == '\b'))
+            {
+                e.Handled = true;
+            }
+            TextBox txtDecimal = sender as TextBox;
+            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtInStock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '\b'))
+            {
+                e.Handled = true;
             }
         }
     }

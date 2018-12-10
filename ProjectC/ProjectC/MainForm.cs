@@ -19,6 +19,7 @@ namespace ProjectC
 
         string userType = clsFormProvider.loginF.getUserType();
         string userName;
+        string userPass;
         public string getUserType()
         {
             return userType;
@@ -34,11 +35,21 @@ namespace ProjectC
             return this.userName;
         }
 
+        public string getUserPass()
+        {
+            return this.userPass;
+        }
+
+        public void setUserPass(string userPass)
+        {
+            this.userPass = userPass;
+        }
+
         public void setUserName(string userName)
         {
             this.userName = userName;
         }
-
+        //Thông báo hỏi trước khi thoát
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -47,24 +58,12 @@ namespace ProjectC
                 e.Cancel = true;
             }
         }
-
-        private void mneLogout_Click(object sender, EventArgs e)
-        {
-            Application.Restart();
-        }
-
-        private void mnuAccountInfo_Click(object sender, EventArgs e)
-        {
-            UserInfoForm UIForm = new UserInfoForm();
-            UIForm.MdiParent = this;
-            UIForm.Show();
-        }
-
+        //CHức năng thoát
         private void mnuExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        //Chỉ cho phép tạo 1 form Product
         ProductForm productForm;
         private void mnuViewProduct_Click(object sender, EventArgs e)
         {
@@ -81,7 +80,6 @@ namespace ProjectC
                 productForm.FormClosing += productForm_FormClosing;
             }
         }
-
         public void productForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             productForm = null;
@@ -96,7 +94,7 @@ namespace ProjectC
             employeeform.Show();
 
         }
-        //Chi cho phep tao 1 UserInfoForm
+        //Chỉ cho phép tạo 1 Form UserInfoForm
         UserInfoForm userInfoForm;
         private void userToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -120,13 +118,11 @@ namespace ProjectC
         private void MainForm_Load(object sender, EventArgs e)
         {
             if (getUserType() == "User") {
-                userToolStripMenuItem.Visible = false;
-                userToolStripMenuItem1.Visible = false;
-                mnuAddCate.Visible = false;
+                managementToolStripMenuItem.Visible = false;
             }
         }
 
-
+        //Chỉ cho phép tạo 1 Form AddCategory
         AddCategory addCate;
         private void mnuAddCate_Click(object sender, EventArgs e)
         {
@@ -147,29 +143,35 @@ namespace ProjectC
             addCate = null;
         }
 
-        AddProductForm addPro;
-        private void mnuAddProduct_Click(object sender, EventArgs e)
+        //Chỉ cho phép tạo 1 Supplier Form
+        SupplierForm supForm;
+        private void mnuAddSupplier_Click(object sender, EventArgs e)
         {
-            if (addPro != null)
+            if (supForm != null)
             {
-                addPro.Show();
+                supForm.Show();
             }
             else
             {
-                addPro = new AddProductForm();
-                addPro.MdiParent = clsFormProvider.mainF;
-                addPro.Show();
-                addPro.FormClosing += addPro_FormClosing;
+                supForm = new SupplierForm();
+                supForm.MdiParent = clsFormProvider.mainF;
+                supForm.Show();
+                supForm.FormClosing += supForm_FormClosing;
             }
         }
-
-        public void addPro_FormClosing(object sender, FormClosingEventArgs e)
+        public void supForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            addPro = null;
+            supForm = null;
         }
 
+        private void mnuLogout_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        //Chỉ cho phép tạo 1 User Form
         UserForm userForm;
-        private void userToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void mnuAccountInfo_Click(object sender, EventArgs e)
         {
             if (userForm != null)
             {
@@ -183,10 +185,9 @@ namespace ProjectC
                 userForm.FormClosing += userForm_FormClosing;
             }
         }
-
         public void userForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            userForm = null;
+            supForm = null;
         }
     }
 }

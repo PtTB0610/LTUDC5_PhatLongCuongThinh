@@ -18,24 +18,21 @@ namespace ProjectC
         }
 
         SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
-        private void btnRegister_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtUserName.Text != "" && txtUserPass.Text != "")
+            if (txtUserPass.Text != "")
             {
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SP_THEMDSUSER", con);
+                    SqlCommand cmd = new SqlCommand("SP_SUAUSER", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@U_NAME", txtUserName.Text));
                     cmd.Parameters.Add(new SqlParameter("@U_PASS", txtUserPass.Text));
-                    cmd.Parameters.Add(new SqlParameter("@U_TYPE", cboUserType.Text));
+                    cmd.Parameters.Add(new SqlParameter("@U_TYPE", clsFormProvider.mainF.getUserType()));
                     if (cmd.ExecuteNonQuery() > 0)
                     {
-                        MessageBox.Show("User register successfull!!!");
-                        txtUserName.Clear();
-                        txtUserPass.Clear();
-                        cboUserType.SelectedText = "";
+                        MessageBox.Show("Account password update successfull!!!");
                     }
                 }
                 catch (Exception ex)
@@ -48,36 +45,7 @@ namespace ProjectC
                 }
             }
             else {
-                MessageBox.Show("The Username or Password is blank. Not enough infomation to create a new user!!!");
-            }
-        }
-
-        private void txtUserName_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                if (txtUserName.Text != "")
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("sp_searchUserbyName", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@U_NAME", txtUserName.Text));
-                    if ((string)cmd.ExecuteScalar() == txtUserName.Text)
-                    {
-                        MessageBox.Show("This Username is already used!!! Please try different Username!!!");
-                        txtUserName.Clear();
-                        txtUserName.Focus();
-                    }
-                    con.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
+                MessageBox.Show("The Password is blank. Not enough infomation to update!!!");
             }
         }
 
@@ -88,6 +56,13 @@ namespace ProjectC
             {
                 e.Cancel = true;
             }
+        }
+
+        private void UserForm_Load(object sender, EventArgs e)
+        {
+            txtUserName.Text = clsFormProvider.mainF.getUserName();
+            txtUserPass.Text = clsFormProvider.mainF.getUserPass();
+            txtUserName.Enabled = false;
         }
     }
 }

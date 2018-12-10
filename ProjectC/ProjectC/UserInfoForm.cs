@@ -21,6 +21,8 @@ namespace ProjectC
         SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
         private void UserInfoForm_Load(object sender, EventArgs e)
         {
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
             dgvData.DataSource = getUserTable();
             dgvData.Columns[1].Visible = false;
             if (clsFormProvider.mainF.getUserType() == "Manager") {
@@ -51,7 +53,7 @@ namespace ProjectC
 
         private void btnAddNew_Click(object sender, EventArgs e)
         {
-            if (txtUserName.Text != "" && txtUserPass.Text != "")
+            if (txtUserName.Text != "" && txtUserPass.Text != "" && cboUserType.Text != "")
             {
                 try
                 {
@@ -80,7 +82,7 @@ namespace ProjectC
                 }
             }
             else {
-                MessageBox.Show("The Username or Password is blank. Not enough infomation to create a new user!!!");
+                MessageBox.Show("The Username, Password or User type is blank. Not enough infomation to create a new user!!!");
             }
         }
 
@@ -118,6 +120,8 @@ namespace ProjectC
                         cboUserType.Text = "";
                         btnAddNew.Enabled = true;
                         txtUserName.Enabled = true;
+                        btnUpdate.Enabled = false;
+                        btnDelete.Enabled = false;
                     }
                 }
                 catch (Exception ex)
@@ -138,15 +142,24 @@ namespace ProjectC
         {
             try
             {
+                btnUpdate.Enabled = true;
                 btnAddNew.Enabled = false;
-                txtUserName.Enabled = false;
+                txtUserName.Enabled = false;               
+                btnDelete.Enabled = true;
                 if (!dgvData.Rows[dgvData.CurrentCell.RowIndex].IsNewRow)
                 {
                     if (dgvData.SelectedRows.Count > 0)
                     {
                         txtUserName.Text = dgvData.SelectedCells[0].Value.ToString();
                         txtUserPass.Text = dgvData.SelectedCells[1].Value.ToString();
-                        cboUserType.Text = dgvData.SelectedCells[2].Value.ToString();
+                        if (clsFormProvider.mainF.getUserType() == "Manager" && dgvData.SelectedCells[2].Value.ToString() == "Admin")
+                        {
+                            btnUpdate.Enabled = false;
+                            btnDelete.Enabled = false;
+                        }
+                        else {
+                            cboUserType.Text = dgvData.SelectedCells[2].Value.ToString();
+                        }
                     }
                 }
             }
@@ -189,10 +202,76 @@ namespace ProjectC
         private void btnClear_Click(object sender, EventArgs e)
         {
             btnAddNew.Enabled = true;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
             txtUserName.Enabled = true;
             txtUserName.Clear();
             txtUserPass.Clear();
             cboUserType.SelectedText = "";
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to delete user?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes && txtUserName.Text != "")
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SP_XOAUSER", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@U_NAME", txtUserName.Text));
+                    if (cmd.ExecuteNonQuery() > 0) {
+                        MessageBox.Show("User deleted!!!");
+                        txtUserName.Clear();
+                        txtUserPass.Clear();
+                        dgvData.DataSource = getUserTable();
+                        btnUpdate.Enabled = false;
+                        btnDelete.Enabled = false;
+                        btnAddNew.Enabled = true;
+                        txtUserName.Enabled = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("sp_searchUserbyName", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@U_NAME",txtSearchName.Text));
+                if ((string)cmd.ExecuteScalar() == txtSearchName.Text) {
+                    btnAddNew.Enabled = false;
+                    btnUpdate.Enabled = true;
+                    btnDelete.Enabled = true;
+                    txtUserName.Enabled = false;
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+                    txtUserName.Text = dt.Rows[0]["USER_NAME"].ToString();
+                    txtUserPass.Text = dt.Rows[0]["USER_PASS"].ToString();
+                    cboUserType.Text = dt.Rows[0]["USER_TYPE"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
     }
 }

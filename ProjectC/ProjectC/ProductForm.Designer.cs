@@ -52,11 +52,11 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnClear = new System.Windows.Forms.Button();
             this.btnUpload = new System.Windows.Forms.Button();
             this.cboProductStatus = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -66,15 +66,17 @@
             // 
             this.pbImage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbImage.Location = new System.Drawing.Point(808, 72);
+            this.pbImage.Location = new System.Drawing.Point(833, 72);
             this.pbImage.Name = "pbImage";
             this.pbImage.Size = new System.Drawing.Size(150, 150);
+            this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImage.TabIndex = 2;
             this.pbImage.TabStop = false;
             // 
             // btnUpdate
             // 
             this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnUpdate.Enabled = false;
             this.btnUpdate.Location = new System.Drawing.Point(647, 303);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(108, 34);
@@ -86,6 +88,7 @@
             // btnDelete
             // 
             this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDelete.Enabled = false;
             this.btnDelete.Location = new System.Drawing.Point(761, 303);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(108, 34);
@@ -117,9 +120,11 @@
             // 
             this.txtInStock.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtInStock.Location = new System.Drawing.Point(185, 233);
+            this.txtInStock.MaxLength = 9;
             this.txtInStock.Name = "txtInStock";
             this.txtInStock.Size = new System.Drawing.Size(208, 25);
             this.txtInStock.TabIndex = 27;
+            this.txtInStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInStock_KeyPress);
             // 
             // label5
             // 
@@ -175,9 +180,11 @@
             // 
             this.txtProductPrice.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtProductPrice.Location = new System.Drawing.Point(185, 113);
+            this.txtProductPrice.MaxLength = 15;
             this.txtProductPrice.Name = "txtProductPrice";
             this.txtProductPrice.Size = new System.Drawing.Size(208, 25);
             this.txtProductPrice.TabIndex = 19;
+            this.txtProductPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductPrice_KeyPress);
             // 
             // txtProductName
             // 
@@ -295,9 +302,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(24, 310);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(140, 18);
+            this.label8.Size = new System.Drawing.Size(130, 18);
             this.label8.TabIndex = 37;
-            this.label8.Text = "Find Product by ID :";
+            this.label8.Text = "Find Product by ID";
             // 
             // groupBox1
             // 
@@ -334,10 +341,21 @@
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             // 
+            // btnClear
+            // 
+            this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnClear.Location = new System.Drawing.Point(761, 263);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(108, 34);
+            this.btnClear.TabIndex = 42;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // btnUpload
             // 
             this.btnUpload.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnUpload.Location = new System.Drawing.Point(808, 228);
+            this.btnUpload.Location = new System.Drawing.Point(875, 263);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(108, 34);
             this.btnUpload.TabIndex = 41;
@@ -364,24 +382,13 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(24, 275);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(118, 18);
+            this.label9.Size = new System.Drawing.Size(103, 18);
             this.label9.TabIndex = 39;
-            this.label9.Text = "Product Status : ";
+            this.label9.Text = "Product Status";
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // btnClear
-            // 
-            this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnClear.Location = new System.Drawing.Point(875, 266);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(108, 34);
-            this.btnClear.TabIndex = 42;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // ProductForm
             // 
