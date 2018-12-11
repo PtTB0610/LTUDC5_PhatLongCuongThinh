@@ -48,15 +48,12 @@ GO
 
 
 
-CREATE TABLE [dbo].[BILL] (
+CCREATE TABLE [dbo].[BILL] (
 			[BILL_ID] [nvarchar] (255) PRIMARY KEY,
 			[BILL_DATE] [datetime],
 			[CUSTOMER_ID] [nvarchar] (255),
-			[CUSTOMER_NAME] [nvarchar] (255),
 			[PRODUCT_ID] [varchar] (255),
-			[PRODUCT_NAME] [nvarchar] (255),
 			[EMPLOYEE_ID] [varchar] (255),
-			[EMPLOYEE_NAME] [nvarchar] (255),
 			[PAYMENT_METHOD_ID][nvarchar] (255),			
 )
 
@@ -118,11 +115,7 @@ ALTER TABLE [dbo].[BILL]
 ADD FOREIGN KEY (CUSTOMER_ID) REFERENCES CUSTOMER(CUSTOMER_ID),
 			FOREIGN KEY (PRODUCT_ID) REFERENCES PRODUCT(PRODUCT_ID),
 			FOREIGN KEY (EMPLOYEE_ID) REFERENCES EMPLOYEE(EMPLOYEE_ID),
-			FOREIGN KEY (CUSTOMER_NAME) REFERENCES CUSTOMER(CUSTOMER_NAME),
-			FOREIGN KEY (PRODUCT_NAME) REFERENCES PRODUCT(PRODUCT_NAME),
-			FOREIGN KEY (EMPLOYEE_NAME) REFERENCES EMPLOYEE(EMPLOYEE_NAME),
 			FOREIGN KEY (PAYMENT_METHOD_ID) REFERENCES PAYMENT(PAYMENT_ID);
-
 			
 ALTER TABLE [dbo].[EMPLOYEE]
 ADD CONSTRAINT chk_EMPphone CHECK (EMPLOYEE_PHONE NOT LIKE '%[^0-9]%');
@@ -242,10 +235,10 @@ SELECT * FROM [dbo].BILL
 
 --them danh sach trong hoa don
 GO
-CREATE PROC sp_ThemDSBILL(@billID nvarchar (255), @billDATE datetime, @cusID nvarchar (255), @cusName nvarchar (255),@proID varchar (255),@proName nvarchar (255), @empID varchar (255), @emplName nvarchar (255), @payMethod nvarchar (255))
+CREATE PROC sp_ThemDSBILL(@billID nvarchar (255), @billDATE datetime, @cusID nvarchar (255),@proID varchar (255), @empID varchar (255), @payMethod nvarchar (255))
 as
-INSERT INTO [dbo].BILL(BILL_ID,BILL_DATE, CUSTOMER_ID,CUSTOMER_NAME,PRODUCT_ID,PRODUCT_NAME,EMPLOYEE_ID,EMPLOYEE_NAME,PAYMENT_METHOD_ID)
-VALUES (@billID, @billDATE, @cusID, @cusName, @proID, @proName, @empID, @emplName, @payMethod)
+INSERT INTO [dbo].BILL(BILL_ID,BILL_DATE, CUSTOMER_ID,PRODUCT_ID,EMPLOYEE_ID,PAYMENT_METHOD_ID)
+VALUES (@billID, @billDATE, @cusID, @proID, @empID, @payMethod)
 
 --xoa danh sach cua bang hoa don
 GO
