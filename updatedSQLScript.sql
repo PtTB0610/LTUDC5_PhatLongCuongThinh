@@ -313,10 +313,10 @@ VALUES (@pay_id, @pay_name, @discount)
  
 -- SP Xoa PAYMENT
 GO
-CREATE PROC sp_XoaPAYMENT(@cus_id nvarchar(255)) 
+CREATE PROC sp_XoaPAYMENT(@pay_id nvarchar(255)) 
 AS
 DELETE FROM PAYMENT
-WHERE PAYMENT_ID = @cus_id
+WHERE PAYMENT_ID = @pay_id
 
 
 -- SP Sua PAYMENT
