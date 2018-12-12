@@ -49,6 +49,7 @@
             this.mnuAddCate = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAddSupplier = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuUser = new System.Windows.Forms.ToolStripMenuItem();
+            this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +63,7 @@
             this.managementToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1067, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1067, 28);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -73,27 +74,27 @@
             this.mnuLogout,
             this.mnuExit});
             this.mnuMenu.Name = "mnuMenu";
-            this.mnuMenu.Size = new System.Drawing.Size(50, 20);
+            this.mnuMenu.Size = new System.Drawing.Size(58, 24);
             this.mnuMenu.Text = "Menu";
             // 
             // mnuAccountInfo
             // 
             this.mnuAccountInfo.Name = "mnuAccountInfo";
-            this.mnuAccountInfo.Size = new System.Drawing.Size(180, 22);
+            this.mnuAccountInfo.Size = new System.Drawing.Size(168, 26);
             this.mnuAccountInfo.Text = "Account Info";
             this.mnuAccountInfo.Click += new System.EventHandler(this.mnuAccountInfo_Click);
             // 
             // mnuLogout
             // 
             this.mnuLogout.Name = "mnuLogout";
-            this.mnuLogout.Size = new System.Drawing.Size(180, 22);
+            this.mnuLogout.Size = new System.Drawing.Size(168, 26);
             this.mnuLogout.Text = "Logout";
             this.mnuLogout.Click += new System.EventHandler(this.mnuLogout_Click);
             // 
             // mnuExit
             // 
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(180, 22);
+            this.mnuExit.Size = new System.Drawing.Size(168, 26);
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
@@ -105,47 +106,48 @@
             this.mnuViewEmployee,
             this.mnuViewCustomer,
             this.mnuViewBill,
-            this.mnuViewStatistic});
+            this.mnuViewStatistic,
+            this.paymentToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // mnuViewProduct
             // 
             this.mnuViewProduct.Name = "mnuViewProduct";
-            this.mnuViewProduct.Size = new System.Drawing.Size(126, 22);
+            this.mnuViewProduct.Size = new System.Drawing.Size(216, 26);
             this.mnuViewProduct.Text = "Product";
             this.mnuViewProduct.Click += new System.EventHandler(this.mnuViewProduct_Click);
             // 
             // mnuViewSupplier
             // 
             this.mnuViewSupplier.Name = "mnuViewSupplier";
-            this.mnuViewSupplier.Size = new System.Drawing.Size(126, 22);
+            this.mnuViewSupplier.Size = new System.Drawing.Size(216, 26);
             this.mnuViewSupplier.Text = "Supplier";
             // 
             // mnuViewEmployee
             // 
             this.mnuViewEmployee.Name = "mnuViewEmployee";
-            this.mnuViewEmployee.Size = new System.Drawing.Size(126, 22);
+            this.mnuViewEmployee.Size = new System.Drawing.Size(216, 26);
             this.mnuViewEmployee.Text = "Employee";
             this.mnuViewEmployee.Click += new System.EventHandler(this.mnuViewEmployee_Click);
             // 
             // mnuViewCustomer
             // 
             this.mnuViewCustomer.Name = "mnuViewCustomer";
-            this.mnuViewCustomer.Size = new System.Drawing.Size(126, 22);
+            this.mnuViewCustomer.Size = new System.Drawing.Size(216, 26);
             this.mnuViewCustomer.Text = "Customer";
             // 
             // mnuViewBill
             // 
             this.mnuViewBill.Name = "mnuViewBill";
-            this.mnuViewBill.Size = new System.Drawing.Size(126, 22);
+            this.mnuViewBill.Size = new System.Drawing.Size(216, 26);
             this.mnuViewBill.Text = "Bill";
             // 
             // mnuViewStatistic
             // 
             this.mnuViewStatistic.Name = "mnuViewStatistic";
-            this.mnuViewStatistic.Size = new System.Drawing.Size(126, 22);
+            this.mnuViewStatistic.Size = new System.Drawing.Size(216, 26);
             this.mnuViewStatistic.Text = "Statistic";
             // 
             // addToolStripMenuItem
@@ -156,31 +158,31 @@
             this.mnuAddBill,
             this.mnuAddStatistic});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.addToolStripMenuItem.Text = "Add";
             // 
             // mnuAddEmployee
             // 
             this.mnuAddEmployee.Name = "mnuAddEmployee";
-            this.mnuAddEmployee.Size = new System.Drawing.Size(126, 22);
+            this.mnuAddEmployee.Size = new System.Drawing.Size(150, 26);
             this.mnuAddEmployee.Text = "Employee";
             // 
             // mnuAddCustomer
             // 
             this.mnuAddCustomer.Name = "mnuAddCustomer";
-            this.mnuAddCustomer.Size = new System.Drawing.Size(126, 22);
+            this.mnuAddCustomer.Size = new System.Drawing.Size(150, 26);
             this.mnuAddCustomer.Text = "Customer";
             // 
             // mnuAddBill
             // 
             this.mnuAddBill.Name = "mnuAddBill";
-            this.mnuAddBill.Size = new System.Drawing.Size(126, 22);
+            this.mnuAddBill.Size = new System.Drawing.Size(150, 26);
             this.mnuAddBill.Text = "Bill";
             // 
             // mnuAddStatistic
             // 
             this.mnuAddStatistic.Name = "mnuAddStatistic";
-            this.mnuAddStatistic.Size = new System.Drawing.Size(126, 22);
+            this.mnuAddStatistic.Size = new System.Drawing.Size(150, 26);
             this.mnuAddStatistic.Text = "Statistic";
             // 
             // managementToolStripMenuItem
@@ -190,33 +192,40 @@
             this.mnuAddSupplier,
             this.mnuUser});
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
-            this.managementToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.managementToolStripMenuItem.Size = new System.Drawing.Size(109, 24);
             this.managementToolStripMenuItem.Text = "Management";
             // 
             // mnuAddCate
             // 
             this.mnuAddCate.Name = "mnuAddCate";
-            this.mnuAddCate.Size = new System.Drawing.Size(122, 22);
+            this.mnuAddCate.Size = new System.Drawing.Size(144, 26);
             this.mnuAddCate.Text = "Category";
             this.mnuAddCate.Click += new System.EventHandler(this.mnuAddCate_Click);
             // 
             // mnuAddSupplier
             // 
             this.mnuAddSupplier.Name = "mnuAddSupplier";
-            this.mnuAddSupplier.Size = new System.Drawing.Size(122, 22);
+            this.mnuAddSupplier.Size = new System.Drawing.Size(144, 26);
             this.mnuAddSupplier.Text = "Supplier";
             this.mnuAddSupplier.Click += new System.EventHandler(this.mnuAddSupplier_Click);
             // 
             // mnuUser
             // 
             this.mnuUser.Name = "mnuUser";
-            this.mnuUser.Size = new System.Drawing.Size(122, 22);
+            this.mnuUser.Size = new System.Drawing.Size(144, 26);
             this.mnuUser.Text = "User";
             this.mnuUser.Click += new System.EventHandler(this.userToolStripMenuItem_Click);
             // 
+            // paymentToolStripMenuItem
+            // 
+            this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
+            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.paymentToolStripMenuItem.Text = "Payment";
+            this.paymentToolStripMenuItem.Click += new System.EventHandler(this.paymentToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 623);
             this.Controls.Add(this.menuStrip1);
@@ -262,5 +271,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuAddCate;
         private System.Windows.Forms.ToolStripMenuItem mnuAddSupplier;
         private System.Windows.Forms.ToolStripMenuItem mnuUser;
+        private System.Windows.Forms.ToolStripMenuItem paymentToolStripMenuItem;
     }
 }

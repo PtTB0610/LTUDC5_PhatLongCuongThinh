@@ -189,5 +189,15 @@ namespace ProjectC
         {
             supForm = null;
         }
+
+        //Xem trang chiếu Payment
+        private void paymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PAYMENT payform = new PAYMENT();
+            payform.MdiParent = this;
+            payform.TopLevel = false;
+            payform.Dock = DockStyle.Fill;
+            payform.Show();
+        }
     }
 }

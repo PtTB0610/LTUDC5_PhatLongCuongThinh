@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ProjectC
 {
@@ -18,13 +19,48 @@ namespace ProjectC
 
         private void EmployeeFORM_Load(object sender, EventArgs e)
         {
+            getEmpData();
+        }
 
+        SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
+        clsDatabase db = new clsDatabase();
+
+        public void getEmpData()
+        {
+            try
+            {
+                con.Close();
+                con.Open();
+                SqlCommand cmd = new SqlCommand("sp_LayDSNhanVien", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                con.Close();
+                dgvEmployee.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dgvEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvEmployee.SelectedCells.Count > 0)
+            {
+                txtEmpID.Text = dgvEmployee.SelectedCells[0].Value.ToString();
+                txtEmpName.Text = dgvEmployee.SelectedCells[1].Value.ToString();
+                txtEmpEmail.Text = dgvEmployee.SelectedCells[2].Value.ToString();
+                txtEmpPhone.Text = dgvEmployee.SelectedCells[3].Value.ToString();
+                dtBirth.Text = dgvEmployee.SelectedCells[4].Value.ToString();
+                txtEmpAdd.Text = dgvEmployee.SelectedCells[5].Value.ToString();
+            }
         }
 
         private void txtEmpName_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
-
         }
 
         private void txtEmpPhone_KeyPress(object sender, KeyPressEventArgs e)
@@ -41,16 +77,98 @@ namespace ProjectC
             addEmp.Show();
         }
 
-        private void dgvEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void EmployeeFORM_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (dgvEmployee.SelectedCells.Count > 0)
+            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
             {
-                txtUserID.Text = dgvEmployee.SelectedCells[0].Value.ToString();
-                txtUserName.Text = dgvEmployee.SelectedCells[1].Value.ToString();
-                txtUserPass.Text = dgvEmployee.SelectedCells[2].Value.ToString();
-                cbUserType.SelectedValue = dgvEmployee.SelectedCells[4].Value.ToString();
-                cbUserStatus.SelectedValue = dgvEmployee.SelectedCells[3].Value.ToString();
+                e.Cancel = true;
             }
+        }
+
+        private void btnrefresh_Click(object sender, EventArgs e)
+        {
+            getEmpData();
+        }
+
+        private void btnEmpSearch_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("sp_searchEmployeeID", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@employee_id", txtEmpSearch.Text));
+            if ((string)cmd.ExecuteScalar() == txtEmpSearch.Text)
+            {
+                DataTable dt = new DataTable();
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt);
+                dgvEmployee.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Invalid product ID!");
+                txtEmpSearch.Focus();
+            }
+            con.Close();
+        }
+
+        private void btnEmpUpdate_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want update the Employee info?", "Update Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                con.Open();
+                if (txtEmpName.Text != "")
+                {
+                    try
+                    {
+
+                        SqlCommand cmd = new SqlCommand("sp_SuaThongTinNhanVien", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@employee_id", txtEmpID.Text));
+                        cmd.Parameters.Add(new SqlParameter("@employee_name", txtEmpName.Text));
+                        cmd.Parameters.Add(new SqlParameter("@employee_email", txtEmpEmail.Text));
+                        cmd.Parameters.Add(new SqlParameter("@employee_phone", txtEmpPhone.Text));
+                        cmd.Parameters.Add(new SqlParameter("@employee_date", dtBirth.Text));
+                        cmd.Parameters.Add(new SqlParameter("@employee_address", txtEmpAdd));
+                        if (cmd.ExecuteNonQuery() > 0)
+                        {
+                            MessageBox.Show("Employee updated successful!!!");
+                            con.Close();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Employee name is blank!!! Can not update Employee infomation!!!");
+                }
+            }
+        }
+
+        private void btnEmpDel_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want delete the Employee info?", "Delete Waning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("sp_XoaNhanVien", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@employee_id", txtEmpID.Text));
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("Employee delete successful!!");
+                }
+                con.Close();
+            }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

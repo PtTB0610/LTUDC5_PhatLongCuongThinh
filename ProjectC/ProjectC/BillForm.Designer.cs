@@ -51,12 +51,6 @@
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.lblSoLuong = new System.Windows.Forms.Label();
-            this.lvChiTietHoaDon = new System.Windows.Forms.ListView();
-            this.clMaHang = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clTenHang = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clSoLuong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clDonGia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clThanhTien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnDong = new System.Windows.Forms.Button();
             this.btnHuyHoaDon = new System.Windows.Forms.Button();
             this.btnLuuHoaDon = new System.Windows.Forms.Button();
@@ -70,32 +64,34 @@
             this.btnTimMaHoaDon = new System.Windows.Forms.Button();
             this.lblTimMaHoaDon = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.dgvBill = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHoaDon
             // 
-            this.lblHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHoaDon.AutoSize = true;
             this.lblHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHoaDon.ForeColor = System.Drawing.Color.Blue;
             this.lblHoaDon.Location = new System.Drawing.Point(554, 9);
             this.lblHoaDon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHoaDon.Name = "lblHoaDon";
-            this.lblHoaDon.Size = new System.Drawing.Size(156, 26);
+            this.lblHoaDon.Size = new System.Drawing.Size(199, 32);
             this.lblHoaDon.TabIndex = 0;
             this.lblHoaDon.Text = "BILL OF SALE";
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.txtMaThanhToan);
@@ -124,42 +120,42 @@
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.MaxDate = new System.DateTime(2018, 11, 22, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(459, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(459, 22);
             this.dateTimePicker1.TabIndex = 13;
             this.dateTimePicker1.Value = new System.DateTime(2018, 11, 22, 0, 0, 0, 0);
             // 
             // txtMaThanhToan
             // 
-            this.txtMaThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMaThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaThanhToan.Location = new System.Drawing.Point(726, 111);
             this.txtMaThanhToan.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaThanhToan.Name = "txtMaThanhToan";
-            this.txtMaThanhToan.Size = new System.Drawing.Size(474, 20);
+            this.txtMaThanhToan.Size = new System.Drawing.Size(474, 22);
             this.txtMaThanhToan.TabIndex = 12;
             // 
             // txtTenNhanVien
             // 
-            this.txtTenNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTenNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTenNhanVien.Location = new System.Drawing.Point(726, 72);
             this.txtTenNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenNhanVien.Name = "txtTenNhanVien";
-            this.txtTenNhanVien.Size = new System.Drawing.Size(474, 20);
+            this.txtTenNhanVien.Size = new System.Drawing.Size(474, 22);
             this.txtTenNhanVien.TabIndex = 11;
             this.txtTenNhanVien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenNhanVien_KeyPress);
             // 
             // txtMaNhanVien
             // 
-            this.txtMaNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMaNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaNhanVien.Location = new System.Drawing.Point(726, 34);
             this.txtMaNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaNhanVien.Name = "txtMaNhanVien";
-            this.txtMaNhanVien.Size = new System.Drawing.Size(474, 20);
+            this.txtMaNhanVien.Size = new System.Drawing.Size(474, 22);
             this.txtMaNhanVien.TabIndex = 10;
             // 
             // txtTenKhach
@@ -167,7 +163,7 @@
             this.txtTenKhach.Location = new System.Drawing.Point(136, 153);
             this.txtTenKhach.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenKhach.Name = "txtTenKhach";
-            this.txtTenKhach.Size = new System.Drawing.Size(459, 20);
+            this.txtTenKhach.Size = new System.Drawing.Size(459, 22);
             this.txtTenKhach.TabIndex = 9;
             this.txtTenKhach.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenKhach_KeyPress);
             // 
@@ -176,7 +172,7 @@
             this.txtMaKhachHang.Location = new System.Drawing.Point(136, 115);
             this.txtMaKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaKhachHang.Name = "txtMaKhachHang";
-            this.txtMaKhachHang.Size = new System.Drawing.Size(459, 20);
+            this.txtMaKhachHang.Size = new System.Drawing.Size(459, 22);
             this.txtMaKhachHang.TabIndex = 8;
             // 
             // txtMaHoaDon
@@ -185,15 +181,15 @@
             this.txtMaHoaDon.Location = new System.Drawing.Point(136, 34);
             this.txtMaHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaHoaDon.Name = "txtMaHoaDon";
-            this.txtMaHoaDon.Size = new System.Drawing.Size(459, 20);
+            this.txtMaHoaDon.Size = new System.Drawing.Size(459, 22);
             this.txtMaHoaDon.TabIndex = 7;
             // 
             // lblMaThanhToan
             // 
-            this.lblMaThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMaThanhToan.Location = new System.Drawing.Point(631, 111);
+            this.lblMaThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMaThanhToan.Location = new System.Drawing.Point(631, 114);
             this.lblMaThanhToan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMaThanhToan.Name = "lblMaThanhToan";
             this.lblMaThanhToan.Size = new System.Drawing.Size(81, 21);
@@ -202,45 +198,45 @@
             // 
             // lblTenNhanVien
             // 
-            this.lblTenNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTenNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTenNhanVien.AutoSize = true;
-            this.lblTenNhanVien.Location = new System.Drawing.Point(630, 79);
+            this.lblTenNhanVien.Location = new System.Drawing.Point(611, 75);
             this.lblTenNhanVien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTenNhanVien.Name = "lblTenNhanVien";
-            this.lblTenNhanVien.Size = new System.Drawing.Size(84, 13);
+            this.lblTenNhanVien.Size = new System.Drawing.Size(111, 17);
             this.lblTenNhanVien.TabIndex = 5;
             this.lblTenNhanVien.Text = "Employee Name";
             // 
             // lblMaNhanVien
             // 
-            this.lblMaNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMaNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMaNhanVien.AutoSize = true;
-            this.lblMaNhanVien.Location = new System.Drawing.Point(630, 45);
+            this.lblMaNhanVien.Location = new System.Drawing.Point(625, 37);
             this.lblMaNhanVien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMaNhanVien.Name = "lblMaNhanVien";
-            this.lblMaNhanVien.Size = new System.Drawing.Size(67, 13);
+            this.lblMaNhanVien.Size = new System.Drawing.Size(87, 17);
             this.lblMaNhanVien.TabIndex = 4;
             this.lblMaNhanVien.Text = "Employee ID";
             // 
             // lblTenKhach
             // 
-            this.lblTenKhach.Location = new System.Drawing.Point(34, 160);
+            this.lblTenKhach.Location = new System.Drawing.Point(18, 156);
             this.lblTenKhach.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTenKhach.Name = "lblTenKhach";
-            this.lblTenKhach.Size = new System.Drawing.Size(82, 13);
+            this.lblTenKhach.Size = new System.Drawing.Size(82, 26);
             this.lblTenKhach.TabIndex = 3;
             this.lblTenKhach.Text = "Customer Name";
             // 
             // lblMaKhachHang
             // 
-            this.lblMaKhachHang.Location = new System.Drawing.Point(34, 118);
+            this.lblMaKhachHang.Location = new System.Drawing.Point(27, 118);
             this.lblMaKhachHang.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMaKhachHang.Name = "lblMaKhachHang";
-            this.lblMaKhachHang.Size = new System.Drawing.Size(65, 13);
+            this.lblMaKhachHang.Size = new System.Drawing.Size(65, 26);
             this.lblMaKhachHang.TabIndex = 2;
             this.lblMaKhachHang.Text = "Customer ID";
             // 
@@ -249,7 +245,7 @@
             this.lblNgayBan.Location = new System.Drawing.Point(34, 75);
             this.lblNgayBan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNgayBan.Name = "lblNgayBan";
-            this.lblNgayBan.Size = new System.Drawing.Size(30, 13);
+            this.lblNgayBan.Size = new System.Drawing.Size(30, 21);
             this.lblNgayBan.TabIndex = 1;
             this.lblNgayBan.Text = "Date";
             // 
@@ -258,7 +254,7 @@
             this.lblMaHoaDon.Location = new System.Drawing.Point(34, 37);
             this.lblMaHoaDon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMaHoaDon.Name = "lblMaHoaDon";
-            this.lblMaHoaDon.Size = new System.Drawing.Size(34, 13);
+            this.lblMaHoaDon.Size = new System.Drawing.Size(34, 25);
             this.lblMaHoaDon.TabIndex = 0;
             this.lblMaHoaDon.Text = "Bill ID";
             // 
@@ -269,20 +265,20 @@
             this.lblTTC.Location = new System.Drawing.Point(34, 34);
             this.lblTTC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTTC.Name = "lblTTC";
-            this.lblTTC.Size = new System.Drawing.Size(109, 13);
+            this.lblTTC.Size = new System.Drawing.Size(138, 17);
             this.lblTTC.TabIndex = 4;
             this.lblTTC.Text = "Public Information";
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.dgvBill);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.txtSoLuong);
             this.panel2.Controls.Add(this.lblSoLuong);
-            this.panel2.Controls.Add(this.lvChiTietHoaDon);
             this.panel2.Controls.Add(this.btnDong);
             this.panel2.Controls.Add(this.btnHuyHoaDon);
             this.panel2.Controls.Add(this.btnLuuHoaDon);
@@ -314,7 +310,7 @@
             this.lblTongTien.Location = new System.Drawing.Point(13, 14);
             this.lblTongTien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTongTien.Name = "lblTongTien";
-            this.lblTongTien.Size = new System.Drawing.Size(55, 13);
+            this.lblTongTien.Size = new System.Drawing.Size(72, 17);
             this.lblTongTien.TabIndex = 5;
             this.lblTongTien.Text = "Sum Price";
             // 
@@ -324,7 +320,7 @@
             this.txtTongTien.Location = new System.Drawing.Point(109, 11);
             this.txtTongTien.Margin = new System.Windows.Forms.Padding(2);
             this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(286, 20);
+            this.txtTongTien.Size = new System.Drawing.Size(286, 22);
             this.txtTongTien.TabIndex = 4;
             // 
             // txtSoLuong
@@ -332,7 +328,7 @@
             this.txtSoLuong.Location = new System.Drawing.Point(136, 60);
             this.txtSoLuong.Margin = new System.Windows.Forms.Padding(2);
             this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(459, 20);
+            this.txtSoLuong.Size = new System.Drawing.Size(459, 22);
             this.txtSoLuong.TabIndex = 12;
             this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
             // 
@@ -342,52 +338,9 @@
             this.lblSoLuong.Location = new System.Drawing.Point(34, 63);
             this.lblSoLuong.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSoLuong.Name = "lblSoLuong";
-            this.lblSoLuong.Size = new System.Drawing.Size(44, 13);
+            this.lblSoLuong.Size = new System.Drawing.Size(58, 17);
             this.lblSoLuong.TabIndex = 11;
             this.lblSoLuong.Text = "Number";
-            // 
-            // lvChiTietHoaDon
-            // 
-            this.lvChiTietHoaDon.Activation = System.Windows.Forms.ItemActivation.OneClick;
-            this.lvChiTietHoaDon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.clMaHang,
-            this.clTenHang,
-            this.clSoLuong,
-            this.clDonGia,
-            this.clThanhTien});
-            this.lvChiTietHoaDon.HoverSelection = true;
-            this.lvChiTietHoaDon.Location = new System.Drawing.Point(21, 96);
-            this.lvChiTietHoaDon.Margin = new System.Windows.Forms.Padding(2);
-            this.lvChiTietHoaDon.Name = "lvChiTietHoaDon";
-            this.lvChiTietHoaDon.Size = new System.Drawing.Size(1181, 369);
-            this.lvChiTietHoaDon.TabIndex = 10;
-            this.lvChiTietHoaDon.UseCompatibleStateImageBehavior = false;
-            this.lvChiTietHoaDon.View = System.Windows.Forms.View.Details;
-            // 
-            // clMaHang
-            // 
-            this.clMaHang.Text = "Product ID";
-            this.clMaHang.Width = 165;
-            // 
-            // clTenHang
-            // 
-            this.clTenHang.Text = "Product Name";
-            this.clTenHang.Width = 204;
-            // 
-            // clSoLuong
-            // 
-            this.clSoLuong.Text = "Amount";
-            this.clSoLuong.Width = 73;
-            // 
-            // clDonGia
-            // 
-            this.clDonGia.Text = "Price";
-            this.clDonGia.Width = 122;
-            // 
-            // clThanhTien
-            // 
-            this.clThanhTien.Text = "Total";
-            this.clThanhTien.Width = 182;
             // 
             // btnDong
             // 
@@ -434,7 +387,7 @@
             this.txtTenHang.Location = new System.Drawing.Point(726, 10);
             this.txtTenHang.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenHang.Name = "txtTenHang";
-            this.txtTenHang.Size = new System.Drawing.Size(476, 20);
+            this.txtTenHang.Size = new System.Drawing.Size(476, 22);
             this.txtTenHang.TabIndex = 3;
             this.txtTenHang.TextChanged += new System.EventHandler(this.txtTenHang_TextChanged);
             // 
@@ -443,7 +396,7 @@
             this.txtMaHang.Location = new System.Drawing.Point(136, 16);
             this.txtMaHang.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaHang.Name = "txtMaHang";
-            this.txtMaHang.Size = new System.Drawing.Size(459, 20);
+            this.txtMaHang.Size = new System.Drawing.Size(459, 22);
             this.txtMaHang.TabIndex = 2;
             // 
             // lblTenHang
@@ -452,7 +405,7 @@
             this.lblTenHang.Location = new System.Drawing.Point(630, 13);
             this.lblTenHang.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTenHang.Name = "lblTenHang";
-            this.lblTenHang.Size = new System.Drawing.Size(75, 13);
+            this.lblTenHang.Size = new System.Drawing.Size(98, 17);
             this.lblTenHang.TabIndex = 1;
             this.lblTenHang.Text = "Product Name";
             // 
@@ -462,7 +415,7 @@
             this.lblMaHang.Location = new System.Drawing.Point(34, 20);
             this.lblMaHang.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMaHang.Name = "lblMaHang";
-            this.lblMaHang.Size = new System.Drawing.Size(58, 13);
+            this.lblMaHang.Size = new System.Drawing.Size(74, 17);
             this.lblMaHang.TabIndex = 0;
             this.lblMaHang.Text = "Product ID";
             // 
@@ -473,7 +426,7 @@
             this.lblTTMH.Location = new System.Drawing.Point(34, 282);
             this.lblTTMH.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTTMH.Name = "lblTTMH";
-            this.lblTTMH.Size = new System.Drawing.Size(134, 13);
+            this.lblTTMH.Size = new System.Drawing.Size(172, 17);
             this.lblTTMH.TabIndex = 7;
             this.lblTTMH.Text = "Commodity Information";
             // 
@@ -482,7 +435,7 @@
             this.txtTimMaHoaDon.Location = new System.Drawing.Point(125, 11);
             this.txtTimMaHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.txtTimMaHoaDon.Name = "txtTimMaHoaDon";
-            this.txtTimMaHoaDon.Size = new System.Drawing.Size(459, 20);
+            this.txtTimMaHoaDon.Size = new System.Drawing.Size(459, 22);
             this.txtTimMaHoaDon.TabIndex = 8;
             this.txtTimMaHoaDon.TextChanged += new System.EventHandler(this.txtTimMaHoaDon_TextChanged);
             // 
@@ -504,7 +457,7 @@
             this.lblTimMaHoaDon.Location = new System.Drawing.Point(66, 14);
             this.lblTimMaHoaDon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTimMaHoaDon.Name = "lblTimMaHoaDon";
-            this.lblTimMaHoaDon.Size = new System.Drawing.Size(34, 13);
+            this.lblTimMaHoaDon.Size = new System.Drawing.Size(43, 17);
             this.lblTimMaHoaDon.TabIndex = 10;
             this.lblTimMaHoaDon.Text = "Bill ID";
             // 
@@ -518,6 +471,15 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(786, 44);
             this.panel3.TabIndex = 11;
+            // 
+            // dgvBill
+            // 
+            this.dgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBill.Location = new System.Drawing.Point(106, 108);
+            this.dgvBill.Name = "dgvBill";
+            this.dgvBill.RowTemplate.Height = 24;
+            this.dgvBill.Size = new System.Drawing.Size(1094, 356);
+            this.dgvBill.TabIndex = 14;
             // 
             // BillForm
             // 
@@ -542,6 +504,7 @@
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -583,13 +546,8 @@
         private System.Windows.Forms.Label lblTimMaHoaDon;
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.Label lblSoLuong;
-        private System.Windows.Forms.ListView lvChiTietHoaDon;
-        private System.Windows.Forms.ColumnHeader clMaHang;
-        private System.Windows.Forms.ColumnHeader clTenHang;
-        private System.Windows.Forms.ColumnHeader clSoLuong;
-        private System.Windows.Forms.ColumnHeader clDonGia;
-        private System.Windows.Forms.ColumnHeader clThanhTien;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridView dgvBill;
     }
 }

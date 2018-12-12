@@ -48,7 +48,7 @@ GO
 
 
 
-CCREATE TABLE [dbo].[BILL] (
+CREATE TABLE [dbo].[BILL] (
 			[BILL_ID] [nvarchar] (255) PRIMARY KEY,
 			[BILL_DATE] [datetime],
 			[CUSTOMER_ID] [nvarchar] (255),
@@ -116,15 +116,20 @@ ADD FOREIGN KEY (CUSTOMER_ID) REFERENCES CUSTOMER(CUSTOMER_ID),
 			FOREIGN KEY (PRODUCT_ID) REFERENCES PRODUCT(PRODUCT_ID),
 			FOREIGN KEY (EMPLOYEE_ID) REFERENCES EMPLOYEE(EMPLOYEE_ID),
 			FOREIGN KEY (PAYMENT_METHOD_ID) REFERENCES PAYMENT(PAYMENT_ID);
-			
+
+
+/*
 ALTER TABLE [dbo].[EMPLOYEE]
 ADD CONSTRAINT chk_EMPphone CHECK (EMPLOYEE_PHONE NOT LIKE '%[^0-9]%');
 
 GO
+*/			
+
 
 
 --Tạo StoredProceduce
 --Lấy tất cả Supplier
+GO
 CREATE PROC SP_LAYTATCASUPPLIER
 AS SELECT * FROM [dbo].[SUPPLIER]
 GO
@@ -375,7 +380,7 @@ GO
 CREATE PROC sp_LayDSNhanVien
 AS
 SELECT *
-FROM EMPLOYEE
+FROM [dbo].[EMPLOYEE]
 
 GO
 -- SP THEM NHAN VIEN
@@ -383,20 +388,24 @@ CREATE PROC sp_ThemNhanVien(@employee_id varchar (255), @employee_name nvarchar 
 							@employee_email nvarchar (255), @employee_phone varchar (15), 
 							@employee_date datetime, @employee_address nvarchar (255))
 AS
-INSERT INTO EMPLOYEE(EMPLOYEE_ID, EMPLOYEE_NAME, EMPLOYEE_EMAIL, EMPLOYEE_PHONE, EMPLOYEE_DATE, EMPLOYEE_ADDRESS)
+INSERT INTO [dbo].[EMPLOYEE](EMPLOYEE_ID, EMPLOYEE_NAME, EMPLOYEE_EMAIL, EMPLOYEE_PHONE, EMPLOYEE_DATE, EMPLOYEE_ADDRESS)
 VALUES (@employee_id, @employee_name, @employee_email, @employee_phone, @employee_date, @employee_address)
 
+/*
 EXEC sp_ThemNhanVien 'NV1', N'Tuan Cuong', N'tcuong@gmail.com', '0902078366', '10/18/1999', N'Thu Duc'
+*/
 EXEC sp_LayDSNhanVien
 
 GO
 -- SP XOA NHAN VIEN
 CREATE PROC sp_XoaNhanVien(@employee_id varchar (255))
 AS
-DELETE FROM EMPLOYEE
+DELETE FROM [dbo].[EMPLOYEE]
 WHERE EMPLOYEE_ID = @employee_id
 
-EXEC sp_XoaNhanVien 'NV1'
+/*
+	EXEC sp_XoaNhanVien 'NV1'
+*/
 EXEC sp_LayDSNhanVien
 
 GO
@@ -405,39 +414,43 @@ CREATE PROC sp_SuaThongTinNhanVien(@employee_id varchar (255), @employee_name nv
 							@employee_email nvarchar (255), @employee_phone varchar (15), 
 							@employee_date datetime, @employee_address nvarchar (255))
 AS
-UPDATE EMPLOYEE
+UPDATE [dbo].[EMPLOYEE]
 SET EMPLOYEE_NAME = @employee_name, 
 	EMPLOYEE_EMAIL = @employee_email,
 	EMPLOYEE_PHONE = @employee_phone,
 	EMPLOYEE_DATE = @employee_date,
 	EMPLOYEE_ADDRESS = @employee_address
 WHERE EMPLOYEE_ID = @employee_id
-GO
+
 
 --Tim Product bang ID
-create proc sp_searchProductbyID (@P_ID varchar(255))
+GO
+create PROC sp_searchProductbyID (@P_ID varchar(255))
 as
 select * from PRODUCT where PRODUCT_ID = @P_ID
-go
 --Tim product name
+GO
 create proc sp_searchProductbyName (@P_NAME varchar(255))
 as
 select * from PRODUCT where PRODUCT_NAME = @P_NAME
-go
 --Tim Username
+GO
 create proc sp_searchUserbyName (@U_NAME varchar(255))
 as
 select * from [dbo].[USER] where USER_NAME = @U_NAME
-go
 --Tim CATEGORY bang ID
+GO
 create proc sp_searchCatebyID (@C_ID int)
 as select * from CATEGORY where CATEGORY_ID = @C_ID
-go
---Tim Supplier bằng ID
-create proc sp_searchSupplierbyID (@S_ID int)
-  as select * from SUPPLIER where SUPPLIER_ID = @S_ID
-  go
---Tim Supplier bang name
-  create proc sp_searchSupplierbyName (@S_NAME nvarchar(255))
-  as select * from SUPPLIER where SUPPLIER_NAME = @S_NAME
-  go
+--Tim Employee ID
+GO
+create PROC sp_searchEmployeeID (@employee_id varchar(255))
+as
+select * from [dbo].EMPLOYEE where EMPLOYEE_ID = @employee_id
+--Tim Customer ID
+GO
+create PROC sp_searchCustomerID (@cus_id varchar(255))
+as
+select * from [dbo].CUSTOMER where CUSTOMER_ID = @cus_id
+
+
