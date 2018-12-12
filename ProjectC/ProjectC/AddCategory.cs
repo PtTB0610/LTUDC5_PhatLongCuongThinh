@@ -220,5 +220,14 @@ namespace ProjectC
                 con.Close();
             }
         }
+
+        private void AddCategory_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to close?", "Close Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

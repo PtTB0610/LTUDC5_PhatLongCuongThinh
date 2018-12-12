@@ -43,11 +43,8 @@ D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\obj\Debug\P
 D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\obj\Debug\ProjectC.AddCategory.resources
 D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\obj\Debug\ProjectC.BillForm.resources
 D:\New folder (3)\LTUDC5_PhatLongCuongThinh-master\ProjectC\ProjectC\obj\Debug\ProjectC.StatisticForm.resources
-D:\Works\C#\Project\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.AddCategory.resources
 D:\Works\C#\Project\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.addCustomer.resources
 D:\Works\C#\Project\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.addEmployee.resources
-D:\Works\C#\Project\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.AddProductForm.resources
-D:\Works\C#\Project\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.AddSupplierForm.resources
 D:\Works\C#\Project\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.BillForm.resources
 D:\Works\C#\Project\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.CustomerForm.resources
 D:\Works\C#\Project\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.EmployeeFORM.resources
@@ -79,3 +76,4 @@ D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.exe
 D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.pdb
 D:\Projects C\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.UserForm.resources
 D:\Works\C#\Project\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.UserForm.resources
+D:\Works\C#\Project\LTUDC5_PhatLongCuongThinh\ProjectC\ProjectC\obj\Debug\ProjectC.AddCategory.resources

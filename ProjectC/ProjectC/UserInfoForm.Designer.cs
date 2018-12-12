@@ -135,7 +135,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(83, 23);
             this.btnExit.TabIndex = 23;
-            this.btnExit.Text = "Exit";
+            this.btnExit.Text = "Close";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -219,6 +219,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "UserInfoForm";
             this.Text = "UserInfoForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserInfoForm_FormClosing);
             this.Load += new System.EventHandler(this.UserInfoForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.ResumeLayout(false);

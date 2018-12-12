@@ -227,6 +227,9 @@
             // 
             // dgvProduct
             // 
+            this.dgvProduct.AllowUserToAddRows = false;
+            this.dgvProduct.AllowUserToDeleteRows = false;
+            this.dgvProduct.AllowUserToOrderColumns = true;
             this.dgvProduct.AllowUserToResizeColumns = false;
             this.dgvProduct.AllowUserToResizeRows = false;
             this.dgvProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -240,7 +243,6 @@
             this.dgvProduct.Size = new System.Drawing.Size(1000, 320);
             this.dgvProduct.TabIndex = 31;
             this.dgvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellClick);
-            this.dgvProduct.SelectionChanged += new System.EventHandler(this.dgvProduct_SelectionChanged);
             // 
             // cboSupplier
             // 
@@ -408,6 +410,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "ProductForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProductForm_FormClosing_1);
             this.Load += new System.EventHandler(this.ProductForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();

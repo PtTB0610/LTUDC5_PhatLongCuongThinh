@@ -85,8 +85,9 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(95, 31);
             this.btnExit.TabIndex = 39;
-            this.btnExit.Text = "Exit";
+            this.btnExit.Text = "Close";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // UserForm
             // 
@@ -104,7 +105,7 @@
             this.Name = "UserForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "User Register";
+            this.Text = "Account Info";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserForm_FormClosing);
             this.Load += new System.EventHandler(this.UserForm_Load);
             this.ResumeLayout(false);
