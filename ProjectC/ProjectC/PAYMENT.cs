@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*
+Name: Le Nguyen Hoa Long
+*/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,16 +19,26 @@ namespace ProjectC
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Ket noi CSDL
+        /// </summary>
         SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
         clsDatabase db = new clsDatabase();
-
+        /// <summary>
+        /// Tao Payment tren form addPayment
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPayCreate_Click(object sender, EventArgs e)
         {
             addPayment addPay = new addPayment();
             addPay.Show();
         }
-
+        /// <summary>
+        /// Kiem Tra Phim Nhan Chi cho phep so va cho phep ki tu .
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtPayDis_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
@@ -33,7 +46,11 @@ namespace ProjectC
                 e.Handled = true;
             }
         }
-
+        /// <summary>
+        /// Click chon du lieu 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvPay_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -54,7 +71,11 @@ namespace ProjectC
                 MessageBox.Show(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Dong form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PAYMENT_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -63,12 +84,20 @@ namespace ProjectC
                 e.Cancel = true;
             }
         }
-
+        /// <summary>
+        /// Thoat form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Xoa phuong thuc payment
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPayDel_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want delete the Employee info?", "Delete Waning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -85,7 +114,9 @@ namespace ProjectC
                 con.Close();
             }
         }
-
+        /// <summary>
+        /// Lay Du lieu Payment
+        /// </summary>
         public void getPayData()
         {
             try
@@ -105,7 +136,11 @@ namespace ProjectC
                 MessageBox.Show(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Cap Nhat payment
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPayUpdate_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want update the Employee info?", "Update Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -139,12 +174,20 @@ namespace ProjectC
                 }
             }
         }
-
+        /// <summary>
+        /// Load Du lieu payment khi mo form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PAYMENT_Load(object sender, EventArgs e)
         {
             getPayData();
         }
-
+        /// <summary>
+        /// Click chon du lieu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvPay_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -165,7 +208,11 @@ namespace ProjectC
                 MessageBox.Show(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Lay lai du lieu 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPayRef_Click(object sender, EventArgs e)
         {
             getPayData();

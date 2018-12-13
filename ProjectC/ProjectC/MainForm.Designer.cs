@@ -40,11 +40,6 @@
             this.mnuViewBill = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuViewStatistic = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuAddEmployee = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuAddCustomer = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuAddBill = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuAddStatistic = new System.Windows.Forms.ToolStripMenuItem();
             this.managementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAddCate = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAddSupplier = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +53,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuMenu,
             this.viewToolStripMenuItem,
-            this.addToolStripMenuItem,
             this.managementToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -113,79 +107,44 @@
             // mnuViewProduct
             // 
             this.mnuViewProduct.Name = "mnuViewProduct";
-            this.mnuViewProduct.Size = new System.Drawing.Size(216, 26);
+            this.mnuViewProduct.Size = new System.Drawing.Size(150, 26);
             this.mnuViewProduct.Text = "Product";
             this.mnuViewProduct.Click += new System.EventHandler(this.mnuViewProduct_Click);
             // 
             // mnuViewEmployee
             // 
             this.mnuViewEmployee.Name = "mnuViewEmployee";
-            this.mnuViewEmployee.Size = new System.Drawing.Size(216, 26);
+            this.mnuViewEmployee.Size = new System.Drawing.Size(150, 26);
             this.mnuViewEmployee.Text = "Employee";
             this.mnuViewEmployee.Click += new System.EventHandler(this.mnuViewEmployee_Click);
             // 
             // mnuViewCustomer
             // 
             this.mnuViewCustomer.Name = "mnuViewCustomer";
-            this.mnuViewCustomer.Size = new System.Drawing.Size(216, 26);
+            this.mnuViewCustomer.Size = new System.Drawing.Size(150, 26);
             this.mnuViewCustomer.Text = "Customer";
             this.mnuViewCustomer.Click += new System.EventHandler(this.mnuViewCustomer_Click);
             // 
             // mnuViewBill
             // 
             this.mnuViewBill.Name = "mnuViewBill";
-            this.mnuViewBill.Size = new System.Drawing.Size(216, 26);
+            this.mnuViewBill.Size = new System.Drawing.Size(150, 26);
             this.mnuViewBill.Text = "Bill";
             this.mnuViewBill.Click += new System.EventHandler(this.mnuViewBill_Click);
             // 
             // mnuViewStatistic
             // 
             this.mnuViewStatistic.Name = "mnuViewStatistic";
-            this.mnuViewStatistic.Size = new System.Drawing.Size(216, 26);
+            this.mnuViewStatistic.Size = new System.Drawing.Size(150, 26);
             this.mnuViewStatistic.Text = "Statistic";
             this.mnuViewStatistic.Click += new System.EventHandler(this.mnuViewStatistic_Click);
             // 
             // paymentToolStripMenuItem
             // 
             this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
-            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
             this.paymentToolStripMenuItem.Text = "Payment";
             this.paymentToolStripMenuItem.Click += new System.EventHandler(this.paymentToolStripMenuItem_Click);
-            // 
-            // addToolStripMenuItem
-            // 
-            this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuAddEmployee,
-            this.mnuAddCustomer,
-            this.mnuAddBill,
-            this.mnuAddStatistic});
-            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
-            this.addToolStripMenuItem.Text = "Add";
-            // 
-            // mnuAddEmployee
-            // 
-            this.mnuAddEmployee.Name = "mnuAddEmployee";
-            this.mnuAddEmployee.Size = new System.Drawing.Size(150, 26);
-            this.mnuAddEmployee.Text = "Employee";
-            // 
-            // mnuAddCustomer
-            // 
-            this.mnuAddCustomer.Name = "mnuAddCustomer";
-            this.mnuAddCustomer.Size = new System.Drawing.Size(150, 26);
-            this.mnuAddCustomer.Text = "Customer";
-            // 
-            // mnuAddBill
-            // 
-            this.mnuAddBill.Name = "mnuAddBill";
-            this.mnuAddBill.Size = new System.Drawing.Size(150, 26);
-            this.mnuAddBill.Text = "Bill";
-            // 
-            // mnuAddStatistic
-            // 
-            this.mnuAddStatistic.Name = "mnuAddStatistic";
-            this.mnuAddStatistic.Size = new System.Drawing.Size(150, 26);
-            this.mnuAddStatistic.Text = "Statistic";
             // 
             // managementToolStripMenuItem
             // 
@@ -200,21 +159,21 @@
             // mnuAddCate
             // 
             this.mnuAddCate.Name = "mnuAddCate";
-            this.mnuAddCate.Size = new System.Drawing.Size(144, 26);
+            this.mnuAddCate.Size = new System.Drawing.Size(216, 26);
             this.mnuAddCate.Text = "Category";
             this.mnuAddCate.Click += new System.EventHandler(this.mnuAddCate_Click);
             // 
             // mnuAddSupplier
             // 
             this.mnuAddSupplier.Name = "mnuAddSupplier";
-            this.mnuAddSupplier.Size = new System.Drawing.Size(144, 26);
+            this.mnuAddSupplier.Size = new System.Drawing.Size(216, 26);
             this.mnuAddSupplier.Text = "Supplier";
             this.mnuAddSupplier.Click += new System.EventHandler(this.mnuAddSupplier_Click);
             // 
             // mnuUser
             // 
             this.mnuUser.Name = "mnuUser";
-            this.mnuUser.Size = new System.Drawing.Size(144, 26);
+            this.mnuUser.Size = new System.Drawing.Size(216, 26);
             this.mnuUser.Text = "User";
             this.mnuUser.Click += new System.EventHandler(this.userToolStripMenuItem_Click);
             // 
@@ -254,11 +213,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuViewCustomer;
         private System.Windows.Forms.ToolStripMenuItem mnuViewBill;
         private System.Windows.Forms.ToolStripMenuItem mnuViewStatistic;
-        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mnuAddEmployee;
-        private System.Windows.Forms.ToolStripMenuItem mnuAddCustomer;
-        private System.Windows.Forms.ToolStripMenuItem mnuAddBill;
-        private System.Windows.Forms.ToolStripMenuItem mnuAddStatistic;
         private System.Windows.Forms.ToolStripMenuItem mnuLogout;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
         private System.Windows.Forms.ToolStripMenuItem managementToolStripMenuItem;

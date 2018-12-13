@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*
+Name: Le Nguyen Hoa Long
+*/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,10 +24,14 @@ namespace ProjectC
         {
             getEmpData();
         }
-
+        /// <summary>
+        /// Ket noi Du lieu
+        /// </summary>
         SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
         clsDatabase db = new clsDatabase();
-
+        /// <summary>
+        /// Lay Du lieu
+        /// </summary>
         public void getEmpData()
         {
             try
@@ -44,7 +51,11 @@ namespace ProjectC
                 MessageBox.Show(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Click Du lieu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvEmployee.SelectedCells.Count > 0)
@@ -57,7 +68,11 @@ namespace ProjectC
                 txtEmpAdd.Text = dgvEmployee.SelectedCells[5].Value.ToString();
             }
         }
-
+        /// <summary>
+        /// Kiem Tra Phim Nhan Chi cho phep nhap chu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtEmpName_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
@@ -70,13 +85,21 @@ namespace ProjectC
                 e.Handled = true;
             }
         }
-
+        /// <summary>
+        /// Tao Employee hien form add Employee
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEmpCreate_Click(object sender, EventArgs e)
         {
             addEmployee addEmp = new addEmployee();
             addEmp.Show();
         }
-
+        /// <summary>
+        /// Dong Form 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EmployeeFORM_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -85,12 +108,20 @@ namespace ProjectC
                 e.Cancel = true;
             }
         }
-
+        /// <summary>
+        /// Lat lai du lieu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnrefresh_Click(object sender, EventArgs e)
         {
             getEmpData();
         }
-
+        /// <summary>
+        /// Tim Kiem Employee
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEmpSearch_Click(object sender, EventArgs e)
         {
             con.Open();
@@ -111,7 +142,11 @@ namespace ProjectC
             }
             con.Close();
         }
-
+        /// <summary>
+        /// Cap Nhap lai Employee
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEmpUpdate_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want update the Employee info?", "Update Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -148,7 +183,11 @@ namespace ProjectC
                 }
             }
         }
-
+        /// <summary>
+        /// Xoa Employee
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEmpDel_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want delete the Employee info?", "Delete Waning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -165,7 +204,11 @@ namespace ProjectC
                 con.Close();
             }
         }
-
+        /// <summary>
+        /// Thoat form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();

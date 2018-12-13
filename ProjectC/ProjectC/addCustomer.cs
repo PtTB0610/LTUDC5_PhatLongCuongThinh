@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*
+Name: Le Nguyen Hoa Long
+*/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +19,17 @@ namespace ProjectC
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Tao CSDL
+        /// </summary>
         SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
         clsDatabase db = new clsDatabase();
 
+        /// <summary>
+        /// Kiem Tra Phim Nhan Chi cho phep nhap so
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtCusPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -27,12 +37,20 @@ namespace ProjectC
                 e.Handled = true;
             }
         }
-
+        /// <summary>
+        /// Kiem Tra Phim Nhan Chi cho phep nhap chu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtCusName_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
         }
-
+        /// <summary>
+        /// Tao Customer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCreate_Click(object sender, EventArgs e)
         {
             con.Open();
@@ -40,6 +58,7 @@ namespace ProjectC
             {
                 try
                 {
+                    //Ket noi CSDL
                     SqlCommand cmd = new SqlCommand("sp_addCUSTOMER", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@cus_id", txtCusID.Text));
