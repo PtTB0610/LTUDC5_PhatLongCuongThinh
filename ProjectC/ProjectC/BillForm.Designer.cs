@@ -46,6 +46,10 @@
             this.txtMaHang = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvBill = new System.Windows.Forms.DataGridView();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnRef = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
             this.SuspendLayout();
@@ -233,15 +237,64 @@
             this.dgvBill.Name = "dgvBill";
             this.dgvBill.RowTemplate.Height = 24;
             this.dgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBill.Size = new System.Drawing.Size(740, 301);
+            this.dgvBill.Size = new System.Drawing.Size(940, 301);
             this.dgvBill.TabIndex = 25;
             this.dgvBill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBill_CellContentClick);
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.Location = new System.Drawing.Point(836, 76);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(100, 50);
+            this.btnCreate.TabIndex = 26;
+            this.btnCreate.Text = "Create";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(836, 277);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(100, 50);
+            this.btnClose.TabIndex = 27;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnRef
+            // 
+            this.btnRef.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRef.Location = new System.Drawing.Point(836, 212);
+            this.btnRef.Name = "btnRef";
+            this.btnRef.Size = new System.Drawing.Size(100, 50);
+            this.btnRef.TabIndex = 28;
+            this.btnRef.Text = "Refesh";
+            this.btnRef.UseVisualStyleBackColor = true;
+            this.btnRef.Click += new System.EventHandler(this.btnRef_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDel.Location = new System.Drawing.Point(836, 139);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(100, 50);
+            this.btnDel.TabIndex = 29;
+            this.btnDel.Text = "Delete";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // BillForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 653);
+            this.ClientSize = new System.Drawing.Size(982, 653);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnDel);
+            this.Controls.Add(this.btnRef);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.dgvBill);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtMaHang);
@@ -290,5 +343,9 @@
         private System.Windows.Forms.TextBox txtMaHang;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgvBill;
+        private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnRef;
+        private System.Windows.Forms.Button btnDel;
     }
 }

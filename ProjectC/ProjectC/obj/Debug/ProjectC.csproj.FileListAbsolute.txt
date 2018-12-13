@@ -101,3 +101,4 @@ D:\LTUD\LTUDC5_PhatLongCuongThinh\trunk\ProjectC\ProjectC\obj\Debug\ProjectC.csp
 D:\LTUD\LTUDC5_PhatLongCuongThinh\trunk\ProjectC\ProjectC\obj\Debug\ProjectC.exe
 D:\LTUD\LTUDC5_PhatLongCuongThinh\trunk\ProjectC\ProjectC\obj\Debug\ProjectC.pdb
 D:\LTUD\LTUDC5_PhatLongCuongThinh\trunk\ProjectC\ProjectC\obj\Debug\ProjectC.addPayment.resources
+D:\LTUD\LTUDC5_PhatLongCuongThinh\trunk\ProjectC\ProjectC\obj\Debug\ProjectC.addBill.resources

@@ -77,14 +77,24 @@ namespace ProjectC
 
         private void dgvBill_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvBill.SelectedRows.Count >= 0)
+            try
             {
-                txtMaHoaDon.Text = dgvBill.SelectedCells[0].Value.ToString();
-                dtgDate.Text = dgvBill.SelectedCells[1].Value.ToString();
-                txtMaKhachHang.Text = dgvBill.SelectedCells[2].Value.ToString();
-                txtMaHang.Text = dgvBill.SelectedCells[3].Value.ToString();
-                txtMaNhanVien.Text = dgvBill.SelectedCells[4].Value.ToString();
-                txtMaThanhToan.Text = dgvBill.SelectedCells[5].Value.ToString();
+                if (!dgvBill.Rows[dgvBill.CurrentCell.RowIndex].IsNewRow)
+                {
+                    if (dgvBill.SelectedCells.Count >= 0)
+                    {
+                        txtMaHoaDon.Text = dgvBill.SelectedCells[0].Value.ToString();
+                        dtgDate.Text = dgvBill.SelectedCells[1].Value.ToString();
+                        txtMaKhachHang.Text = dgvBill.SelectedCells[2].Value.ToString();
+                        txtMaHang.Text = dgvBill.SelectedCells[3].Value.ToString();
+                        txtMaNhanVien.Text = dgvBill.SelectedCells[4].Value.ToString();
+                        txtMaThanhToan.Text = dgvBill.SelectedCells[5].Value.ToString();
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -109,25 +119,38 @@ namespace ProjectC
         { }
 
         private void dgvBill_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {         }
+
+        private void btnCreate_Click(object sender, EventArgs e)
         {
-            try
+            addBill addBill = new addBill();
+            addBill.Show();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnRef_Click(object sender, EventArgs e)
+        {
+            getBillData();
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want delete the Bill info?", "Delete Waning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                if (!dgvBill.Rows[dgvBill.CurrentCell.RowIndex].IsNewRow)
+                con.Open();
+                SqlCommand cmd = new SqlCommand("sp_XoaDSBILL", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@billID", txtMaHoaDon.Text));
+                if (cmd.ExecuteNonQuery() > 0)
                 {
-                    if (dgvBill.SelectedRows.Count > 0)
-                    {
-                        txtMaHoaDon.Text = dgvBill.SelectedCells[0].Value.ToString();
-                        dtgDate.Text = dgvBill.SelectedCells[1].Value.ToString();
-                        txtMaKhachHang.Text = dgvBill.SelectedCells[2].Value.ToString();
-                        txtMaHang.Text = dgvBill.SelectedCells[3].Value.ToString();
-                        txtMaNhanVien.Text = dgvBill.SelectedCells[4].Value.ToString();
-                        txtMaThanhToan.Text = dgvBill.SelectedCells[5].Value.ToString();
-                    }
+                    MessageBox.Show("Bill delete successful!!");
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                con.Close();
             }
         }
     }
