@@ -42,3 +42,38 @@ EXEC sp_ThemNhanVien 'NV10', N'Le Hoang', N'hoangbadboy@gmail.com', '0902995886'
 EXEC sp_addPAYMENT 'ol',N'Mua Online',0.9
 EXEC sp_addPAYMENT 'sto',N'Mua Tại Cửa Hàng',1
 EXEC sp_addPAYMENT 'ins',N'Trả góp',1.2
+
+/*Supplier*/
+
+exec SP_THEMSUPPLIER 1,'Dell','012121212','dell@gmail.com','HCM','active'
+exec SP_THEMSUPPLIER 2,'Toshiba','012121212','toshiba@gmail.com','Da nang','active'
+exec SP_THEMSUPPLIER 3,'Asus','012121212','asus@gmail.com','Ha noi','active'
+exec SP_THEMSUPPLIER 4,'Apple','012121212','apple@gmail.com','HCM','active'
+exec SP_THEMSUPPLIER 5,'Microsoft','012121212','soft@gmail.com','HCM','active'
+exec SP_THEMSUPPLIER 6,'Xiaomi','012121212','mixao@gmail.com','Ha Noi','active'
+exec SP_THEMSUPPLIER 7,'Oppo','012121212','oppo@gmail.com','Da Nang','active'
+exec SP_THEMSUPPLIER 8,'Hoco','012121212','hoco@gmail.com','Vung tau','active'
+exec SP_THEMSUPPLIER 9,'Amazon','012121212','amazon@gmail.com','My Tho','active'
+exec SP_THEMSUPPLIER 10,'Alibaba','012121212','alibaba@gmail.com','ai cap','active'
+
+/*Category*/
+
+exec SP_THEMCATEGORY 1,'Laptop', 'active'
+exec SP_THEMCATEGORY 2,'HeadPhone', 'active'
+exec SP_THEMCATEGORY 3,'SmartPhone', 'active'
+exec SP_THEMCATEGORY 4,'Smartwatch', 'active'
+exec SP_THEMCATEGORY 5,'Tivi', 'active'
+exec SP_THEMCATEGORY 6,'Other', 'active'
+
+/*Product*/
+exec SP_THEMDSPRODUCT '1','Laptop Toshiba HQ1',1,'',10000000,2,50,'i7 7700 Ram 8gb ssd 120gb hdd 1TB', 'active' 
+exec SP_THEMDSPRODUCT '2','Asus Zenphone 5',3,'',10000000,3,100,'Chip snap 660 Ram 4gb', 'active' 
+exec SP_THEMDSPRODUCT '3','Iphone X',3,'',12000000,4,50,'Chip Apple A11 Ram 3gb', 'active' 
+exec SP_THEMDSPRODUCT '4','Asus Zenphone max pro m1',1,'',5900000,3,20,'Chip snap 660 Ram 4gb', 'active' 
+exec SP_THEMDSPRODUCT '5','Toshiba LB 55',5,'',100000000,1,10,'Super Oled 4k internet 55 inch', 'active' 
+exec SP_THEMDSPRODUCT '6','Asus Laptop nitro 5',1,'',19990000,3,5,'Chip i7 6700HQ ram 8gb 1050ti', 'active' 
+exec SP_THEMDSPRODUCT '7','DELL alienware 17 R4',1,'',80000000,1,5,'Chip snap 8700HQ Ram 64gb 1080', 'active' 
+exec SP_THEMDSPRODUCT '8','Asus Zenphone 6',1,'',10000000,2,5,'Chip snap 660 Ram 4gb', 'active' 
+exec SP_THEMDSPRODUCT '9','Iphone 6s plus',3,'',5500000,4,50,'Chip Apple A9 Ram 2gb', 'active' 
+exec SP_THEMDSPRODUCT '10','Iphone 7s plus',3,'',7000000,4,50,'Chip Apple A10 Ram 3gb', 'active' 
+
