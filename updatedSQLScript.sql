@@ -248,6 +248,10 @@ as
 INSERT INTO [dbo].BILL(BILL_ID,BILL_DATE, CUSTOMER_ID,PRODUCT_ID,EMPLOYEE_ID,PAYMENT_METHOD_ID)
 VALUES (@billID, @billDATE, @cusID, @proID, @empID, @payMethod)
 
+EXEC sp_ThemDSBill N'Bill1', '13/12/2018', N'KH1', 'PD1', 'NV1', N'sto'
+EXEC sp_ThemDSBill N'Bill2', '14/12/2018', N'KH2', 'PD1', 'NV2', N'sto'
+EXEC sp_ThemDSBill N'Bill3', '12/12/2018', N'KH4', 'PD1', 'NV3', N'sto'
+
 --xoa danh sach cua bang hoa don
 GO
 CREATE PROC sp_XoaDSBILL(@billID nvarchar (255))
@@ -350,7 +354,7 @@ AS
 INSERT INTO STATISTIC(STATISTIC_ID,STATISTIC_EMPLOYEE,STATISTIC_BILL,STATISTIC_PRICE,EMPLOYEE_ID)
 VALUES (@statistic_id,@statistic_employee,@statistic_bill,@statistic_price,@employee_id)
 
-EXEC sp_ThemThongKe N'T2', N'LONG', N'BILL1', 500000, 'UserLong'
+EXEC sp_ThemThongKe N'T1', N'Cuong', N'BILL1', 500000, N'NV1'
 EXEC sp_LayDSThongKe
 
 GO
