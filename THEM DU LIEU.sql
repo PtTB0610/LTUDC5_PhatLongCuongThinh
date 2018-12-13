@@ -39,8 +39,8 @@ EXEC sp_ThemNhanVien 'NV10', N'Le Hoang', N'hoangbadboy@gmail.com', '0902995886'
 
 /*Payment*/
 
-EXEC sp_addPAYMENT '1',N'Mua Online',0.9
-EXEC sp_addPAYMENT '2',N'Mua Tại Cửa Hàng',1
+EXEC sp_addPAYMENT '1',N'Mua Tại Cửa Hàng',1
+EXEC sp_addPAYMENT '2',N'Mua Online',0.9
 EXEC sp_addPAYMENT '3',N'Trả góp',1.2
 
 /*Supplier*/
@@ -76,4 +76,17 @@ exec SP_THEMDSPRODUCT '7','DELL alienware 17 R4',1,'',80000000,1,5,'Chip snap 87
 exec SP_THEMDSPRODUCT '8','Asus Zenphone 6',1,'',10000000,2,5,'Chip snap 660 Ram 4gb', 'active' 
 exec SP_THEMDSPRODUCT '9','Iphone 6s plus',3,'',5500000,4,50,'Chip Apple A9 Ram 2gb', 'active' 
 exec SP_THEMDSPRODUCT '10','Iphone 7s plus',3,'',7000000,4,50,'Chip Apple A10 Ram 3gb', 'active' 
+
+/*BILL*/
+exec sp_ThemDSBILL 'BILL1','12/13/2018','KH1','1','NV1','1'
+exec sp_ThemDSBILL 'BILL2','12/13/2018','KH2','2','NV2','1'
+exec sp_ThemDSBILL 'BILL3','12/13/2018','KH3','3','NV3','1'
+exec sp_ThemDSBILL 'BILL4','12/13/2018','KH4','4','NV4','1'
+exec sp_ThemDSBILL 'BILL5','12/13/2018','KH5','5','NV5','1'
+exec sp_ThemDSBILL 'BILL6','12/13/2018','KH6','6','NV6','1'
+exec sp_ThemDSBILL 'BILL7','12/13/2018','KH7','7','NV7','1'
+exec sp_ThemDSBILL 'BILL8','12/13/2018','KH8','8','NV8','1'
+exec sp_ThemDSBILL 'BILL9','12/13/2018','KH9','9','NV9','1'
+exec sp_ThemDSBILL 'BILL10','12/13/2018','KH10','10','NV10','1'
+
 
