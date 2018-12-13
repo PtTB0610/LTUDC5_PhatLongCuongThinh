@@ -84,7 +84,7 @@ CREATE TABLE [dbo].[STATISTIC](
 			[STATISTIC_EMPLOYEE] [nvarchar] (255) UNIQUE,
 			[STATISTIC_BILL] [nvarchar] (255),
 			[STATISTIC_PRICE] [int],
-			[USER_ID] [varchar] (255)
+			[EMPLOYEE_ID] [varchar] (255)
 )
 
 GO
@@ -116,7 +116,10 @@ ADD FOREIGN KEY (CUSTOMER_ID) REFERENCES CUSTOMER(CUSTOMER_ID),
 			FOREIGN KEY (PRODUCT_ID) REFERENCES PRODUCT(PRODUCT_ID),
 			FOREIGN KEY (EMPLOYEE_ID) REFERENCES EMPLOYEE(EMPLOYEE_ID),
 			FOREIGN KEY (PAYMENT_METHOD_ID) REFERENCES PAYMENT(PAYMENT_ID);
+GO
 
+ALTER TABLE [dbo].[STATISTIC]
+ADD FOREIGN KEY (EMPLOYEE_ID) REFERENCES EMPLOYEE(EMPLOYEE_ID)
 
 /*
 ALTER TABLE [dbo].[EMPLOYEE]
@@ -343,10 +346,10 @@ FROM STATISTIC
 GO
 -- SP THEM THONG KE
 CREATE PROC sp_ThemThongKe(@statistic_id nvarchar (255), @statistic_employee nvarchar (255),
-							@statistic_bill nvarchar (255), @statistic_price int, @user_id varchar (255))
+							@statistic_bill nvarchar (255), @statistic_price int, @employee_id varchar (255))
 AS
-INSERT INTO STATISTIC(STATISTIC_ID,STATISTIC_EMPLOYEE,STATISTIC_BILL,STATISTIC_PRICE,USER_ID)
-VALUES (@statistic_id,@statistic_employee,@statistic_bill,@statistic_price,@user_id)
+INSERT INTO STATISTIC(STATISTIC_ID,STATISTIC_EMPLOYEE,STATISTIC_BILL,STATISTIC_PRICE,EMPLOYEE_ID)
+VALUES (@statistic_id,@statistic_employee,@statistic_bill,@statistic_price,@employee_id)
 
 EXEC sp_ThemThongKe N'T2', N'LONG', N'BILL1', 500000, 'UserLong'
 EXEC sp_LayDSThongKe
@@ -363,13 +366,13 @@ EXEC sp_LayDSThongKe
 
 GO
 -- SP SUA THONG KE
-CREATE PROC sp_SuaThongKe(@statistic_id nvarchar (255), @statistic_employee nvarchar (255),@statistic_bill nvarchar (255), @statistic_price int, @user_id varchar (255))
+CREATE PROC sp_SuaThongKe(@statistic_id nvarchar (255), @statistic_employee nvarchar (255),@statistic_bill nvarchar (255), @statistic_price int, @employee_id varchar (255))
 AS
 UPDATE STATISTIC
 SET STATISTIC_EMPLOYEE = @statistic_employee,
 	STATISTIC_BILL = @statistic_bill,
 	STATISTIC_PRICE = @statistic_price,
-	USER_ID = @user_id
+	EMPLOYEE_ID = @employee_id
 WHERE STATISTIC_ID = @statistic_id
 
 
