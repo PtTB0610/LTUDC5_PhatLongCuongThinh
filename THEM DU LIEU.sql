@@ -39,9 +39,9 @@ EXEC sp_ThemNhanVien 'NV10', N'Le Hoang', N'hoangbadboy@gmail.com', '0902995886'
 
 /*Payment*/
 
-EXEC sp_addPAYMENT 'ol',N'Mua Online',0.9
-EXEC sp_addPAYMENT 'sto',N'Mua Tại Cửa Hàng',1
-EXEC sp_addPAYMENT 'ins',N'Trả góp',1.2
+EXEC sp_addPAYMENT '1',N'Mua Online',0.9
+EXEC sp_addPAYMENT '2',N'Mua Tại Cửa Hàng',1
+EXEC sp_addPAYMENT '3',N'Trả góp',1.2
 
 /*Supplier*/
 
