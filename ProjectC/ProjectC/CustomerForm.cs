@@ -150,8 +150,8 @@ namespace ProjectC
                         cmd.Parameters.Add(new SqlParameter("@cus_name", txtCusName.Text));
                         cmd.Parameters.Add(new SqlParameter("@cus_email", txtCusEmail.Text));
                         cmd.Parameters.Add(new SqlParameter("@cus_phone", txtCusPhone.Text));
-                        cmd.Parameters.Add(new SqlParameter("@cus_date", dtbCus.Text));
-                        cmd.Parameters.Add(new SqlParameter("@cus_address", txtCusAddress));
+                        cmd.Parameters.Add(new SqlParameter("@cus_date", dtbCus.Value));
+                        cmd.Parameters.Add(new SqlParameter("@cus_address", txtCusAddress.Text));
                         if (cmd.ExecuteNonQuery() > 0)
                         {
                             MessageBox.Show("Customer updated successful!!!");
@@ -168,6 +168,11 @@ namespace ProjectC
                     MessageBox.Show("Customer name is blank!!! Can not update customer infomation!!!");
                 }
             }
+        }
+
+        private void dgvCus_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -28,407 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblHoaDon = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txtMaThanhToan = new System.Windows.Forms.TextBox();
-            this.txtTenNhanVien = new System.Windows.Forms.TextBox();
-            this.txtMaNhanVien = new System.Windows.Forms.TextBox();
-            this.txtTenKhach = new System.Windows.Forms.TextBox();
-            this.txtMaKhachHang = new System.Windows.Forms.TextBox();
-            this.txtMaHoaDon = new System.Windows.Forms.TextBox();
-            this.lblMaThanhToan = new System.Windows.Forms.Label();
-            this.lblTenNhanVien = new System.Windows.Forms.Label();
-            this.lblMaNhanVien = new System.Windows.Forms.Label();
-            this.lblTenKhach = new System.Windows.Forms.Label();
-            this.lblMaKhachHang = new System.Windows.Forms.Label();
-            this.lblNgayBan = new System.Windows.Forms.Label();
-            this.lblMaHoaDon = new System.Windows.Forms.Label();
-            this.lblTTC = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lblTongTien = new System.Windows.Forms.Label();
-            this.txtTongTien = new System.Windows.Forms.TextBox();
-            this.txtSoLuong = new System.Windows.Forms.TextBox();
-            this.lblSoLuong = new System.Windows.Forms.Label();
-            this.btnDong = new System.Windows.Forms.Button();
-            this.btnHuyHoaDon = new System.Windows.Forms.Button();
-            this.btnLuuHoaDon = new System.Windows.Forms.Button();
-            this.btnThemHoaDon = new System.Windows.Forms.Button();
-            this.txtTenHang = new System.Windows.Forms.TextBox();
-            this.txtMaHang = new System.Windows.Forms.TextBox();
-            this.lblTenHang = new System.Windows.Forms.Label();
-            this.lblMaHang = new System.Windows.Forms.Label();
-            this.lblTTMH = new System.Windows.Forms.Label();
             this.txtTimMaHoaDon = new System.Windows.Forms.TextBox();
             this.btnTimMaHoaDon = new System.Windows.Forms.Button();
             this.lblTimMaHoaDon = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblMaHoaDon = new System.Windows.Forms.Label();
+            this.txtMaHoaDon = new System.Windows.Forms.TextBox();
+            this.dtgDate = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtMaKhachHang = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtMaNhanVien = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtMaThanhToan = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtMaHang = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.dgvBill = new System.Windows.Forms.DataGridView();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblHoaDon
-            // 
-            this.lblHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblHoaDon.AutoSize = true;
-            this.lblHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHoaDon.ForeColor = System.Drawing.Color.Blue;
-            this.lblHoaDon.Location = new System.Drawing.Point(554, 9);
-            this.lblHoaDon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblHoaDon.Name = "lblHoaDon";
-            this.lblHoaDon.Size = new System.Drawing.Size(199, 32);
-            this.lblHoaDon.TabIndex = 0;
-            this.lblHoaDon.Text = "BILL OF SALE";
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.txtMaThanhToan);
-            this.panel1.Controls.Add(this.txtTenNhanVien);
-            this.panel1.Controls.Add(this.txtMaNhanVien);
-            this.panel1.Controls.Add(this.txtTenKhach);
-            this.panel1.Controls.Add(this.txtMaKhachHang);
-            this.panel1.Controls.Add(this.txtMaHoaDon);
-            this.panel1.Controls.Add(this.lblMaThanhToan);
-            this.panel1.Controls.Add(this.lblTenNhanVien);
-            this.panel1.Controls.Add(this.lblMaNhanVien);
-            this.panel1.Controls.Add(this.lblTenKhach);
-            this.panel1.Controls.Add(this.lblMaKhachHang);
-            this.panel1.Controls.Add(this.lblNgayBan);
-            this.panel1.Controls.Add(this.lblMaHoaDon);
-            this.panel1.ForeColor = System.Drawing.Color.Blue;
-            this.panel1.Location = new System.Drawing.Point(24, 42);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1225, 202);
-            this.panel1.TabIndex = 1;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(136, 69);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2018, 11, 22, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(459, 22);
-            this.dateTimePicker1.TabIndex = 13;
-            this.dateTimePicker1.Value = new System.DateTime(2018, 11, 22, 0, 0, 0, 0);
-            // 
-            // txtMaThanhToan
-            // 
-            this.txtMaThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMaThanhToan.Location = new System.Drawing.Point(726, 111);
-            this.txtMaThanhToan.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMaThanhToan.Name = "txtMaThanhToan";
-            this.txtMaThanhToan.Size = new System.Drawing.Size(474, 22);
-            this.txtMaThanhToan.TabIndex = 12;
-            // 
-            // txtTenNhanVien
-            // 
-            this.txtTenNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTenNhanVien.Location = new System.Drawing.Point(726, 72);
-            this.txtTenNhanVien.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTenNhanVien.Name = "txtTenNhanVien";
-            this.txtTenNhanVien.Size = new System.Drawing.Size(474, 22);
-            this.txtTenNhanVien.TabIndex = 11;
-            this.txtTenNhanVien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenNhanVien_KeyPress);
-            // 
-            // txtMaNhanVien
-            // 
-            this.txtMaNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMaNhanVien.Location = new System.Drawing.Point(726, 34);
-            this.txtMaNhanVien.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMaNhanVien.Name = "txtMaNhanVien";
-            this.txtMaNhanVien.Size = new System.Drawing.Size(474, 22);
-            this.txtMaNhanVien.TabIndex = 10;
-            // 
-            // txtTenKhach
-            // 
-            this.txtTenKhach.Location = new System.Drawing.Point(136, 153);
-            this.txtTenKhach.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTenKhach.Name = "txtTenKhach";
-            this.txtTenKhach.Size = new System.Drawing.Size(459, 22);
-            this.txtTenKhach.TabIndex = 9;
-            this.txtTenKhach.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenKhach_KeyPress);
-            // 
-            // txtMaKhachHang
-            // 
-            this.txtMaKhachHang.Location = new System.Drawing.Point(136, 115);
-            this.txtMaKhachHang.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMaKhachHang.Name = "txtMaKhachHang";
-            this.txtMaKhachHang.Size = new System.Drawing.Size(459, 22);
-            this.txtMaKhachHang.TabIndex = 8;
-            // 
-            // txtMaHoaDon
-            // 
-            this.txtMaHoaDon.Enabled = false;
-            this.txtMaHoaDon.Location = new System.Drawing.Point(136, 34);
-            this.txtMaHoaDon.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMaHoaDon.Name = "txtMaHoaDon";
-            this.txtMaHoaDon.Size = new System.Drawing.Size(459, 22);
-            this.txtMaHoaDon.TabIndex = 7;
-            // 
-            // lblMaThanhToan
-            // 
-            this.lblMaThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMaThanhToan.Location = new System.Drawing.Point(631, 114);
-            this.lblMaThanhToan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblMaThanhToan.Name = "lblMaThanhToan";
-            this.lblMaThanhToan.Size = new System.Drawing.Size(81, 21);
-            this.lblMaThanhToan.TabIndex = 6;
-            this.lblMaThanhToan.Text = "Payment ID";
-            // 
-            // lblTenNhanVien
-            // 
-            this.lblTenNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTenNhanVien.AutoSize = true;
-            this.lblTenNhanVien.Location = new System.Drawing.Point(611, 75);
-            this.lblTenNhanVien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTenNhanVien.Name = "lblTenNhanVien";
-            this.lblTenNhanVien.Size = new System.Drawing.Size(111, 17);
-            this.lblTenNhanVien.TabIndex = 5;
-            this.lblTenNhanVien.Text = "Employee Name";
-            // 
-            // lblMaNhanVien
-            // 
-            this.lblMaNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMaNhanVien.AutoSize = true;
-            this.lblMaNhanVien.Location = new System.Drawing.Point(625, 37);
-            this.lblMaNhanVien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblMaNhanVien.Name = "lblMaNhanVien";
-            this.lblMaNhanVien.Size = new System.Drawing.Size(87, 17);
-            this.lblMaNhanVien.TabIndex = 4;
-            this.lblMaNhanVien.Text = "Employee ID";
-            // 
-            // lblTenKhach
-            // 
-            this.lblTenKhach.Location = new System.Drawing.Point(18, 156);
-            this.lblTenKhach.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTenKhach.Name = "lblTenKhach";
-            this.lblTenKhach.Size = new System.Drawing.Size(82, 26);
-            this.lblTenKhach.TabIndex = 3;
-            this.lblTenKhach.Text = "Customer Name";
-            // 
-            // lblMaKhachHang
-            // 
-            this.lblMaKhachHang.Location = new System.Drawing.Point(27, 118);
-            this.lblMaKhachHang.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblMaKhachHang.Name = "lblMaKhachHang";
-            this.lblMaKhachHang.Size = new System.Drawing.Size(65, 26);
-            this.lblMaKhachHang.TabIndex = 2;
-            this.lblMaKhachHang.Text = "Customer ID";
-            // 
-            // lblNgayBan
-            // 
-            this.lblNgayBan.Location = new System.Drawing.Point(34, 75);
-            this.lblNgayBan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblNgayBan.Name = "lblNgayBan";
-            this.lblNgayBan.Size = new System.Drawing.Size(30, 21);
-            this.lblNgayBan.TabIndex = 1;
-            this.lblNgayBan.Text = "Date";
-            // 
-            // lblMaHoaDon
-            // 
-            this.lblMaHoaDon.Location = new System.Drawing.Point(34, 37);
-            this.lblMaHoaDon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblMaHoaDon.Name = "lblMaHoaDon";
-            this.lblMaHoaDon.Size = new System.Drawing.Size(34, 25);
-            this.lblMaHoaDon.TabIndex = 0;
-            this.lblMaHoaDon.Text = "Bill ID";
-            // 
-            // lblTTC
-            // 
-            this.lblTTC.AutoSize = true;
-            this.lblTTC.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTTC.Location = new System.Drawing.Point(34, 34);
-            this.lblTTC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTTC.Name = "lblTTC";
-            this.lblTTC.Size = new System.Drawing.Size(138, 17);
-            this.lblTTC.TabIndex = 4;
-            this.lblTTC.Text = "Public Information";
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.dgvBill);
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.txtSoLuong);
-            this.panel2.Controls.Add(this.lblSoLuong);
-            this.panel2.Controls.Add(this.btnDong);
-            this.panel2.Controls.Add(this.btnHuyHoaDon);
-            this.panel2.Controls.Add(this.btnLuuHoaDon);
-            this.panel2.Controls.Add(this.btnThemHoaDon);
-            this.panel2.Controls.Add(this.txtTenHang);
-            this.panel2.Controls.Add(this.txtMaHang);
-            this.panel2.Controls.Add(this.lblTenHang);
-            this.panel2.Controls.Add(this.lblMaHang);
-            this.panel2.ForeColor = System.Drawing.Color.Blue;
-            this.panel2.Location = new System.Drawing.Point(24, 282);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1225, 594);
-            this.panel2.TabIndex = 5;
-            // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.lblTongTien);
-            this.panel4.Controls.Add(this.txtTongTien);
-            this.panel4.Location = new System.Drawing.Point(798, 479);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(404, 43);
-            this.panel4.TabIndex = 13;
-            // 
-            // lblTongTien
-            // 
-            this.lblTongTien.AutoSize = true;
-            this.lblTongTien.Location = new System.Drawing.Point(13, 14);
-            this.lblTongTien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTongTien.Name = "lblTongTien";
-            this.lblTongTien.Size = new System.Drawing.Size(72, 17);
-            this.lblTongTien.TabIndex = 5;
-            this.lblTongTien.Text = "Sum Price";
-            // 
-            // txtTongTien
-            // 
-            this.txtTongTien.Enabled = false;
-            this.txtTongTien.Location = new System.Drawing.Point(109, 11);
-            this.txtTongTien.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(286, 22);
-            this.txtTongTien.TabIndex = 4;
-            // 
-            // txtSoLuong
-            // 
-            this.txtSoLuong.Location = new System.Drawing.Point(136, 60);
-            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(459, 22);
-            this.txtSoLuong.TabIndex = 12;
-            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
-            // 
-            // lblSoLuong
-            // 
-            this.lblSoLuong.AutoSize = true;
-            this.lblSoLuong.Location = new System.Drawing.Point(34, 63);
-            this.lblSoLuong.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSoLuong.Name = "lblSoLuong";
-            this.lblSoLuong.Size = new System.Drawing.Size(58, 17);
-            this.lblSoLuong.TabIndex = 11;
-            this.lblSoLuong.Text = "Number";
-            // 
-            // btnDong
-            // 
-            this.btnDong.Location = new System.Drawing.Point(1110, 538);
-            this.btnDong.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(92, 26);
-            this.btnDong.TabIndex = 9;
-            this.btnDong.Text = "Exit";
-            this.btnDong.UseVisualStyleBackColor = true;
-            // 
-            // btnHuyHoaDon
-            // 
-            this.btnHuyHoaDon.Location = new System.Drawing.Point(966, 538);
-            this.btnHuyHoaDon.Margin = new System.Windows.Forms.Padding(2);
-            this.btnHuyHoaDon.Name = "btnHuyHoaDon";
-            this.btnHuyHoaDon.Size = new System.Drawing.Size(92, 26);
-            this.btnHuyHoaDon.TabIndex = 8;
-            this.btnHuyHoaDon.Text = "Cancel Bill";
-            this.btnHuyHoaDon.UseVisualStyleBackColor = true;
-            // 
-            // btnLuuHoaDon
-            // 
-            this.btnLuuHoaDon.Location = new System.Drawing.Point(823, 538);
-            this.btnLuuHoaDon.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLuuHoaDon.Name = "btnLuuHoaDon";
-            this.btnLuuHoaDon.Size = new System.Drawing.Size(92, 26);
-            this.btnLuuHoaDon.TabIndex = 7;
-            this.btnLuuHoaDon.Text = "Save Bill";
-            this.btnLuuHoaDon.UseVisualStyleBackColor = true;
-            // 
-            // btnThemHoaDon
-            // 
-            this.btnThemHoaDon.Location = new System.Drawing.Point(693, 538);
-            this.btnThemHoaDon.Margin = new System.Windows.Forms.Padding(2);
-            this.btnThemHoaDon.Name = "btnThemHoaDon";
-            this.btnThemHoaDon.Size = new System.Drawing.Size(92, 26);
-            this.btnThemHoaDon.TabIndex = 6;
-            this.btnThemHoaDon.Text = "Add Bill";
-            this.btnThemHoaDon.UseVisualStyleBackColor = true;
-            // 
-            // txtTenHang
-            // 
-            this.txtTenHang.Location = new System.Drawing.Point(726, 10);
-            this.txtTenHang.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTenHang.Name = "txtTenHang";
-            this.txtTenHang.Size = new System.Drawing.Size(476, 22);
-            this.txtTenHang.TabIndex = 3;
-            this.txtTenHang.TextChanged += new System.EventHandler(this.txtTenHang_TextChanged);
-            // 
-            // txtMaHang
-            // 
-            this.txtMaHang.Location = new System.Drawing.Point(136, 16);
-            this.txtMaHang.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMaHang.Name = "txtMaHang";
-            this.txtMaHang.Size = new System.Drawing.Size(459, 22);
-            this.txtMaHang.TabIndex = 2;
-            // 
-            // lblTenHang
-            // 
-            this.lblTenHang.AutoSize = true;
-            this.lblTenHang.Location = new System.Drawing.Point(630, 13);
-            this.lblTenHang.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTenHang.Name = "lblTenHang";
-            this.lblTenHang.Size = new System.Drawing.Size(98, 17);
-            this.lblTenHang.TabIndex = 1;
-            this.lblTenHang.Text = "Product Name";
-            // 
-            // lblMaHang
-            // 
-            this.lblMaHang.AutoSize = true;
-            this.lblMaHang.Location = new System.Drawing.Point(34, 20);
-            this.lblMaHang.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblMaHang.Name = "lblMaHang";
-            this.lblMaHang.Size = new System.Drawing.Size(74, 17);
-            this.lblMaHang.TabIndex = 0;
-            this.lblMaHang.Text = "Product ID";
-            // 
-            // lblTTMH
-            // 
-            this.lblTTMH.AutoSize = true;
-            this.lblTTMH.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTTMH.Location = new System.Drawing.Point(34, 282);
-            this.lblTTMH.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTTMH.Name = "lblTTMH";
-            this.lblTTMH.Size = new System.Drawing.Size(172, 17);
-            this.lblTTMH.TabIndex = 7;
-            this.lblTTMH.Text = "Commodity Information";
             // 
             // txtTimMaHoaDon
             // 
@@ -472,36 +92,177 @@
             this.panel3.Size = new System.Drawing.Size(786, 44);
             this.panel3.TabIndex = 11;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(204, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(339, 52);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "BILL OF PRODUCT";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // lblMaHoaDon
+            // 
+            this.lblMaHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaHoaDon.Location = new System.Drawing.Point(25, 76);
+            this.lblMaHoaDon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMaHoaDon.Name = "lblMaHoaDon";
+            this.lblMaHoaDon.Size = new System.Drawing.Size(132, 25);
+            this.lblMaHoaDon.TabIndex = 13;
+            this.lblMaHoaDon.Text = "BILL ID";
+            // 
+            // txtMaHoaDon
+            // 
+            this.txtMaHoaDon.Enabled = false;
+            this.txtMaHoaDon.Location = new System.Drawing.Point(198, 80);
+            this.txtMaHoaDon.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaHoaDon.Name = "txtMaHoaDon";
+            this.txtMaHoaDon.Size = new System.Drawing.Size(572, 22);
+            this.txtMaHoaDon.TabIndex = 14;
+            this.txtMaHoaDon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaHoaDon_KeyPress);
+            // 
+            // dtgDate
+            // 
+            this.dtgDate.CustomFormat = "";
+            this.dtgDate.Enabled = false;
+            this.dtgDate.Location = new System.Drawing.Point(198, 120);
+            this.dtgDate.Margin = new System.Windows.Forms.Padding(2);
+            this.dtgDate.Name = "dtgDate";
+            this.dtgDate.Size = new System.Drawing.Size(572, 22);
+            this.dtgDate.TabIndex = 15;
+            this.dtgDate.Value = new System.DateTime(2018, 11, 22, 0, 0, 0, 0);
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(25, 120);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(132, 25);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "DATE";
+            // 
+            // txtMaKhachHang
+            // 
+            this.txtMaKhachHang.Enabled = false;
+            this.txtMaKhachHang.Location = new System.Drawing.Point(198, 167);
+            this.txtMaKhachHang.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaKhachHang.Name = "txtMaKhachHang";
+            this.txtMaKhachHang.Size = new System.Drawing.Size(572, 22);
+            this.txtMaKhachHang.TabIndex = 17;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(25, 164);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(169, 25);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "CUSTOMER ID";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // txtMaNhanVien
+            // 
+            this.txtMaNhanVien.Enabled = false;
+            this.txtMaNhanVien.Location = new System.Drawing.Point(198, 216);
+            this.txtMaNhanVien.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaNhanVien.Name = "txtMaNhanVien";
+            this.txtMaNhanVien.Size = new System.Drawing.Size(572, 22);
+            this.txtMaNhanVien.TabIndex = 19;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(25, 212);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(148, 25);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "EMPLOYEE ID";
+            // 
+            // txtMaThanhToan
+            // 
+            this.txtMaThanhToan.Enabled = false;
+            this.txtMaThanhToan.Location = new System.Drawing.Point(198, 260);
+            this.txtMaThanhToan.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaThanhToan.Name = "txtMaThanhToan";
+            this.txtMaThanhToan.Size = new System.Drawing.Size(572, 22);
+            this.txtMaThanhToan.TabIndex = 21;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(25, 260);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(169, 25);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "PAYMENT ID";
+            // 
+            // txtMaHang
+            // 
+            this.txtMaHang.Enabled = false;
+            this.txtMaHang.Location = new System.Drawing.Point(198, 302);
+            this.txtMaHang.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaHang.Name = "txtMaHang";
+            this.txtMaHang.Size = new System.Drawing.Size(572, 22);
+            this.txtMaHang.TabIndex = 23;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(25, 302);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(169, 25);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "PRODUCT ID";
+            // 
             // dgvBill
             // 
+            this.dgvBill.AllowUserToAddRows = false;
+            this.dgvBill.AllowUserToDeleteRows = false;
+            this.dgvBill.AllowUserToResizeColumns = false;
+            this.dgvBill.AllowUserToResizeRows = false;
+            this.dgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBill.Location = new System.Drawing.Point(106, 108);
+            this.dgvBill.Location = new System.Drawing.Point(30, 353);
             this.dgvBill.Name = "dgvBill";
             this.dgvBill.RowTemplate.Height = 24;
-            this.dgvBill.Size = new System.Drawing.Size(1094, 356);
-            this.dgvBill.TabIndex = 14;
+            this.dgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBill.Size = new System.Drawing.Size(740, 301);
+            this.dgvBill.TabIndex = 25;
+            this.dgvBill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBill_CellContentClick);
             // 
             // BillForm
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1264, 948);
-            this.Controls.Add(this.lblTTMH);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.lblTTC);
-            this.Controls.Add(this.lblHoaDon);
-            this.Controls.Add(this.panel1);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(782, 653);
+            this.Controls.Add(this.dgvBill);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtMaHang);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtMaThanhToan);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtMaNhanVien);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtMaKhachHang);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dtgDate);
+            this.Controls.Add(this.txtMaHoaDon);
+            this.Controls.Add(this.lblMaHoaDon);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BillForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Bill";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BillForm_FormClosing);
             this.Load += new System.EventHandler(this.BillForm_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).EndInit();
@@ -511,43 +272,23 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblHoaDon;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblMaThanhToan;
-        private System.Windows.Forms.Label lblTenNhanVien;
-        private System.Windows.Forms.Label lblMaNhanVien;
-        private System.Windows.Forms.Label lblTenKhach;
-        private System.Windows.Forms.Label lblMaKhachHang;
-        private System.Windows.Forms.Label lblNgayBan;
-        private System.Windows.Forms.Label lblMaHoaDon;
-        private System.Windows.Forms.Label lblTTC;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox txtMaThanhToan;
-        private System.Windows.Forms.TextBox txtTenNhanVien;
-        private System.Windows.Forms.TextBox txtMaNhanVien;
-        private System.Windows.Forms.TextBox txtTenKhach;
-        private System.Windows.Forms.TextBox txtMaKhachHang;
-        private System.Windows.Forms.TextBox txtMaHoaDon;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnDong;
-        private System.Windows.Forms.Button btnHuyHoaDon;
-        private System.Windows.Forms.Button btnLuuHoaDon;
-        private System.Windows.Forms.Button btnThemHoaDon;
-        private System.Windows.Forms.Label lblTongTien;
-        private System.Windows.Forms.TextBox txtTongTien;
-        private System.Windows.Forms.TextBox txtTenHang;
-        private System.Windows.Forms.TextBox txtMaHang;
-        private System.Windows.Forms.Label lblTenHang;
-        private System.Windows.Forms.Label lblMaHang;
-        private System.Windows.Forms.Label lblTTMH;
         private System.Windows.Forms.TextBox txtTimMaHoaDon;
         private System.Windows.Forms.Button btnTimMaHoaDon;
         private System.Windows.Forms.Label lblTimMaHoaDon;
-        private System.Windows.Forms.TextBox txtSoLuong;
-        private System.Windows.Forms.Label lblSoLuong;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMaHoaDon;
+        private System.Windows.Forms.TextBox txtMaHoaDon;
+        private System.Windows.Forms.DateTimePicker dtgDate;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtMaKhachHang;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtMaNhanVien;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtMaThanhToan;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtMaHang;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgvBill;
     }
 }

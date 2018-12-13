@@ -35,7 +35,6 @@
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuViewProduct = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuViewSupplier = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuViewEmployee = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuViewCustomer = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuViewBill = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,7 +101,6 @@
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuViewProduct,
-            this.mnuViewSupplier,
             this.mnuViewEmployee,
             this.mnuViewCustomer,
             this.mnuViewBill,
@@ -118,12 +116,6 @@
             this.mnuViewProduct.Size = new System.Drawing.Size(216, 26);
             this.mnuViewProduct.Text = "Product";
             this.mnuViewProduct.Click += new System.EventHandler(this.mnuViewProduct_Click);
-            // 
-            // mnuViewSupplier
-            // 
-            this.mnuViewSupplier.Name = "mnuViewSupplier";
-            this.mnuViewSupplier.Size = new System.Drawing.Size(216, 26);
-            this.mnuViewSupplier.Text = "Supplier";
             // 
             // mnuViewEmployee
             // 
@@ -144,12 +136,14 @@
             this.mnuViewBill.Name = "mnuViewBill";
             this.mnuViewBill.Size = new System.Drawing.Size(216, 26);
             this.mnuViewBill.Text = "Bill";
+            this.mnuViewBill.Click += new System.EventHandler(this.mnuViewBill_Click);
             // 
             // mnuViewStatistic
             // 
             this.mnuViewStatistic.Name = "mnuViewStatistic";
             this.mnuViewStatistic.Size = new System.Drawing.Size(216, 26);
             this.mnuViewStatistic.Text = "Statistic";
+            this.mnuViewStatistic.Click += new System.EventHandler(this.mnuViewStatistic_Click);
             // 
             // paymentToolStripMenuItem
             // 
@@ -256,7 +250,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuAccountInfo;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuViewProduct;
-        private System.Windows.Forms.ToolStripMenuItem mnuViewSupplier;
         private System.Windows.Forms.ToolStripMenuItem mnuViewEmployee;
         private System.Windows.Forms.ToolStripMenuItem mnuViewCustomer;
         private System.Windows.Forms.ToolStripMenuItem mnuViewBill;

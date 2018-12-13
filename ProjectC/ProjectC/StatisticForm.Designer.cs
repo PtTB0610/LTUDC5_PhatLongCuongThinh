@@ -39,14 +39,14 @@
             this.txtSTATISTIC_BILL = new System.Windows.Forms.TextBox();
             this.txtSTATISTIC_PRICE = new System.Windows.Forms.TextBox();
             this.USER_ID = new System.Windows.Forms.TextBox();
-            this.dtvSTA = new System.Windows.Forms.DataGridView();
+            this.dgvStatis = new System.Windows.Forms.DataGridView();
             this.btnTimNhanVien = new System.Windows.Forms.Button();
             this.txtTimNhanVien = new System.Windows.Forms.TextBox();
             this.btnThoat = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dtvSTA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStatis)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -70,9 +70,9 @@
             this.lblSTATISTIC_ID.Location = new System.Drawing.Point(21, 22);
             this.lblSTATISTIC_ID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSTATISTIC_ID.Name = "lblSTATISTIC_ID";
-            this.lblSTATISTIC_ID.Size = new System.Drawing.Size(98, 17);
+            this.lblSTATISTIC_ID.Size = new System.Drawing.Size(94, 17);
             this.lblSTATISTIC_ID.TabIndex = 1;
-            this.lblSTATISTIC_ID.Text = "STATISTIC_ID";
+            this.lblSTATISTIC_ID.Text = "STATISTIC ID";
             // 
             // lblSTATISTIC_EMPLOYEE
             // 
@@ -81,9 +81,9 @@
             this.lblSTATISTIC_EMPLOYEE.Location = new System.Drawing.Point(21, 65);
             this.lblSTATISTIC_EMPLOYEE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSTATISTIC_EMPLOYEE.Name = "lblSTATISTIC_EMPLOYEE";
-            this.lblSTATISTIC_EMPLOYEE.Size = new System.Drawing.Size(160, 17);
+            this.lblSTATISTIC_EMPLOYEE.Size = new System.Drawing.Size(156, 17);
             this.lblSTATISTIC_EMPLOYEE.TabIndex = 2;
-            this.lblSTATISTIC_EMPLOYEE.Text = "STATISTIC_EMPLOYEE";
+            this.lblSTATISTIC_EMPLOYEE.Text = "STATISTIC EMPLOYEE";
             // 
             // lblSTATISTIC_BILL
             // 
@@ -92,9 +92,9 @@
             this.lblSTATISTIC_BILL.Location = new System.Drawing.Point(21, 110);
             this.lblSTATISTIC_BILL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSTATISTIC_BILL.Name = "lblSTATISTIC_BILL";
-            this.lblSTATISTIC_BILL.Size = new System.Drawing.Size(113, 17);
+            this.lblSTATISTIC_BILL.Size = new System.Drawing.Size(109, 17);
             this.lblSTATISTIC_BILL.TabIndex = 3;
-            this.lblSTATISTIC_BILL.Text = "STATISTIC_BILL";
+            this.lblSTATISTIC_BILL.Text = "STATISTIC BILL";
             // 
             // lblSTATISTIC_PRICE
             // 
@@ -103,9 +103,9 @@
             this.lblSTATISTIC_PRICE.Location = new System.Drawing.Point(21, 151);
             this.lblSTATISTIC_PRICE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSTATISTIC_PRICE.Name = "lblSTATISTIC_PRICE";
-            this.lblSTATISTIC_PRICE.Size = new System.Drawing.Size(125, 17);
+            this.lblSTATISTIC_PRICE.Size = new System.Drawing.Size(121, 17);
             this.lblSTATISTIC_PRICE.TabIndex = 4;
-            this.lblSTATISTIC_PRICE.Text = "STATISTIC_PRICE";
+            this.lblSTATISTIC_PRICE.Text = "STATISTIC PRICE";
             // 
             // lblUSER_ID
             // 
@@ -114,12 +114,13 @@
             this.lblUSER_ID.Location = new System.Drawing.Point(21, 194);
             this.lblUSER_ID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUSER_ID.Name = "lblUSER_ID";
-            this.lblUSER_ID.Size = new System.Drawing.Size(67, 17);
+            this.lblUSER_ID.Size = new System.Drawing.Size(100, 17);
             this.lblUSER_ID.TabIndex = 5;
-            this.lblUSER_ID.Text = "USER_ID";
+            this.lblUSER_ID.Text = "EMPLOYEE ID";
             // 
             // txtSTATISTIC_ID
             // 
+            this.txtSTATISTIC_ID.Enabled = false;
             this.txtSTATISTIC_ID.Location = new System.Drawing.Point(281, 82);
             this.txtSTATISTIC_ID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSTATISTIC_ID.Name = "txtSTATISTIC_ID";
@@ -128,6 +129,7 @@
             // 
             // txtSTATISTIC_EMPLOYEE
             // 
+            this.txtSTATISTIC_EMPLOYEE.Enabled = false;
             this.txtSTATISTIC_EMPLOYEE.Location = new System.Drawing.Point(281, 126);
             this.txtSTATISTIC_EMPLOYEE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSTATISTIC_EMPLOYEE.Name = "txtSTATISTIC_EMPLOYEE";
@@ -136,6 +138,7 @@
             // 
             // txtSTATISTIC_BILL
             // 
+            this.txtSTATISTIC_BILL.Enabled = false;
             this.txtSTATISTIC_BILL.Location = new System.Drawing.Point(281, 178);
             this.txtSTATISTIC_BILL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSTATISTIC_BILL.Name = "txtSTATISTIC_BILL";
@@ -144,6 +147,7 @@
             // 
             // txtSTATISTIC_PRICE
             // 
+            this.txtSTATISTIC_PRICE.Enabled = false;
             this.txtSTATISTIC_PRICE.Location = new System.Drawing.Point(281, 220);
             this.txtSTATISTIC_PRICE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSTATISTIC_PRICE.Name = "txtSTATISTIC_PRICE";
@@ -153,20 +157,24 @@
             // 
             // USER_ID
             // 
+            this.USER_ID.Enabled = false;
             this.USER_ID.Location = new System.Drawing.Point(281, 263);
             this.USER_ID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.USER_ID.Name = "USER_ID";
             this.USER_ID.Size = new System.Drawing.Size(1331, 22);
             this.USER_ID.TabIndex = 10;
             // 
-            // dtvSTA
+            // dgvStatis
             // 
-            this.dtvSTA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtvSTA.Location = new System.Drawing.Point(32, 314);
-            this.dtvSTA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dtvSTA.Name = "dtvSTA";
-            this.dtvSTA.Size = new System.Drawing.Size(1616, 758);
-            this.dtvSTA.TabIndex = 11;
+            this.dgvStatis.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvStatis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStatis.Location = new System.Drawing.Point(32, 314);
+            this.dgvStatis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvStatis.Name = "dgvStatis";
+            this.dgvStatis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvStatis.Size = new System.Drawing.Size(1616, 728);
+            this.dgvStatis.TabIndex = 11;
+            this.dgvStatis.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStatis_CellClick);
             // 
             // btnTimNhanVien
             // 
@@ -243,7 +251,7 @@
             this.ClientSize = new System.Drawing.Size(1685, 1055);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.dtvSTA);
+            this.Controls.Add(this.dgvStatis);
             this.Controls.Add(this.USER_ID);
             this.Controls.Add(this.txtSTATISTIC_PRICE);
             this.Controls.Add(this.txtSTATISTIC_BILL);
@@ -255,7 +263,9 @@
             this.Name = "StatisticForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "StatisticForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dtvSTA)).EndInit();
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.StatisticForm_FormClosing);
+            this.Load += new System.EventHandler(this.StatisticForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStatis)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -278,7 +288,7 @@
         private System.Windows.Forms.TextBox txtSTATISTIC_BILL;
         private System.Windows.Forms.TextBox txtSTATISTIC_PRICE;
         private System.Windows.Forms.TextBox USER_ID;
-        private System.Windows.Forms.DataGridView dtvSTA;
+        private System.Windows.Forms.DataGridView dgvStatis;
         private System.Windows.Forms.Button btnTimNhanVien;
         private System.Windows.Forms.TextBox txtTimNhanVien;
         private System.Windows.Forms.Button btnThoat;

@@ -85,7 +85,7 @@ namespace ProjectC
         //Thêm mới product
         private void btnAddNew_Click(object sender, EventArgs e)
         {
-            if (txtProductID.Text != "" && txtProductName.Text != "")//Kiểm trả rỗng textbox ID và Name của Product trước khi thêm
+            if (txtProductID.Text != "" && txtProductName.Text != "" && txtProductPrice.Text != "")//Kiểm trả rỗng textbox ID và Name của Product trước khi thêm
             {
                 try
                 {
@@ -130,6 +130,7 @@ namespace ProjectC
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);//Thông báo lỗi
+                    con.Close();
                 }
             }
             else {

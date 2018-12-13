@@ -116,7 +116,7 @@
             // txtCusID
             // 
             this.txtCusID.Location = new System.Drawing.Point(134, 136);
-            this.txtCusID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCusID.Margin = new System.Windows.Forms.Padding(4);
             this.txtCusID.Name = "txtCusID";
             this.txtCusID.Size = new System.Drawing.Size(367, 22);
             this.txtCusID.TabIndex = 6;
@@ -124,7 +124,7 @@
             // txtCusName
             // 
             this.txtCusName.Location = new System.Drawing.Point(134, 169);
-            this.txtCusName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCusName.Margin = new System.Windows.Forms.Padding(4);
             this.txtCusName.Name = "txtCusName";
             this.txtCusName.Size = new System.Drawing.Size(367, 22);
             this.txtCusName.TabIndex = 7;
@@ -133,7 +133,7 @@
             // txtCusEmail
             // 
             this.txtCusEmail.Location = new System.Drawing.Point(134, 206);
-            this.txtCusEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCusEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtCusEmail.Name = "txtCusEmail";
             this.txtCusEmail.Size = new System.Drawing.Size(367, 22);
             this.txtCusEmail.TabIndex = 8;
@@ -141,7 +141,7 @@
             // txtCusPhone
             // 
             this.txtCusPhone.Location = new System.Drawing.Point(683, 141);
-            this.txtCusPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCusPhone.Margin = new System.Windows.Forms.Padding(4);
             this.txtCusPhone.Name = "txtCusPhone";
             this.txtCusPhone.Size = new System.Drawing.Size(286, 22);
             this.txtCusPhone.TabIndex = 9;
@@ -150,7 +150,7 @@
             // txtCusAddress
             // 
             this.txtCusAddress.Location = new System.Drawing.Point(683, 209);
-            this.txtCusAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCusAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtCusAddress.Name = "txtCusAddress";
             this.txtCusAddress.Size = new System.Drawing.Size(286, 22);
             this.txtCusAddress.TabIndex = 11;
@@ -158,7 +158,7 @@
             // btnCusCreate
             // 
             this.btnCusCreate.Location = new System.Drawing.Point(1015, 22);
-            this.btnCusCreate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCusCreate.Margin = new System.Windows.Forms.Padding(4);
             this.btnCusCreate.Name = "btnCusCreate";
             this.btnCusCreate.Size = new System.Drawing.Size(116, 63);
             this.btnCusCreate.TabIndex = 13;
@@ -169,7 +169,7 @@
             // btnCusUpdate
             // 
             this.btnCusUpdate.Location = new System.Drawing.Point(1015, 110);
-            this.btnCusUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCusUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnCusUpdate.Name = "btnCusUpdate";
             this.btnCusUpdate.Size = new System.Drawing.Size(116, 68);
             this.btnCusUpdate.TabIndex = 14;
@@ -180,7 +180,7 @@
             // btnCusDelete
             // 
             this.btnCusDelete.Location = new System.Drawing.Point(1166, 109);
-            this.btnCusDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCusDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnCusDelete.Name = "btnCusDelete";
             this.btnCusDelete.Size = new System.Drawing.Size(133, 69);
             this.btnCusDelete.TabIndex = 15;
@@ -205,17 +205,18 @@
             this.dgvCus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCus.Location = new System.Drawing.Point(16, 306);
-            this.dgvCus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCus.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCus.Name = "dgvCus";
             this.dgvCus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCus.Size = new System.Drawing.Size(1304, 509);
             this.dgvCus.TabIndex = 31;
             this.dgvCus.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCus_CellClick);
+            this.dgvCus.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCus_CellContentClick);
             // 
             // dtbCus
             // 
             this.dtbCus.Location = new System.Drawing.Point(683, 172);
-            this.dtbCus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtbCus.Margin = new System.Windows.Forms.Padding(4);
             this.dtbCus.Name = "dtbCus";
             this.dtbCus.Size = new System.Drawing.Size(286, 22);
             this.dtbCus.TabIndex = 32;
@@ -224,7 +225,7 @@
             // btnEmpCan
             // 
             this.btnEmpCan.Location = new System.Drawing.Point(1166, 208);
-            this.btnEmpCan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEmpCan.Margin = new System.Windows.Forms.Padding(4);
             this.btnEmpCan.Name = "btnEmpCan";
             this.btnEmpCan.Size = new System.Drawing.Size(133, 66);
             this.btnEmpCan.TabIndex = 33;
@@ -298,7 +299,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CustomerForm";
             this.Text = "CUSTOMER";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomerForm_FormClosing);

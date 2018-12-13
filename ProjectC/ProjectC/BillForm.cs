@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ProjectC
 {
@@ -16,15 +17,36 @@ namespace ProjectC
             InitializeComponent();
         }
 
+        SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=ElectronicSupermarket;Integrated Security=True");
+        clsDatabase db = new clsDatabase();
+
+        public void getBillData()
+        {
+            try
+            {
+                con.Close();
+                con.Open();
+                SqlCommand cmd = new SqlCommand("sp_LayDSBILL", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                con.Close();
+                dgvBill.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void BillForm_Load(object sender, EventArgs e)
         {
-
+            getBillData();
         }
 
         private void txtTimMaHoaDon_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        {}
 
         private void txtSoLuong_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -37,18 +59,76 @@ namespace ProjectC
         private void txtTenKhach_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
-
         }
 
         private void txtTenNhanVien_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
-
         }
 
         private void txtTenHang_TextChanged(object sender, EventArgs e)
-        {
+        {}
 
+        private void txtMaHoaDon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+        }
+
+
+        private void dgvBill_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvBill.SelectedRows.Count >= 0)
+            {
+                txtMaHoaDon.Text = dgvBill.SelectedCells[0].Value.ToString();
+                dtgDate.Text = dgvBill.SelectedCells[1].Value.ToString();
+                txtMaKhachHang.Text = dgvBill.SelectedCells[2].Value.ToString();
+                txtMaHang.Text = dgvBill.SelectedCells[3].Value.ToString();
+                txtMaNhanVien.Text = dgvBill.SelectedCells[4].Value.ToString();
+                txtMaThanhToan.Text = dgvBill.SelectedCells[5].Value.ToString();
+            }
+        }
+
+        private void BillForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void btnHuyHoaDon_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        { }
+
+        private void label3_Click(object sender, EventArgs e)
+        { }
+
+        private void dgvBill_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (!dgvBill.Rows[dgvBill.CurrentCell.RowIndex].IsNewRow)
+                {
+                    if (dgvBill.SelectedRows.Count > 0)
+                    {
+                        txtMaHoaDon.Text = dgvBill.SelectedCells[0].Value.ToString();
+                        dtgDate.Text = dgvBill.SelectedCells[1].Value.ToString();
+                        txtMaKhachHang.Text = dgvBill.SelectedCells[2].Value.ToString();
+                        txtMaHang.Text = dgvBill.SelectedCells[3].Value.ToString();
+                        txtMaNhanVien.Text = dgvBill.SelectedCells[4].Value.ToString();
+                        txtMaThanhToan.Text = dgvBill.SelectedCells[5].Value.ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

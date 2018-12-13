@@ -209,5 +209,41 @@ namespace ProjectC
             cusform.Dock = DockStyle.Fill;
             cusform.Show();
         }
+
+        //Xem trang chiếu Statistic
+        StatisticForm statisForm;
+        private void mnuViewStatistic_Click(object sender, EventArgs e)
+        {
+            if(statisForm != null)
+            {
+                statisForm.Show();
+            }
+            else
+            {
+                statisForm = new StatisticForm();
+                statisForm.MdiParent = this;
+                statisForm.TopLevel = false;
+                statisForm.Dock = DockStyle.Fill;
+                statisForm.Show();
+            } 
+        }
+
+        //Xem trang chiếu Bill
+        BillForm billForm;
+        private void mnuViewBill_Click(object sender, EventArgs e)
+        {
+            if(billForm != null)
+            {
+                billForm.Show();
+            }
+            else
+            {
+                billForm = new BillForm();
+                billForm.MdiParent = this;
+                billForm.TopLevel = false;
+                billForm.Dock = DockStyle.Fill;
+                billForm.Show();
+            }
+        }
     }
 }
