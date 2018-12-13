@@ -313,7 +313,6 @@ INSERT INTO PAYMENT(PAYMENT_ID,PAYMENT_NAME,DISCOUNT)
 VALUES (@pay_id, @pay_name, @discount)
 
 
- 
 -- SP Xoa PAYMENT
 GO
 CREATE PROC sp_XoaPAYMENT(@pay_id nvarchar(255)) 

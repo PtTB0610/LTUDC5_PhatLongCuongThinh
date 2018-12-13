@@ -54,6 +54,7 @@
             // 
             // dgvEmployee
             // 
+            this.dgvEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmployee.Location = new System.Drawing.Point(4, 399);
             this.dgvEmployee.Margin = new System.Windows.Forms.Padding(4);

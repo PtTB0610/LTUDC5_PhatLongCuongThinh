@@ -35,7 +35,25 @@ namespace ProjectC
         }
 
         private void dgvPay_CellClick(object sender, DataGridViewCellEventArgs e)
-        {}
+        {
+            try
+            {
+                if (!dgvPay.Rows[dgvPay.CurrentCell.RowIndex].IsNewRow)
+                {
+                    if (dgvPay.SelectedRows.Count > 0)
+                    {
+                        txtPayID.Text = dgvPay.SelectedCells[0].Value.ToString();
+                        txtPayName.Text = dgvPay.SelectedCells[1].Value.ToString();
+                        txtPayDis.Text = dgvPay.SelectedCells[2].Value.ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private void PAYMENT_FormClosing(object sender, FormClosingEventArgs e)
         {

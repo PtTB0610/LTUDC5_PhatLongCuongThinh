@@ -40,6 +40,7 @@
             this.mnuViewCustomer = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuViewBill = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuViewStatistic = new System.Windows.Forms.ToolStripMenuItem();
+            this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAddEmployee = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAddCustomer = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +50,6 @@
             this.mnuAddCate = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAddSupplier = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuUser = new System.Windows.Forms.ToolStripMenuItem();
-            this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -137,6 +137,7 @@
             this.mnuViewCustomer.Name = "mnuViewCustomer";
             this.mnuViewCustomer.Size = new System.Drawing.Size(216, 26);
             this.mnuViewCustomer.Text = "Customer";
+            this.mnuViewCustomer.Click += new System.EventHandler(this.mnuViewCustomer_Click);
             // 
             // mnuViewBill
             // 
@@ -149,6 +150,13 @@
             this.mnuViewStatistic.Name = "mnuViewStatistic";
             this.mnuViewStatistic.Size = new System.Drawing.Size(216, 26);
             this.mnuViewStatistic.Text = "Statistic";
+            // 
+            // paymentToolStripMenuItem
+            // 
+            this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
+            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.paymentToolStripMenuItem.Text = "Payment";
+            this.paymentToolStripMenuItem.Click += new System.EventHandler(this.paymentToolStripMenuItem_Click);
             // 
             // addToolStripMenuItem
             // 
@@ -215,13 +223,6 @@
             this.mnuUser.Size = new System.Drawing.Size(144, 26);
             this.mnuUser.Text = "User";
             this.mnuUser.Click += new System.EventHandler(this.userToolStripMenuItem_Click);
-            // 
-            // paymentToolStripMenuItem
-            // 
-            this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
-            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.paymentToolStripMenuItem.Text = "Payment";
-            this.paymentToolStripMenuItem.Click += new System.EventHandler(this.paymentToolStripMenuItem_Click);
             // 
             // MainForm
             // 

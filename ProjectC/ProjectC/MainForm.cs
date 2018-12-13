@@ -199,5 +199,15 @@ namespace ProjectC
             payform.Dock = DockStyle.Fill;
             payform.Show();
         }
+
+        //Xem trang chiếu Customer
+        private void mnuViewCustomer_Click(object sender, EventArgs e)
+        {
+            CustomerForm cusform = new CustomerForm();
+            cusform.MdiParent = this;
+            cusform.TopLevel = false;
+            cusform.Dock = DockStyle.Fill;
+            cusform.Show();
+        }
     }
 }

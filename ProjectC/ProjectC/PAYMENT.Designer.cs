@@ -101,10 +101,16 @@
             // 
             // dgvPay
             // 
+            this.dgvPay.AllowUserToAddRows = false;
+            this.dgvPay.AllowUserToDeleteRows = false;
+            this.dgvPay.AllowUserToResizeColumns = false;
+            this.dgvPay.AllowUserToResizeRows = false;
+            this.dgvPay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPay.Location = new System.Drawing.Point(16, 254);
             this.dgvPay.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPay.Name = "dgvPay";
+            this.dgvPay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPay.Size = new System.Drawing.Size(597, 359);
             this.dgvPay.TabIndex = 7;
             this.dgvPay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPay_CellClick);
