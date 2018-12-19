@@ -89,4 +89,14 @@ exec sp_ThemDSBILL 'BILL8','12/13/2018','KH8','8','NV8','1'
 exec sp_ThemDSBILL 'BILL9','12/13/2018','KH9','9','NV9','1'
 exec sp_ThemDSBILL 'BILL10','12/13/2018','KH10','10','NV10','1'
 
+/*STATISTIC*/
+EXEC sp_ThemThongKe N'T1', N'Cuong', N'BILL1', 500000, N'NV1'
+EXEC sp_ThemThongKe N'T2', N'Thinh', N'BILL3', 510000, N'NV2'
+EXEC sp_ThemThongKe N'T3', N'Phat', N'BILL1', 600000, N'NV3'
+EXEC sp_ThemThongKe N'T4', N'Long', N'BILL2', 400000, N'NV4'
+EXEC sp_ThemThongKe N'T5', N'Hoa', N'BILL2', 450000, N'NV5'
+EXEC sp_ThemThongKe N'T6', N'Linh', N'BILL4', 550000, N'NV6'
+
+
+
 

@@ -579,5 +579,10 @@ namespace ProjectC
                 e.Cancel = true;
             }
         }
+
+        private void txtProductID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -193,5 +193,10 @@ namespace ProjectC
                 con.Close();
             }
         }
+
+        private void txtMaHoaDon_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

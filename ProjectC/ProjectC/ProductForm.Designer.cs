@@ -112,7 +112,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(24, 236);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 18);
+            this.label7.Size = new System.Drawing.Size(131, 23);
             this.label7.TabIndex = 28;
             this.label7.Text = "Stock Quantity";
             // 
@@ -122,7 +122,7 @@
             this.txtInStock.Location = new System.Drawing.Point(185, 233);
             this.txtInStock.MaxLength = 9;
             this.txtInStock.Name = "txtInStock";
-            this.txtInStock.Size = new System.Drawing.Size(208, 25);
+            this.txtInStock.Size = new System.Drawing.Size(208, 29);
             this.txtInStock.TabIndex = 27;
             this.txtInStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInStock_KeyPress);
             // 
@@ -132,7 +132,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(24, 195);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 18);
+            this.label5.Size = new System.Drawing.Size(79, 23);
             this.label5.TabIndex = 26;
             this.label5.Text = "Supplier";
             // 
@@ -142,7 +142,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(24, 151);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 18);
+            this.label4.Size = new System.Drawing.Size(84, 23);
             this.label4.TabIndex = 25;
             this.label4.Text = "Category";
             // 
@@ -152,7 +152,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(24, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 18);
+            this.label3.Size = new System.Drawing.Size(120, 23);
             this.label3.TabIndex = 24;
             this.label3.Text = "Product Price";
             // 
@@ -162,7 +162,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(24, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 18);
+            this.label2.Size = new System.Drawing.Size(129, 23);
             this.label2.TabIndex = 23;
             this.label2.Text = "Product Name";
             // 
@@ -172,7 +172,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(24, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 18);
+            this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 22;
             this.label1.Text = "Product ID";
             // 
@@ -182,7 +182,7 @@
             this.txtProductPrice.Location = new System.Drawing.Point(185, 113);
             this.txtProductPrice.MaxLength = 15;
             this.txtProductPrice.Name = "txtProductPrice";
-            this.txtProductPrice.Size = new System.Drawing.Size(208, 25);
+            this.txtProductPrice.Size = new System.Drawing.Size(208, 29);
             this.txtProductPrice.TabIndex = 19;
             this.txtProductPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductPrice_KeyPress);
             // 
@@ -191,7 +191,7 @@
             this.txtProductName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtProductName.Location = new System.Drawing.Point(185, 72);
             this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(208, 25);
+            this.txtProductName.Size = new System.Drawing.Size(208, 29);
             this.txtProductName.TabIndex = 18;
             this.txtProductName.Leave += new System.EventHandler(this.txtProductName_Leave);
             // 
@@ -200,8 +200,9 @@
             this.txtProductID.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtProductID.Location = new System.Drawing.Point(185, 34);
             this.txtProductID.Name = "txtProductID";
-            this.txtProductID.Size = new System.Drawing.Size(208, 25);
+            this.txtProductID.Size = new System.Drawing.Size(208, 29);
             this.txtProductID.TabIndex = 17;
+            this.txtProductID.TextChanged += new System.EventHandler(this.txtProductID_TextChanged);
             this.txtProductID.Leave += new System.EventHandler(this.txtProductID_Leave);
             // 
             // label6
@@ -210,7 +211,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(416, 34);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(132, 18);
+            this.label6.Size = new System.Drawing.Size(173, 23);
             this.label6.TabIndex = 29;
             this.label6.Text = "Product Description";
             // 
@@ -252,7 +253,7 @@
             this.cboSupplier.FormattingEnabled = true;
             this.cboSupplier.Location = new System.Drawing.Point(185, 192);
             this.cboSupplier.Name = "cboSupplier";
-            this.cboSupplier.Size = new System.Drawing.Size(208, 25);
+            this.cboSupplier.Size = new System.Drawing.Size(208, 30);
             this.cboSupplier.TabIndex = 32;
             this.cboSupplier.ValueMember = "SUPPLIER_ID";
             // 
@@ -264,7 +265,7 @@
             this.cboCategory.FormattingEnabled = true;
             this.cboCategory.Location = new System.Drawing.Point(185, 151);
             this.cboCategory.Name = "cboCategory";
-            this.cboCategory.Size = new System.Drawing.Size(208, 25);
+            this.cboCategory.Size = new System.Drawing.Size(208, 30);
             this.cboCategory.TabIndex = 33;
             this.cboCategory.ValueMember = "CATEGORY_ID";
             // 
@@ -284,7 +285,7 @@
             this.txtIDtoSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtIDtoSearch.Location = new System.Drawing.Point(185, 310);
             this.txtIDtoSearch.Name = "txtIDtoSearch";
-            this.txtIDtoSearch.Size = new System.Drawing.Size(208, 25);
+            this.txtIDtoSearch.Size = new System.Drawing.Size(208, 29);
             this.txtIDtoSearch.TabIndex = 35;
             // 
             // btnSearch
@@ -304,7 +305,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(24, 310);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(130, 18);
+            this.label8.Size = new System.Drawing.Size(168, 23);
             this.label8.TabIndex = 37;
             this.label8.Text = "Find Product by ID";
             // 
@@ -375,7 +376,7 @@
             "inactive"});
             this.cboProductStatus.Location = new System.Drawing.Point(185, 272);
             this.cboProductStatus.Name = "cboProductStatus";
-            this.cboProductStatus.Size = new System.Drawing.Size(208, 25);
+            this.cboProductStatus.Size = new System.Drawing.Size(208, 30);
             this.cboProductStatus.TabIndex = 40;
             // 
             // label9
@@ -384,7 +385,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(24, 275);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(103, 18);
+            this.label9.Size = new System.Drawing.Size(132, 23);
             this.label9.TabIndex = 39;
             this.label9.Text = "Product Status";
             // 
@@ -394,7 +395,7 @@
             // 
             // ProductForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1000, 673);

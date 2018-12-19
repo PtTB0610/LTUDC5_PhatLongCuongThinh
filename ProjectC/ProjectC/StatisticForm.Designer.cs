@@ -38,7 +38,7 @@
             this.txtSTATISTIC_EMPLOYEE = new System.Windows.Forms.TextBox();
             this.txtSTATISTIC_BILL = new System.Windows.Forms.TextBox();
             this.txtSTATISTIC_PRICE = new System.Windows.Forms.TextBox();
-            this.USER_ID = new System.Windows.Forms.TextBox();
+            this.txtEMPLOYEEID = new System.Windows.Forms.TextBox();
             this.dgvStatis = new System.Windows.Forms.DataGridView();
             this.btnTimNhanVien = new System.Windows.Forms.Button();
             this.txtTimNhanVien = new System.Windows.Forms.TextBox();
@@ -46,6 +46,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatis)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -120,59 +124,54 @@
             // 
             // txtSTATISTIC_ID
             // 
-            this.txtSTATISTIC_ID.Enabled = false;
             this.txtSTATISTIC_ID.Location = new System.Drawing.Point(281, 82);
-            this.txtSTATISTIC_ID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSTATISTIC_ID.Margin = new System.Windows.Forms.Padding(4);
             this.txtSTATISTIC_ID.Name = "txtSTATISTIC_ID";
-            this.txtSTATISTIC_ID.Size = new System.Drawing.Size(1331, 22);
+            this.txtSTATISTIC_ID.Size = new System.Drawing.Size(1100, 22);
             this.txtSTATISTIC_ID.TabIndex = 6;
             // 
             // txtSTATISTIC_EMPLOYEE
             // 
-            this.txtSTATISTIC_EMPLOYEE.Enabled = false;
             this.txtSTATISTIC_EMPLOYEE.Location = new System.Drawing.Point(281, 126);
-            this.txtSTATISTIC_EMPLOYEE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSTATISTIC_EMPLOYEE.Margin = new System.Windows.Forms.Padding(4);
             this.txtSTATISTIC_EMPLOYEE.Name = "txtSTATISTIC_EMPLOYEE";
-            this.txtSTATISTIC_EMPLOYEE.Size = new System.Drawing.Size(1331, 22);
+            this.txtSTATISTIC_EMPLOYEE.Size = new System.Drawing.Size(1100, 22);
             this.txtSTATISTIC_EMPLOYEE.TabIndex = 7;
             // 
             // txtSTATISTIC_BILL
             // 
-            this.txtSTATISTIC_BILL.Enabled = false;
             this.txtSTATISTIC_BILL.Location = new System.Drawing.Point(281, 178);
-            this.txtSTATISTIC_BILL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSTATISTIC_BILL.Margin = new System.Windows.Forms.Padding(4);
             this.txtSTATISTIC_BILL.Name = "txtSTATISTIC_BILL";
-            this.txtSTATISTIC_BILL.Size = new System.Drawing.Size(1331, 22);
+            this.txtSTATISTIC_BILL.Size = new System.Drawing.Size(1100, 22);
             this.txtSTATISTIC_BILL.TabIndex = 8;
             // 
             // txtSTATISTIC_PRICE
             // 
-            this.txtSTATISTIC_PRICE.Enabled = false;
             this.txtSTATISTIC_PRICE.Location = new System.Drawing.Point(281, 220);
-            this.txtSTATISTIC_PRICE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSTATISTIC_PRICE.Margin = new System.Windows.Forms.Padding(4);
             this.txtSTATISTIC_PRICE.Name = "txtSTATISTIC_PRICE";
-            this.txtSTATISTIC_PRICE.Size = new System.Drawing.Size(1331, 22);
+            this.txtSTATISTIC_PRICE.Size = new System.Drawing.Size(1100, 22);
             this.txtSTATISTIC_PRICE.TabIndex = 9;
             this.txtSTATISTIC_PRICE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSTATISTIC_PRICE_KeyPress);
             // 
-            // USER_ID
+            // txtEMPLOYEEID
             // 
-            this.USER_ID.Enabled = false;
-            this.USER_ID.Location = new System.Drawing.Point(281, 263);
-            this.USER_ID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.USER_ID.Name = "USER_ID";
-            this.USER_ID.Size = new System.Drawing.Size(1331, 22);
-            this.USER_ID.TabIndex = 10;
+            this.txtEMPLOYEEID.Location = new System.Drawing.Point(281, 263);
+            this.txtEMPLOYEEID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEMPLOYEEID.Name = "txtEMPLOYEEID";
+            this.txtEMPLOYEEID.Size = new System.Drawing.Size(1100, 22);
+            this.txtEMPLOYEEID.TabIndex = 10;
             // 
             // dgvStatis
             // 
             this.dgvStatis.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStatis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStatis.Location = new System.Drawing.Point(32, 314);
-            this.dgvStatis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvStatis.Margin = new System.Windows.Forms.Padding(4);
             this.dgvStatis.Name = "dgvStatis";
             this.dgvStatis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStatis.Size = new System.Drawing.Size(1616, 728);
+            this.dgvStatis.Size = new System.Drawing.Size(1471, 728);
             this.dgvStatis.TabIndex = 11;
             this.dgvStatis.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStatis_CellClick);
             // 
@@ -180,7 +179,7 @@
             // 
             this.btnTimNhanVien.ForeColor = System.Drawing.Color.Blue;
             this.btnTimNhanVien.Location = new System.Drawing.Point(477, 20);
-            this.btnTimNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTimNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimNhanVien.Name = "btnTimNhanVien";
             this.btnTimNhanVien.Size = new System.Drawing.Size(100, 28);
             this.btnTimNhanVien.TabIndex = 12;
@@ -190,7 +189,7 @@
             // txtTimNhanVien
             // 
             this.txtTimNhanVien.Location = new System.Drawing.Point(149, 22);
-            this.txtTimNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTimNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimNhanVien.Name = "txtTimNhanVien";
             this.txtTimNhanVien.Size = new System.Drawing.Size(303, 22);
             this.txtTimNhanVien.TabIndex = 13;
@@ -199,7 +198,7 @@
             // 
             this.btnThoat.ForeColor = System.Drawing.Color.Blue;
             this.btnThoat.Location = new System.Drawing.Point(1513, 1094);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(116, 52);
             this.btnThoat.TabIndex = 14;
@@ -227,9 +226,9 @@
             this.panel1.Controls.Add(this.lblSTATISTIC_EMPLOYEE);
             this.panel1.Controls.Add(this.lblSTATISTIC_ID);
             this.panel1.Location = new System.Drawing.Point(32, 68);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1615, 232);
+            this.panel1.Size = new System.Drawing.Size(1354, 232);
             this.panel1.TabIndex = 16;
             // 
             // panel2
@@ -239,27 +238,71 @@
             this.panel2.Controls.Add(this.txtTimNhanVien);
             this.panel2.Controls.Add(this.btnTimNhanVien);
             this.panel2.Location = new System.Drawing.Point(32, 1087);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(627, 71);
             this.panel2.TabIndex = 17;
+            // 
+            // btnThem
+            // 
+            this.btnThem.Location = new System.Drawing.Point(1404, 72);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(99, 39);
+            this.btnThem.TabIndex = 18;
+            this.btnThem.Text = "Add";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(1404, 132);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(99, 39);
+            this.btnXoa.TabIndex = 19;
+            this.btnXoa.Text = "Delete";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Location = new System.Drawing.Point(1404, 201);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(99, 39);
+            this.btnSua.TabIndex = 20;
+            this.btnSua.Text = "Update";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1404, 261);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 39);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // StatisticForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1685, 1055);
+            this.ClientSize = new System.Drawing.Size(1529, 1055);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSua);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.dgvStatis);
-            this.Controls.Add(this.USER_ID);
+            this.Controls.Add(this.txtEMPLOYEEID);
             this.Controls.Add(this.txtSTATISTIC_PRICE);
             this.Controls.Add(this.txtSTATISTIC_BILL);
             this.Controls.Add(this.txtSTATISTIC_EMPLOYEE);
             this.Controls.Add(this.txtSTATISTIC_ID);
             this.Controls.Add(this.lblSTATISTIC);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "StatisticForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "StatisticForm";
@@ -287,7 +330,7 @@
         private System.Windows.Forms.TextBox txtSTATISTIC_EMPLOYEE;
         private System.Windows.Forms.TextBox txtSTATISTIC_BILL;
         private System.Windows.Forms.TextBox txtSTATISTIC_PRICE;
-        private System.Windows.Forms.TextBox USER_ID;
+        private System.Windows.Forms.TextBox txtEMPLOYEEID;
         private System.Windows.Forms.DataGridView dgvStatis;
         private System.Windows.Forms.Button btnTimNhanVien;
         private System.Windows.Forms.TextBox txtTimNhanVien;
@@ -295,5 +338,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button button1;
     }
 }
